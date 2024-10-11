@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navlink > span.active {
+  color: #243F8F;
+}
+
+.emails-nav {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.emails-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.emails-nav.active::before {
+  width: 100%;
+  background-color: #243F8F;
+}
+
+.emails-nav.active > svg {
+  fill: #243F8F;
+}
+
+
+.loader {
+  border: 2px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
