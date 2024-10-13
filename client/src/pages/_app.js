@@ -3,7 +3,10 @@ import Header from '@/components/Header';
 import '@/styles/globals.css';
 import { useRouter } from 'next/router';
 import AuthLayout from '@/components/AuthLayout';
-import { UserProvider } from '@/components/UserContext'; // Import the UserProvider
+import { UserProvider } from '@/components/UserContext'; 
+import { ToastContainer } from 'react-toastify'; // Импортируем ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Импортируем стили Toastify
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -12,12 +15,27 @@ function MyApp({ Component, pageProps }) {
   const showHeader = router.pathname !== '/login';
 
   return (
-    <UserProvider> {/* Wrap your app in UserProvider */}
-      <AuthLayout>
+    <AuthLayout>
+      <UserProvider>
+        <ToastContainer // Добавляем ToastContainer для алертов
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored" // Можно указать темную или светлую тему, по вашему желанию
+        />
         {showHeader && <Header />}
+        <Head>
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+        </Head>
         <Component {...pageProps} />
-      </AuthLayout>
-    </UserProvider>
+      </UserProvider>
+    </AuthLayout>
   );
 }
 

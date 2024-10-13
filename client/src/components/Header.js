@@ -54,7 +54,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="flex justify-between items-center">
-                <div id="navigation-link" className="flex gap-10 items-center *:text-black *:text-md *:font-light *:duration-150 hover:*:text-[#243F8F]">
+                <div id="navigation-link" className="flex gap-10 items-center *:text-black *:text-md *:font-regular *:duration-150 hover:*:text-[#243F8F]">
                     <Link href="/" className="navlink">
                         <span className={`cursor-pointer ${isActive('/') ? 'active' : ''}`}>Главная</span>
                     </Link>

@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');  
 const userRoutes = require('./routes/userRoutes');
+const emailRoutes = require('./routes/emailRoutes');
 
 app.use(cors({
   origin: 'http://localhost:3000',
@@ -22,6 +23,7 @@ app.use(cookieParser());
 // Подключаем маршруты
 app.use(authRoutes);
 app.use(userRoutes);
+app.use(emailRoutes);
 
 // Подключение к MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

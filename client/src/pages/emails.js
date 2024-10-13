@@ -5,8 +5,9 @@ import React, { useState, useEffect  } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
-// Создаем схему валидации с помощью Yup
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -29,10 +30,14 @@ export default function EmailsPage() {
   const user = useUser();
   const [selectedTab, setSelectedTab] = useState('allMails');
   const [loading, setLoading] = useState(false);
+  const [emailValue, setEmailValue] = useState('');
+  const [usernameValue, setUsernameValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [emails, setEmails] = useState([]);
 
-  const { register, handleSubmit, formState: { errors, touchedFields, isValid }, setValue, trigger } = useForm({
-    mode: 'onChange', // Валидация при изменении значений
-    resolver: yupResolver(schema),
+  const { register, handleSubmit, formState: { errors, touchedFields, isValid }, setValue, trigger, clearErrors } = useForm({
+      mode: 'onChange', // Валидация при изменении значений
+      resolver: yupResolver(schema),
   });
 
   useEffect(() => {
@@ -41,29 +46,80 @@ export default function EmailsPage() {
     inputs.forEach((input) => {
       input.setAttribute('autocomplete', 'new-password'); // Полное отключение автозаполнения
     });
+    fetchEmails();
   }, []);
 
   // Очистка от запрещенных символов
   const handleInputChange = (e, field) => {
     let value = e.target.value;
-    
+  
     // Удаляем запрещённые символы
     if (field === 'email') {
       value = value.replace(/[^a-zA-Z0-9.]/g, ''); // Только латиница, цифры и точка
+      setEmailValue(value); // Обновляем состояние для email
     }
     if (field === 'username') {
       value = value.replace(/[^А-Яа-яЁё0-9 ]/g, ''); // Только кириллица и цифры
+      setUsernameValue(value); // Обновляем состояние для имени пользователя
     }
     if (field === 'password') {
       value = value.replace(/[\u0400-\u04FF\s]/g, ''); // Запрещена кириллица и пробелы
+      setPasswordValue(value); // Обновляем состояние для пароля
     }
   
-    setValue(field, value); // Устанавливаем отфильтрованное значение
-    trigger(field); // Запуск валидации для этого поля
+    setValue(field, value); // Устанавливаем отфильтрованное значение в форму
+    if (value.length === 0) {
+      clearErrors(field); // Сбрасываем ошибки, если поле пустое
+    } else {
+      trigger(field); // Проверка валидации для поля
+    }
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const fetchEmails = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/emails');
+      setEmails(response.data); // Сохраняем почты в состояние
+      setLoading(false);
+    } catch (error) {
+      console.error('Ошибка при загрузке почт:', error);
+      setLoading(false);
+    }
+  };
+
+
+  const onSubmit = async (data) => {
+    try {
+      const payload = {
+        ...data,
+        email: `${data.email}@rubikom.kz`, // Append @rubikom.kz to email
+      };
+  
+      console.log(payload);
+      const response = await axios.post('http://localhost:5000/api/emails', payload);
+  
+      if (response.status === 200) {
+        toast.success('Email успешно создан!', {
+          position: "bottom-right",
+          autoClose: 3000, // Устанавливаем время отображения 3 секунды
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Ошибка при создании email', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
   
 
@@ -89,16 +145,21 @@ export default function EmailsPage() {
                   onClick={() => setSelectedTab('allMails')}
                   className={`emails-nav flex items-center justify-center px-8 py-3 ${selectedTab === 'allMails' ? 'active' : ''}`}
                 >
-                  <span className="text-sm text-light flex gap-3">
-                    Все почты <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">0</span>
-                  </span>
+                <span className={`text-sm text-light flex gap-3 ${selectedTab === 'allMails' ? 'text-[#243F8F]' : ''}`}>
+                  Все почты <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">{emails.length}</span>
+                </span>
                 </button>
                 <button
                   onClick={() => setSelectedTab('createMail')}
                   className={`emails-nav flex items-center justify-center px-8 py-3 ${selectedTab === 'createMail' ? 'active' : ''}`}
                 >
-                  <span className="text-sm text-light flex items-center gap-2">
-                    <img src="/assets/img/formkit_add.svg" alt="add" /> Создать почту
+                  <span className={`text-sm text-light flex items-center gap-2 font-regular ${selectedTab === 'createMail' ? 'text-[#243F8F] *:fill-[#243F8F] *:duration-150' : ''}`}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15C4.14 15 1 11.86 1 8C1 4.14 4.14 1 8 1C11.86 1 15 4.14 15 8C15 11.86 11.86 15 8 15ZM8 2C4.69 2 2 4.69 2 8C2 11.31 4.69 14 8 14C11.31 14 14 11.31 14 8C14 4.69 11.31 2 8 2Z" />
+                    <path d="M8 11.5C7.72 11.5 7.5 11.28 7.5 11V5C7.5 4.72 7.72 4.5 8 4.5C8.28 4.5 8.5 4.72 8.5 5V11C8.5 11.28 8.28 11.5 8 11.5Z"/>
+                    <path d="M11 8.5H5C4.72 8.5 4.5 8.28 4.5 8C4.5 7.72 4.72 7.5 5 7.5H11C11.28 7.5 11.5 7.72 11.5 8C11.5 8.28 11.28 8.5 11 8.5Z"/>
+                  </svg> 
+                  Создать почту
                   </span>
                 </button>
               </div>
@@ -131,11 +192,12 @@ export default function EmailsPage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b font-medium text-[#343F52]">
-                          <td className="px-6 py-3">nk.osinsky@rubikom.kz</td>
-                          <td className="px-6 py-3">Осинский Н.А.</td>
-                          <td className="px-6 py-3">************</td>
-                          <td className="px-6 py-3 flex justify-between items-center">
+                        {emails.map((email) => (
+                          <tr key={email._id} className="border-b font-medium text-[#343F52]">
+                            <td className="px-6 py-3">{email.email}</td>
+                            <td className="px-6 py-3">{email.username}</td>
+                            <td className="px-6 py-3">{email.password}</td>
+                            <td className="px-6 py-3 flex justify-between items-center">
                             <button className=" flex items-center justify-center *:fill-[#343F52] hover:*:fill-[#243F8F] hover:*:rotate-180 *:duration-300">
                             <svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg">
                               <path d="M8.2502 20L7.8502 16.8C7.63353 16.7167 7.42953 16.6167 7.2382 16.5C7.04686 16.3833 6.8592 16.2583 6.6752 16.125L3.7002 17.375L0.950195 12.625L3.5252 10.675C3.50853 10.5583 3.5002 10.446 3.5002 10.338V9.663C3.5002 9.55433 3.50853 9.44167 3.5252 9.325L0.950195 7.375L3.7002 2.625L6.6752 3.875C6.85853 3.74167 7.0502 3.61667 7.2502 3.5C7.4502 3.38333 7.6502 3.28333 7.8502 3.2L8.2502 0H13.7502L14.1502 3.2C14.3669 3.28333 14.5712 3.38333 14.7632 3.5C14.9552 3.61667 15.1425 3.74167 15.3252 3.875L18.3002 2.625L21.0502 7.375L18.4752 9.325C18.4919 9.44167 18.5002 9.55433 18.5002 9.663V10.337C18.5002 10.4457 18.4835 10.5583 18.4502 10.675L21.0252 12.625L18.2752 17.375L15.3252 16.125C15.1419 16.2583 14.9502 16.3833 14.7502 16.5C14.5502 16.6167 14.3502 16.7167 14.1502 16.8L13.7502 20H8.2502ZM11.0502 13.5C12.0169 13.5 12.8419 13.1583 13.5252 12.475C14.2085 11.7917 14.5502 10.9667 14.5502 10C14.5502 9.03333 14.2085 8.20833 13.5252 7.525C12.8419 6.84167 12.0169 6.5 11.0502 6.5C10.0669 6.5 9.23753 6.84167 8.5622 7.525C7.88686 8.20833 7.54953 9.03333 7.5502 10C7.55086 10.9667 7.88853 11.7917 8.5632 12.475C9.23786 13.1583 10.0669 13.5 11.0502 13.5Z"/>
@@ -148,7 +210,8 @@ export default function EmailsPage() {
                             </svg>
                             </button>
                           </td>
-                        </tr>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </motion.div>
@@ -163,86 +226,87 @@ export default function EmailsPage() {
                     {/* Контейнер для создания новой почты */}
                     <div>
                       <h2 className="text-lg font-semibold mb-4">Создать почту</h2>
-                      <form onSubmit={handleSubmit(onSubmit)}>
-  {/* Поле Email */}
-  <div className="flex flex-col mb-4 w-full">
-    <label className="text-sm mb-1 font-medium">Email:</label>
-    <div className="flex w-full">
-      <input
-        type="text"
-        className={`p-2 border ${
-          touchedFields.email && errors.email
-            ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
-            : touchedFields.email && !errors.email
-            ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
-            : 'border-[#E9EBF3]' // Серый по умолчанию
-        } rounded-l-md w-full outline-none focus:border-[#243F8F] duration-150`}
-        placeholder="Введите email"
-        {...register('email')}
-        onChange={(e) => handleInputChange(e, 'email')}
-        autoComplete="off"
-      />
-      <span className="bg-[#E9EBF3] rounded-r-md flex items-center text-sm justify-center text-[#343F52] px-2">
-        @rubikom.kz
-      </span>
-    </div>
-    {touchedFields.email && errors.email && (
-      <p className="text-red-500 text-sm">{errors.email.message}</p>
-    )}
-  </div>
+                        <form onSubmit={handleSubmit(onSubmit)} >
+                          {/* Поле Email */}
+                          <div className="flex gap-4">
+                          <div className="flex flex-col mb-4 w-full">
+                            <label className="text-sm mb-1 font-medium">Email:</label>
+                            <div className="flex w-full">
+                              <input
+                                type="text"
+                                className={`p-2 border ${
+                                  touchedFields.email && errors.email
+                                    ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
+                                    : touchedFields.email && !errors.email && emailValue.length > 0
+                                    ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
+                                    : 'border-[#E9EBF3]' // Серый по умолчанию
+                                } rounded-l-md w-full outline-none focus:border-[#243F8F] duration-150`}
+                                placeholder="Введите email"
+                                {...register('email')}
+                                onChange={(e) => handleInputChange(e, 'email')}
+                                autoComplete="new-password"
+                              />
+                              <span className="bg-[#E9EBF3] rounded-r-md flex items-center text-sm justify-center text-[#343F52] px-2">
+                                @rubikom.kz
+                              </span>
+                            </div>
+                            {touchedFields.email && errors.email && (
+                              <p className="text-red-500 text-sm">{errors.email.message}</p>
+                            )}
+                          </div>
 
-  {/* Поле Имя пользователя */}
-  <div className="flex flex-col mb-4 w-full">
-    <label className="text-sm mb-1 font-medium">Имя пользователя:</label>
-    <input
-      type="text"
-      className={`p-2 border ${
-        touchedFields.username && errors.username
-          ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
-          : touchedFields.username && !errors.username
-          ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
-          : 'border-[#E9EBF3]' // Серый по умолчанию
-      } rounded-md w-full outline-none focus:border-[#243F8F] duration-150`}
-      placeholder="Введите имя пользователя"
-      {...register('username')}
-      onChange={(e) => handleInputChange(e, 'username')}
-      autoComplete="off"
-    />
-    {touchedFields.username && errors.username && (
-      <p className="text-red-500 text-sm">{errors.username.message}</p>
-    )}
-  </div>
+                          {/* Поле Имя пользователя */}
+                          <div className="flex flex-col mb-4 w-full">
+                            <label className="text-sm mb-1 font-medium">Имя пользователя:</label>
+                            <input
+                              type="text"
+                              className={`p-2 border ${
+                                touchedFields.username && errors.username
+                                  ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
+                                  : touchedFields.username && !errors.username && usernameValue.length > 0
+                                  ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
+                                  : 'border-[#E9EBF3]' // Серый по умолчанию
+                              } rounded-md w-full outline-none focus:border-[#243F8F] duration-150`}
+                              placeholder="Введите имя пользователя"
+                              {...register('username')}
+                              onChange={(e) => handleInputChange(e, 'username')}
+                              autoComplete="new-password"
+                            />
+                            {touchedFields.username && errors.username && (
+                              <p className="text-red-500 text-sm">{errors.username.message}</p>
+                            )}
+                          </div>
 
-  {/* Поле Пароль */}
-  <div className="flex flex-col mb-4 w-full">
-    <label className="text-sm mb-1 font-medium">Пароль:</label>
-    <input
-      type="password"
-      className={`p-2 border ${
-        touchedFields.password && errors.password
-          ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
-          : touchedFields.password && !errors.password
-          ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
-          : 'border-[#E9EBF3]' // Серый по умолчанию
-      } rounded-md w-full outline-none focus:border-[#243F8F] duration-150`}
-      placeholder="Введите пароль"
-      {...register('password')}
-      onChange={(e) => handleInputChange(e, 'password')}
-      autoComplete="off"
-    />
-    {touchedFields.password && errors.password && (
-      <p className="text-red-500 text-sm">{errors.password.message}</p>
-    )}
-  </div>
-
-  <button
-    type="submit"
-    className="text-light text-sm text-white rounded-lg bg-[#243F8F] flex items-center justify-center py-1.5 px-6 disabled:bg-[#243F8F]/65"
-    disabled={!isValid}
-  >
-    Сохранить почту
-  </button>
-</form>
+                          {/* Поле Пароль */}
+                          <div className="flex flex-col mb-4 w-full">
+                            <label className="text-sm mb-1 font-medium">Пароль:</label>
+                            <input
+                              type="password"
+                              className={`p-2 border ${
+                                touchedFields.password && errors.password
+                                  ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
+                                  : touchedFields.password && !errors.password && passwordValue.length > 0
+                                  ? 'border-[#2B935D] focus:border-[#2B935D]' // Зелёный при валидном значении
+                                  : 'border-[#E9EBF3]' // Серый по умолчанию
+                              } rounded-md w-full outline-none focus:border-[#243F8F] duration-150`}
+                              placeholder="Введите пароль"
+                              {...register('password')}
+                              onChange={(e) => handleInputChange(e, 'password')}
+                              autoComplete="new-password"
+                            />
+                            {touchedFields.password && errors.password && (
+                              <p className="text-red-500 text-sm">{errors.password.message}</p>
+                            )}
+                          </div>
+                          </div>
+                          <button
+                            type="submit"
+                            className="text-light text-sm text-white rounded-lg bg-[#243F8F] flex items-center justify-center py-1.5 px-6 disabled:bg-[#243F8F]/65"
+                            disabled={!isValid}
+                          >
+                            Сохранить почту
+                          </button>
+                        </form>
                     </div>
                   </motion.div>
                 )}
