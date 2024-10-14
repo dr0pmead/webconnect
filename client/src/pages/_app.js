@@ -32,9 +32,6 @@ function MyApp({ Component, pageProps }) {
           theme="colored" // Можно указать темную или светлую тему, по вашему желанию
         />
         {showHeader && <Header />}
-        <Head>
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-        </Head>
         <Component {...pageProps} />
       </UserProvider>
     </AuthLayout>

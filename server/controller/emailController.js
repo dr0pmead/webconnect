@@ -83,4 +83,22 @@ const getEmailPassword = async (req, res) => {
   }
 };
 
-module.exports = { createEmail, getAllEmails, getEmailPassword};
+const deleteEmail = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Поиск и удаление email по id
+    const deletedEmail = await Email.findByIdAndDelete(id);
+
+    if (!deletedEmail) {
+      return res.status(404).json({ message: 'Email не найден' });
+    }
+
+    res.status(200).json({ message: 'Email успешно удален', deletedEmail });
+  } catch (error) {
+    console.error('Ошибка при удалении email:', error);
+    res.status(500).json({ message: 'Ошибка сервера при удалении email' });
+  }
+};
+
+module.exports = { createEmail, getAllEmails, getEmailPassword, deleteEmail};
