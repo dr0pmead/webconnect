@@ -29,6 +29,7 @@ export default function Header() {
 
     useEffect(() => {
       async function fetchUserData() {
+        if (user) {
         const name = user.name;
         const firstName = user.firstname;
   
@@ -36,6 +37,7 @@ export default function Header() {
         const firstNameInitial = firstName ? firstName.charAt(0).toUpperCase() : '';
   
         setUserInitials(`${nameInitial}${firstNameInitial}`);
+        }
       }
       fetchUserData();
     }, []);

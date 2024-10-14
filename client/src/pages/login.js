@@ -60,28 +60,36 @@ export default function Login() {
       const [showPassword, setShowPassword] = useState(false);
       const [emailOrLogin, setEmailOrLoginValue] = useState('');
       const [passwordValue, setPasswordValue] = useState('');
-
+      const [twofaStep, setTwofaStep] = useState(false);
+      const [code, setCode] = useState(Array(6).fill(''));
+      const [userId, setUserId] = useState(null);
+      
       const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
       };
     
       const onSubmit = async (data) => {
         setLoading(true);
-        setErrorMessage(''); // Clear previous error message
+        setErrorMessage('');
+        console.log('Login form submitted:', data); // Логируем данные формы
       
         try {
           const response = await axios.post('http://localhost:5000/api/login', data);
-          const { token, user_id } = response.data;
+          const { twofaRequired, user_id } = response.data;
       
-          // Save cookies and redirect user
-          Cookies.set('token', token, { expires: 15 });
-          Cookies.set('user_id', user_id, { expires: 15 });
-          window.location.href = '/';
+          if (twofaRequired) {
+            console.log(`2FA step required for user: ${user_id}`); // Логируем, что требуется шаг 2FA
+            setTwofaStep(true);
+            setUserId(user_id);
+          } else {
+            console.log('User logged in without 2FA'); // Логируем успешный вход без 2FA
+            Cookies.set('token', response.data.token);
+            Cookies.set('user_id', user_id);
+            window.location.href = '/';
+          }
         } catch (error) {
-          setEmailOrLoginValue('');  // Clear email or login state
-          setPasswordValue('');      // Clear password state
-          reset();                   // Reset the form and validation
-          setErrorMessage(error.response?.data?.message || 'Ошибка авторизации');  // Show error message
+          console.error('Login failed:', error); // Логируем ошибку авторизации
+          setErrorMessage('Ошибка авторизации');
         } finally {
           setLoading(false);
         }
@@ -114,7 +122,59 @@ export default function Login() {
         hidden: { opacity: 0, y: -20 }, // Начальное состояние (скрыто)
         visible: { opacity: 1, y: 0 },  // Переход к видимому состоянию
       };
-    
+      
+      const handle2faSubmit = async () => {
+        const verificationCode = code.join('');
+        console.log(`2FA verification attempt for user: ${userId} with code: ${verificationCode}`); // Логируем код 2FA
+      
+        try {
+          const response = await axios.post(`http://localhost:5000/api/users/${userId}/2fa/2faauth`, {
+            token: verificationCode,
+          });
+          console.log('2FA successful'); // Логируем успешную проверку 2FA
+          Cookies.set('token', response.data.token);
+          Cookies.set('user_id', userId);
+          window.location.href = '/';
+        } catch (error) {
+          console.error('2FA failed:', error); // Логируем ошибку при проверке 2FA
+          setErrorMessage('Неверный код');
+        }
+      };
+
+      const handleChange = (e, index) => {
+        const value = e.target.value;
+      
+        if (value.match(/^[0-9]$/)) { // Проверяем, является ли введенный символ числом
+          const newCode = [...code];
+          newCode[index] = value;
+          setCode(newCode);
+      
+          // Перемещаем фокус на следующий инпут, если не последний
+          if (index < 5 && value) {
+            document.getElementById(`code-input-${index + 1}`).focus();
+          }
+      
+          // Если это последний инпут, добавляем небольшую задержку и затем нажимаем на кнопку
+          if (index === 5 && value) {
+            setTimeout(() => {
+              document.getElementById('submit-button').click();
+            }, 100); // Небольшая задержка, чтобы обновление состояния прошло
+          }
+        }
+      };
+      
+      const handleKeyDown = (e, index) => {
+        if (e.key === 'Backspace') {
+          const newCode = [...code];
+          newCode[index] = '';  // Очищаем текущее значение
+          setCode(newCode);
+      
+          // Перемещаем фокус на предыдущий инпут, если он есть
+          if (index > 0) {
+            document.getElementById(`code-input-${index - 1}`).focus();
+          }
+        }
+      };
 
   return (
     <div className="overflow-hidden mx-auto w-full flex items-center justify-center h-screen">
@@ -145,6 +205,37 @@ export default function Login() {
               <div className="error-message text-sm">{errorMessage}</div>
             </motion.div>
         )}
+
+    {twofaStep ? (
+      // Шаг для ввода 2FA
+      
+      <div className="flex flex-col gap-4">
+        <p className="font-bold flex items-center justify-center text-center">Введите 6-ти значный код из приложения Google Authenticator:</p>
+        <div className="flex justify-between">
+          {code.map((value, index) => (
+            <input
+              key={index}
+              id={`code-input-${index}`} // Добавляем id для управления фокусом
+              type="text"
+              maxLength={1}
+              value={value}
+              onChange={(e) => handleChange(e, index)} // Обрабатываем ввод данных
+              onKeyDown={(e) => handleKeyDown(e, index)} // Обрабатываем нажатие клавиш
+              placeholder="0"
+              className="w-14 h-12 border text-center mx-1 rounded-lg text-xl font-bold outline-[#243F8F]"
+            />
+          ))}
+        </div>
+        <button
+            type="submit"
+            className="hidden"
+            disabled={loading}  // Кнопка блокируется, если форма невалидна или идет загрузка
+            onClick={handle2faSubmit}
+            id="submit-button"
+          >
+          </button>
+      </div>
+    ) : (
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full mb-3">
           {/* Email/Логин */}
@@ -269,6 +360,7 @@ export default function Login() {
             )}
           </button>
         </form>
+    )}
       </div>
     </div>
   );

@@ -29,49 +29,90 @@ const generate2FA = async (req, res) => {
     return res.status(400).json({ message: '2FA уже активирована' });
   }
 
-  const secret = speakeasy.generateSecret({ name: `WebConnect (${user.email})` });
+  // Генерация секрета с уменьшенным количеством символов
+  const secret = speakeasy.generateSecret({ length: 20, name: `WebConnect` });
 
   user.twofaSecret = secret.base32;
   await user.save();
 
-  // Генерация QR-кода
+  // Генерация QR-кода и возвращаем сокращенный код
   qrcode.toDataURL(secret.otpauth_url, (err, data_url) => {
     if (err) {
       return res.status(500).json({ message: 'Ошибка генерации QR-кода' });
     }
 
-    res.json({
-      qrCodeUrl: data_url,  // URL для отображения QR-кода
-      manualCode: secret.base32  // Код для ручного ввода
-    });
+    res.json({ qrCodeUrl: data_url, manualCode: secret.base32.slice(0, 20) });  // Сокращаем длину до 10 символов
   });
 };
 
-// Верификация 2FA
 const verify2FA = async (req, res) => {
-  const user = await User.findById(req.params.id);
+  try {
+    const user = await User.findById(req.params.id);
 
-  if (!user) {
-    return res.status(404).json({ message: 'Пользователь не найден' });
+    if (!user) {
+      return res.status(404).json({ message: 'Пользователь не найден' });
+    }
+
+    // Проверяем введенный одноразовый код
+    const verified = speakeasy.totp.verify({
+      secret: user.twofaSecret,
+      encoding: 'base32',
+      token: req.body.token,
+      window: 1 // Добавляем окно времени для улучшения верификации
+    });
+    
+
+    if (verified) {
+      // Если 2FA еще не активирована, активируем её
+      if (!user.twofaEnable) {
+        user.twofaEnable = true;
+        await user.save();
+        return res.json({ message: '2FA успешно активирована' });
+      }
+
+      // Если 2FA уже активирована, выполняем авторизацию
+      const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
+        expiresIn: '15d',
+      });
+
+      return res.json({ message: '2FA успешно пройдена', token });
+    } else {
+      return res.status(400).json({ message: 'Неверный код 2FA' });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: 'Ошибка сервера', error: error.message });
   }
+};
 
-  const verified = speakeasy.totp.verify({
-    secret: user.twofaSecret,
-    encoding: 'base32',
-    token: req.body.token,
-  });
+const verify2FAAuth = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
 
-  if (verified) {
-    user.twofaEnable = true;
-    await user.save();
-    return res.json({ message: '2FA успешно активирована' });
+    if (!user) {
+      return res.status(404).json({ message: 'Пользователь не найден' });
+    }
+
+    // Валидация токена с помощью библиотеки speakeasy
+    const verified = speakeasy.totp.verify({
+      secret: user.twofaSecret,
+      encoding: 'base32',
+      token: req.body.token,
+    });
+
+    if (verified) {
+      return res.json({ message: '2FA успешно проверена', token: 'ваш-токен' });
+    } else {
+      return res.status(400).json({ message: 'Неверный код 2FA' });
+    }
+  } catch (error) {
+    console.error('Ошибка сервера:', error);
+    res.status(500).json({ message: 'Ошибка сервера' });
   }
-
-  res.status(400).json({ message: 'Неверный код 2FA' });
 };
 
 module.exports = {
   getUserById,
   generate2FA,
   verify2FA,
+  verify2FAAuth
 };

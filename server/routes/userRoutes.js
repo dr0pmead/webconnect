@@ -1,5 +1,5 @@
 const express = require('express');
-const {getUserById, generate2FA, verify2FA} = require('../controller/userController');
+const {getUserById, generate2FA, verify2FA, verify2FAAuth} = require('../controller/userController');
 
 const router = express.Router();
 
@@ -11,5 +11,7 @@ router.get('/api/users/:id/2fa', generate2FA);
 
 // Маршрут для верификации 2FA
 router.post('/api/users/:id/2fa/verify', verify2FA);
+
+router.post('/api/users/:id/2fa/2faauth', verify2FAAuth);
 
 module.exports = router;

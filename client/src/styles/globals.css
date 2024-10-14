@@ -56,3 +56,7 @@ body {
       transform: rotate(360deg);
   }
   } 
+
+  .after\:bg-primary::after {
+    background-color: #243F8F;
+  }
