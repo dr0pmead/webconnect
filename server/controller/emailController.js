@@ -83,6 +83,36 @@ const getEmailPassword = async (req, res) => {
   }
 };
 
+  const checkUsername = async (req, res) => {
+    const { email } = req.body;
+    const existingUser = await Email.findOne({ email });
+    console.log(email)
+    if (existingUser) {
+      return res.json({ isUnique: false });
+    }
+    console.log(existingUser)
+    res.json({ isUnique: true });
+  }
+
+const deleteEmails = async (req, res) => {
+  const { ids } = req.body; // Получаем массив ID из тела запроса
+
+  if (!ids || ids.length === 0) {
+    return res.status(400).json({ message: 'Не выбраны почты для удаления' });
+  }
+
+  try {
+    // Удаляем записи по их ID
+    await Email.deleteMany({ _id: { $in: ids } });
+
+    // Возвращаем успешный ответ
+    res.status(200).json({ message: 'Почты успешно удалены' });
+  } catch (error) {
+    console.error('Ошибка при удалении почт:', error);
+    res.status(500).json({ message: 'Произошла ошибка при удалении почт', error });
+  }
+}
+
 const deleteEmail = async (req, res) => {
   try {
     const { id } = req.params;
@@ -101,4 +131,4 @@ const deleteEmail = async (req, res) => {
   }
 };
 
-module.exports = { createEmail, getAllEmails, getEmailPassword, deleteEmail};
+module.exports = { createEmail, getAllEmails, getEmailPassword, deleteEmail, checkUsername, deleteEmails};
