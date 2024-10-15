@@ -131,6 +131,7 @@ export default function EmailsPage() {
         setIsAllChecked(false);
         setIsIndeterminate(false);
         setDeleteModalOpen(false);
+        fetchEmails(setEmails, setIsLoading);
       } catch (error) {
         console.error('Ошибка при удалении почт', error);
       } finally {

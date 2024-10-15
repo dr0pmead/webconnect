@@ -5,11 +5,17 @@ import { motion } from 'framer-motion';
 import { handleShowPassword } from '@/utils/passwordUtils';
 
 const SelectedEmailForm = ({ selectedEmail }) => {
+  const [initialData, setInitialData] = useState({
+    username: selectedEmail.username,
+    password: selectedEmail.password,
+  });
+
   const {
     register,
     handleSubmit,
-    formState: { errors, touchedFields, isSubmitting, isValid },
+    formState: { errors, touchedFields, isSubmitting, isValid, dirtyFields },
     setValue,
+    watch,
   } = useForm({
     defaultValues: {
       username: selectedEmail.username,
@@ -20,6 +26,9 @@ const SelectedEmailForm = ({ selectedEmail }) => {
   const [loadingStates, setLoadingStates] = useState({}); // Состояние для загрузки паролей
   const [decryptedPasswords, setDecryptedPasswords] = useState({}); // Расшифрованные пароли
   const [showPassword, setShowPassword] = useState({});
+
+  const watchedUsername = watch('username'); // Следим за именем пользователя
+  const watchedPassword = watch('password'); // Следим за паролем
 
   useEffect(() => {
     if (selectedEmail) {
@@ -35,7 +44,7 @@ const SelectedEmailForm = ({ selectedEmail }) => {
 
   const onUpdate = (data) => {
     console.log('Updated email data:', data);
-    // Implement your update logic here
+    // Реализуйте логику обновления данных на сервере здесь
   };
 
   const handleInputChange = (e, field) => {
@@ -43,6 +52,14 @@ const SelectedEmailForm = ({ selectedEmail }) => {
       shouldValidate: true,
       shouldDirty: true,
     });
+  };
+
+  // Проверка изменений
+  const isChanged = () => {
+    return (
+      watchedUsername !== initialData.username ||
+      watchedPassword !== initialData.password
+    );
   };
 
   return (
@@ -99,9 +116,7 @@ const SelectedEmailForm = ({ selectedEmail }) => {
             <label className="text-sm mb-1 font-medium">Пароль:</label>
             <input
                 type={showPassword[selectedEmail._id] ? 'text' : 'password'} // Показать или скрыть пароль
-                value={
-                decryptedPasswords[selectedEmail._id] || selectedEmail.password // Показываем расшифрованный пароль, если доступен
-                }
+                value={decryptedPasswords[selectedEmail._id] || watchedPassword} // Показываем расшифрованный пароль, если доступен
                 className={`p-2 border ${
                 touchedFields.password && errors.password
                     ? 'border-[#ff5a67] focus:border-[#ff5a67]' // Красный при ошибке
@@ -111,16 +126,17 @@ const SelectedEmailForm = ({ selectedEmail }) => {
                 } rounded-md w-full outline-none`}
                 placeholder="Введите пароль"
                 {...register('password', { required: 'Пароль обязателен' })}
+                onChange={(e) => handleInputChange(e, 'password')}
                 autoComplete="new-password"
             />
             {touchedFields.password && errors.password && (
                 <p className="text-red-500 text-sm">{errors.password.message}</p>
             )}
-            </div>
+          </div>
         </div>
         <Button
           className="bg-[#243F8F] text-white py-1.5 px-6"
-          isDisabled={!isValid || isSubmitting}
+          isDisabled={!isChanged() || !isValid || isSubmitting} // Кнопка активна только если данные изменены и форма валидна
           isLoading={isSubmitting}
           type="submit"
         >
