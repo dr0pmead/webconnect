@@ -6,6 +6,6 @@ const router = express.Router();
 // Маршрут для получения данных пользователя по ID
 router.post('/api/createEquipment', addEquipment);
 router.post('/api/ping', ping);
-router.get('/equipments', getEquipments);
+router.get('/api/equipments', getEquipments);
 
 module.exports = router;

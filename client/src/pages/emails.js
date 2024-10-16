@@ -5,8 +5,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AllMailsTab from '@/components/pages/emails/AllMailsTab';
 import CreateMailTab from '@/components/pages/emails/CreateMailTab';
-import { fetchEmails } from '@/components/pages/emails/fetchEmails';
 import SelectedEmailForm from '@/components/pages/emails/SelectedEmailForm';
+import { fetchEmails } from '@/components/pages/emails/fetchEmails';
 import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent } from "@nextui-org/react";
 
 export default function EmailsPage() {
@@ -15,11 +15,11 @@ export default function EmailsPage() {
   const isTwofaEnabled = user.twofaEnable === true;
   const [selectedTab, setSelectedTab] = useState('allMails');
   const [selectedEmail, setSelectedEmail] = useState(null);
+  const [selectedEmails, setSelectedEmails] = useState([]);
   const [emails, setEmails] = useState([]);
   const [filteredEmails, setFilteredEmails] = useState([]); // Состояние для фильтрованных email
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState(''); // Состояние для поискового запроса
-  const [selectedEmails, setSelectedEmails] = useState([]);
   const [isAllChecked, setIsAllChecked] = useState(false);
   const [isIndeterminate, setIsIndeterminate] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -200,7 +200,7 @@ export default function EmailsPage() {
               
               {selectedTab === 'allMails' && (
                 <div className="w-full flex items-center justify-start mb-4 gap-4">
-                  {filteredEmails.length > 0 && ( 
+                 
                   <div>
                     <Input
                       type="text"
@@ -211,7 +211,7 @@ export default function EmailsPage() {
                       endContent={<img src="/assets/img/octicon_search-16.svg" alt="" />}
                     />
                   </div>
-                  )}
+                  
       
             {selectedEmails.length > 0 && isAdmin && (
               <motion.div
@@ -242,8 +242,8 @@ export default function EmailsPage() {
                 searchTerm={searchTerm}
                 handleSelectEmailTab={handleSelectEmailTab}
                 setSelectedEmailTab={setSelectedEmailTab}
-                fetchEmails={() => fetchEmails(setEmails, setIsLoading)}
                 selectedEmails={selectedEmails}
+                fetchEmails={() => fetchEmails(setEmails, setIsLoading)}
                 isAllChecked={isAllChecked}
                 isIndeterminate={isIndeterminate}
                 handleSelectAll={handleSelectAll}

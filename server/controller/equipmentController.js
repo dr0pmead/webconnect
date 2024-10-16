@@ -86,21 +86,12 @@ const checkLastUpdated = async () => {
     }
 };
 
-const getEquipments = async (req, res) => {
+  const getEquipments = async (req, res) => {
     try {
-      const filter = req.query; // Получаем фильтры из query-параметров (если нужны)
-  
-      // Если фильтров нет, просто возвращаем все записи
-      const equipments = await Equipment.find(filter);
-  
-      if (!equipments || equipments.length === 0) {
-        return res.status(404).json({ message: 'No equipment found' });
-      }
-  
-      res.status(200).json({ message: 'Equipments retrieved successfully', equipments });
+      const equipments = await Equipment.find(); // Получаем все почты
+      res.status(200).json(equipments); // Возвращаем почты
     } catch (error) {
-      console.error('Error retrieving equipment:', error);
-      res.status(500).json({ message: 'Internal server error', error: error.message });
+      res.status(500).json({ message: 'Ошибка при получении почт' });
     }
   };
 
