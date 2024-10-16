@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import { handleShowPassword } from '@/utils/passwordUtils';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const SelectedEmailForm = ({ selectedEmail }) => {
+const SelectedEmailForm = ({ selectedEmail, fetchEmails }) => {
   const [initialData, setInitialData] = useState({
     username: selectedEmail.username,
     password: selectedEmail.password,
@@ -42,9 +44,39 @@ const SelectedEmailForm = ({ selectedEmail }) => {
     }
   }, [selectedEmail]);
 
-  const onUpdate = (data) => {
-    console.log('Updated email data:', data);
-    // Реализуйте логику обновления данных на сервере здесь
+  const updateEmail = async (data) => {
+    try {
+      const response = await axios.put('http://localhost:5000/api/update-email', {
+        _id: selectedEmail._id,  // ID обновляемой почты
+        username: data.username, // Новое имя пользователя
+        password: data.password  // Новый пароль
+      });
+  
+      if (response.status === 200) {
+        toast.success('Почта успешно обновлена!', {
+          position: 'bottom-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+  
+        // Обновляем список email-ов
+        await fetchEmails();
+      }
+    } catch (error) {
+      toast.error('Ошибка при обновлении почты', {
+        position: 'bottom-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   const handleInputChange = (e, field) => {
@@ -57,7 +89,7 @@ const SelectedEmailForm = ({ selectedEmail }) => {
   // Проверка изменений
   const isChanged = () => {
     return (
-      watchedUsername !== initialData.username ||
+      watchedUsername !== initialData.username &&
       watchedPassword !== initialData.password
     );
   };
@@ -71,7 +103,7 @@ const SelectedEmailForm = ({ selectedEmail }) => {
       transition={{ duration: 0.3 }}
     >
       <h2 className="text-lg font-semibold mb-4">Редактировать почту {selectedEmail.email}</h2>
-      <form onSubmit={handleSubmit(onUpdate)}>
+      <form onSubmit={handleSubmit(updateEmail)}>
         <div className="flex gap-4">
           {/* Поле Email (нельзя изменить) */}
           <div className="flex flex-col mb-4 w-full">

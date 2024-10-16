@@ -51,6 +51,36 @@ const createEmail = async (req, res) => {
   }
 };
 
+const updateEmail = async (req, res) => {
+  const { _id, username, password } = req.body;
+
+  // Проверка, что все необходимые поля переданы
+  if (!_id || !username || !password) {
+    return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
+  }
+
+  try {
+    // Хэшируем пароль перед обновлением
+    const encryptedPassword = encryptFunction(password);
+
+    // Обновляем данные email'а в базе
+    const updatedEmail = await Email.findByIdAndUpdate(
+      _id,
+      { username, password: encryptedPassword },
+      { new: true } // Возвращаем обновленный документ
+    );
+
+    if (!updatedEmail) {
+      return res.status(404).json({ message: 'Почта не найдена' });
+    }
+
+    res.status(200).json({ message: 'Почта успешно обновлена', updatedEmail });
+  } catch (error) {
+    console.error('Ошибка при обновлении почты:', error);
+    res.status(500).json({ message: 'Ошибка сервера' });
+  }
+}
+
 
 const getAllEmails = async (req, res) => {
   try {
@@ -131,4 +161,4 @@ const deleteEmail = async (req, res) => {
   }
 };
 
-module.exports = { createEmail, getAllEmails, getEmailPassword, deleteEmail, checkUsername, deleteEmails};
+module.exports = { createEmail, getAllEmails, getEmailPassword, deleteEmail, checkUsername, deleteEmails, updateEmail};

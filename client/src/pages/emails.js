@@ -197,8 +197,10 @@ export default function EmailsPage() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
+              
               {selectedTab === 'allMails' && (
                 <div className="w-full flex items-center justify-start mb-4 gap-4">
+                  {filteredEmails.length > 0 && ( 
                   <div>
                     <Input
                       type="text"
@@ -209,47 +211,57 @@ export default function EmailsPage() {
                       endContent={<img src="/assets/img/octicon_search-16.svg" alt="" />}
                     />
                   </div>
-                  
-                  {selectedEmails.length > 0 && isAdmin && (
-                    <motion.div
-                    initial={{ x: -10, opacity: 0}}
-                    animate={{opacity: 1, x: 0}}
-                    exit={{x: -10, opacity: 1}}
-                    transition={{duration: 0.3}}>
-                    <Button color="default" variant="flat" onClick={() => handleOpenDeleteModal(selectedEmails)}>
-                      Удалить
-                    </Button>
-                    </motion.div>
                   )}
-                </div>
-              )}
-              {isLoading ? (
-                <div className="flex items-center justify-center p-24">
-                  <Spinner size="lg" />
-                </div>
-              ) : (
-                selectedTab === 'allMails' ? (
-                  <AllMailsTab
-                    emails={filteredEmails} // Передаем фильтрованные email
-                    isAdmin={isAdmin}
-                    isTwofaEnabled={isTwofaEnabled}
-                    searchTerm={searchTerm}
-                    handleSelectEmailTab={handleSelectEmailTab}
-                    setSelectedEmailTab={setSelectedEmailTab}
-                    fetchEmails={() => fetchEmails(setEmails, setIsLoading)}
-                    selectedEmails={selectedEmails}
-                    isAllChecked={isAllChecked}
-                    isIndeterminate={isIndeterminate}
-                    handleSelectAll={handleSelectAll}
-                    handleSelectEmail={handleSelectEmail}
-                  />
-                ) : selectedTab === 'createMail' ? (
-                  <CreateMailTab fetchEmails={() => fetchEmails(setEmails, setIsLoading)} />
-                ) : selectedTab === 'selected-email' && selectedEmail ? (
-                  <SelectedEmailForm selectedEmail={selectedEmail} />
-                ) : null
-              )}
-            </motion.div>
+      
+            {selectedEmails.length > 0 && isAdmin && (
+              <motion.div
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ x: -10, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Button color="default" variant="flat" onClick={() => handleOpenDeleteModal(selectedEmails)}>
+                  Удалить
+                </Button>
+              </motion.div>
+            )}
+          </div>
+        )}
+        
+        {isLoading ? (
+          <div className="flex items-center justify-center p-24">
+            <Spinner size="lg" />
+          </div>
+        ) : (
+          selectedTab === 'allMails' ? (
+            filteredEmails.length > 0 ? ( // Проверяем, есть ли email'ы
+              <AllMailsTab
+                emails={filteredEmails} // Передаем фильтрованные email
+                isAdmin={isAdmin}
+                isTwofaEnabled={isTwofaEnabled}
+                searchTerm={searchTerm}
+                handleSelectEmailTab={handleSelectEmailTab}
+                setSelectedEmailTab={setSelectedEmailTab}
+                fetchEmails={() => fetchEmails(setEmails, setIsLoading)}
+                selectedEmails={selectedEmails}
+                isAllChecked={isAllChecked}
+                isIndeterminate={isIndeterminate}
+                handleSelectAll={handleSelectAll}
+                handleSelectEmail={handleSelectEmail}
+              />
+            ) : (
+              // Контейнер с картинкой и сообщением об отсутствии записей
+              <div className="flex flex-col items-center justify-center p-24">
+                <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+              </div>
+            )
+          ) : selectedTab === 'createMail' ? (
+            <CreateMailTab fetchEmails={() => fetchEmails(setEmails, setIsLoading)} />
+          ) : selectedTab === 'selected-email' && selectedEmail ? (
+            <SelectedEmailForm selectedEmail={selectedEmail} fetchEmails={() => fetchEmails(setEmails, setIsLoading)} />
+          ) : null
+        )}
+      </motion.div>
 
             <Modal size="lg" isOpen={deleteModalOpen} onClose={() => {
               setDeleteModalOpen(false);

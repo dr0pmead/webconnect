@@ -10,10 +10,11 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');  
 const userRoutes = require('./routes/userRoutes');
 const emailRoutes = require('./routes/emailRoutes');
+const equipmentRoutes = require('./routes/equipmentRoutes');
 
 app.use(cors({
   origin: 'http://localhost:3000',
-  methods: ['GET', 'POST', 'DELETE'],
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
   credentials: true,
 }));
 
@@ -24,6 +25,8 @@ app.use(cookieParser());
 app.use(authRoutes);
 app.use(userRoutes);
 app.use(emailRoutes);
+app.use(equipmentRoutes);
+
 
 // Подключение к MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
