@@ -2,7 +2,7 @@ import { useUser } from '@/components/UserContext';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fetchEquipment } from '@/components/pages/equipment/fetchEquipment';
+import { fetchEquipment, useSocketEquipmentUpdates } from '@/components/pages/equipment/fetchEquipment';
 import AllEquipmentTab from '@/components/pages/equipment/AllEquipmentTab';
 import OfflineEquipmentTab from '@/components/pages/equipment/OfflineEquipmentTab';
 import OnlineEquipmentTab from '@/components/pages/equipment/OnlineEquipmentTab';
@@ -22,7 +22,7 @@ export default function EquipmentPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isIndeterminate, setIsIndeterminate] = useState(false);
   const [isAllChecked, setIsAllChecked] = useState(false);
-  // Проверяем, загружены ли данные пользователя
+
   if (!user) {
     return <div>Загрузка данных пользователя...</div>;
   }
@@ -31,18 +31,24 @@ export default function EquipmentPage() {
     fetchEquipment(setEquipment, setIsLoading);
   }, []);
 
+  // Listen for real-time updates
+  useSocketEquipmentUpdates(setEquipment);
+
   useEffect(() => {
     if (searchTerm) {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
         const filtered = equipments.filter((equipment) => {
-            const nameMatch = equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
-            const ownerMatch = equipment.owner.toLowerCase().includes(searchTerm.toLowerCase());
-            const anyDeskMatch = equipment.anyDesk.toLowerCase().includes(searchTerm.toLowerCase());
-            const teamViewerMatch = equipment.teamViewer.toLowerCase().includes(searchTerm.toLowerCase());
-
-            // If IP address is an array, check each element
-            const ipAddressMatch = Array.isArray(equipment.ipAddress)
-                ? equipment.ipAddress.some(ip => ip.toLowerCase().includes(searchTerm.toLowerCase()))
-                : equipment.ipAddress.toLowerCase().includes(searchTerm.toLowerCase());
+            const nameMatch = equipment.name.toLowerCase().includes(lowerCaseSearchTerm);
+            const ownerMatch = equipment.owner.toLowerCase().includes(lowerCaseSearchTerm);
+            
+            // Приведение anyDesk к строке
+            const anyDeskMatch = equipment.anyDesk && String(equipment.anyDesk).includes(searchTerm);
+            
+            // Приведение teamViewer к строке
+            const teamViewerMatch = equipment.teamViewer && String(equipment.teamViewer).includes(searchTerm);
+            
+            // Приведение ipAddress.main к строке
+            const ipAddressMatch = equipment.ipAddress.main && String(equipment.ipAddress.main).includes(searchTerm);
 
             return nameMatch || ownerMatch || anyDeskMatch || teamViewerMatch || ipAddressMatch;
         });
@@ -51,6 +57,7 @@ export default function EquipmentPage() {
         setFilteredEquipments(equipments);
     }
 }, [equipments, searchTerm]);
+
   
   
 
@@ -95,6 +102,9 @@ export default function EquipmentPage() {
     setIsIndeterminate(selectedEquipments.length > 0 && selectedEquipments.length < equipments.length);
   };
 
+  const onlineCount = equipments.filter((equipment) => equipment.online === true).length;
+  const offlineCount = equipments.filter((equipment) => equipment.online === false).length;
+
 
   return (
     <>
@@ -125,7 +135,7 @@ export default function EquipmentPage() {
                 <span className={`text-sm text-light flex items-center gap-2 font-regular relative`}>
                 <span className={`absolute h-2 w-2 rounded-full bg-[#2B935D] -left-4 ${selectedTab === 'onlineEquipment' ? 'animate-ping' : ''}`}></span>
                 <span className="absolute h-2 w-2 rounded-full bg-[#2B935D] -left-4"></span>
-                  В сети <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">0</span>
+                  В сети <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">{onlineCount}</span>
                 </span>
               </button>
               <button
@@ -135,7 +145,7 @@ export default function EquipmentPage() {
                 <span className={`text-sm text-light flex items-center gap-2 font-regular relative`}>
                   <span className={`absolute h-2 w-2 rounded-full bg-[#FF5A67] -left-4 ${selectedTab === 'offlineEquipment' ? 'animate-ping' : ''}`}></span>
                   <span className="absolute h-2 w-2 rounded-full bg-[#FF5A67] -left-4"></span>
-                  Оффлайн <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">0</span>
+                  Оффлайн <span className="flex items-center justify-center rounded-md bg-[#243F8F] font-semibold w-5 h-5 text-white">{offlineCount}</span>
                 </span>
               </button>
               

@@ -1,41 +1,34 @@
 const Equipment = require('../models/Equipment');  // Модель пользователя
-const speakeasy = require('speakeasy');
-const qrcode = require('qrcode');
 
 const addEquipment = async (req, res) => {
     try {
         const computerInfo = req.body;
-
-        // Выводим данные в консоль для проверки
-        console.log('Received computer info:', JSON.stringify(computerInfo, null, 2));
-
-        // Разделение компонентов на диски и остальные компоненты
         const disks = [];
         const components = [];
 
         computerInfo.components.forEach(component => {
             if (component.Type === 'Disk') {
-                // Если это диск, добавляем его в массив дисков
                 disks.push({
                     Name: component.Name,
                     Size: component.Size,
                     FreeSpace: component.FreeSpace
                 });
             } else {
-                // Если это не диск, добавляем его в компоненты
                 components.push(component);
             }
         });
 
-        // Создаем объект для сохранения в MongoDB
         const equipmentData = {
-            ...computerInfo,  // Копируем остальные данные
-            components,       // Обновленный массив компонентов без дисков
-            disks             // Отдельный массив дисков
+            ...computerInfo,
+            components,
+            disks,
+            ipAddress: {
+                main: computerInfo.ipAddress.main,
+                secondary: computerInfo.ipAddress.secondary
+            }
         };
 
-        // Сохраняем или обновляем запись
-        const filter = { name: computerInfo.name };  // Поиск по имени компьютера
+        const filter = { name: computerInfo.name };
         const options = { upsert: true, new: true, setDefaultsOnInsert: true };
         const updatedEquipment = await Equipment.findOneAndUpdate(filter, equipmentData, options);
 
@@ -49,14 +42,14 @@ const addEquipment = async (req, res) => {
     }
 };
 
-const ping = async (req, res) => {
+async function ping(req, res) {
     try {
         const { name } = req.body;
 
-        // Поиск оборудования по имени ПК
+        // Find and update the equipment
         const equipment = await Equipment.findOneAndUpdate(
-            { name },  // Поиск по названию ПК
-            { online: true, lastUpdated: Date.now() },  // Обновляем статус online и время последнего обновления
+            { name },
+            { online: true, lastUpdated: Date.now() },
             { new: true }
         );
 
@@ -64,43 +57,53 @@ const ping = async (req, res) => {
             return res.status(404).json({ message: 'Equipment not found' });
         }
 
+        // Emit the updated equipment to all clients
+        const io = req.app.get('socketio');
+        io.emit('equipmentUpdated', equipment);
+
         res.status(200).json({ message: 'Ping received and equipment updated', equipment });
     } catch (error) {
         console.error('Error handling /api/ping request:', error);
         res.status(500).json({ message: 'Internal server error', error: error.message });
     }
-};
+}
 
-const checkLastUpdated = async () => {
+// Function to check and update offline status of equipment based on lastUpdated
+async function checkLastUpdated(io) {
     try {
-        const secondsThreshold = 3;  // Порог в секундах
-        const timeLimit = new Date(Date.now() - secondsThreshold * 1000);  // 3 секунды
+        const secondsThreshold = 3;  // Порог в секундах для проверки статуса
+        const timeLimit = new Date(Date.now() - secondsThreshold * 1000);  // Время до которого записи считаются устаревшими
 
-        // Поиск всех записей, где lastUpdated меньше порогового времени
+        // Обновляем статус всех записей, которые устарели
         const result = await Equipment.updateMany(
-            { lastUpdated: { $lt: timeLimit } },  // Условие для поиска старых записей
-            { online: false }  // Обновляем поле online в false
+            { lastUpdated: { $lt: timeLimit }, online: true },  // Ищем только активные устройства, которые устарели
+            { online: false }  // Устанавливаем статус как offline
         );
+
+        // Найти все записи, которые сейчас offline
+        const updatedEquipment = await Equipment.find({ online: false });
+        
+        if (updatedEquipment.length > 0) {
+            io.emit('equipmentUpdated', updatedEquipment);  // Отправляем изменения через сокет
+        }
+
     } catch (error) {
         console.error('Error checking lastUpdated:', error);
     }
-};
+}
 
-  const getEquipments = async (req, res) => {
+const getEquipments = async (req, res) => {
     try {
-      const equipments = await Equipment.find(); // Получаем все почты
-      res.status(200).json(equipments); // Возвращаем почты
+        const equipments = await Equipment.find();
+        res.status(200).json(equipments);
     } catch (error) {
-      res.status(500).json({ message: 'Ошибка при получении почт' });
+        res.status(500).json({ message: 'Error fetching equipments' });
     }
-  };
-
-// Запуск проверки через регулярные интервалы
-setInterval(checkLastUpdated, 3 * 1000);  // Запуск проверки каждые 3 секунды
+};
 
 module.exports = {
     addEquipment,
     ping,
+    checkLastUpdated,
     getEquipments
 };
-  

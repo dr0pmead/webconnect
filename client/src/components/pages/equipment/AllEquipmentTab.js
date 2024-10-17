@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input, Checkbox, ButtonGroup, Tooltip, Pagination} from '@nextui-org/react';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input, Checkbox, ButtonGroup, Tooltip, Pagination, Chip} from '@nextui-org/react';
 import { toast } from 'react-toastify';
 import { HighlightText } from '@/components/HighlightText';
 
@@ -92,16 +92,29 @@ const AllEquipmentTab = ({
       }, []);
     
       // Обрабатываем фильтрацию по поисковому запросу
-        useEffect(() => {
+      useEffect(() => {
         if (searchTerm) {
-            const filtered = equipments.filter((equipment) => 
-            equipment.name.includes(searchTerm) || equipment.owner.includes(searchTerm) || equipment.teamViewer.includes(searchTerm) || equipment.ipAddress.includes(searchTerm) 
-            );
+            const filtered = equipments.filter((equipment) => {
+                const nameMatch = equipment.name && equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
+                const ownerMatch = equipment.owner && equipment.owner.toLowerCase().includes(searchTerm.toLowerCase());
+                
+                // Приведение anyDesk к строке
+                const anyDeskMatch = equipment.anyDesk && String(equipment.anyDesk).includes(searchTerm);
+                
+                // Приведение teamViewer к строке
+                const teamViewerMatch = equipment.teamViewer && String(equipment.teamViewer).includes(searchTerm);
+                
+                // Приведение ipAddress.main к строке
+                const ipAddressMatch = equipment.ipAddress && equipment.ipAddress.main && String(equipment.ipAddress.main).includes(searchTerm);
+    
+                return nameMatch || ownerMatch || anyDeskMatch || teamViewerMatch || ipAddressMatch;
+            });
             setFilteredEquipments(filtered);
         } else {
             setFilteredEquipments(equipments);
         }
-        }, [equipments, searchTerm]);
+    }, [equipments, searchTerm]);
+    
     
     // Рассчитываем общее количество страниц
     const totalPages = Math.ceil(filteredEquipments.length / equipmentsPerPage);
@@ -166,7 +179,20 @@ const AllEquipmentTab = ({
               </td>
                )}
               <td className="px-6 py-1">
-            <HighlightText text={equipment.name} highlight={searchTerm} />
+                
+                  {equipment.online ? (
+                    <div className="flex gap-4 items-center justify-start">
+                        <span className="h-2 w-2 rounded-full bg-[#2B935D]"></span>
+                        <HighlightText text={equipment.name} highlight={searchTerm} />
+                    </div>
+                  ) : (
+                    <div className="flex gap-4">
+                    <div className="flex gap-4 items-center justify-start">
+                        <span className="h-2 w-2 rounded-full bg-[#FF5A67]"></span>
+                        <HighlightText text={equipment.name} highlight={searchTerm} />
+                    </div>
+                    </div>
+                  )}
             </td>
             <td className="px-6 py-1">
             <HighlightText text={equipment.owner} highlight={searchTerm} />
@@ -178,7 +204,7 @@ const AllEquipmentTab = ({
             <HighlightText text={equipment.teamViewer} highlight={searchTerm} />
             </td>
             <td className="px-6 py-1">
-            <HighlightText text={equipment.ipAddress} highlight={searchTerm} />
+            <HighlightText text={equipment.ipAddress.main} highlight={searchTerm} />
             </td>
               <td className="px-6 py-1 ">
                 <div className="flex justify-between items-center ">

@@ -23,10 +23,15 @@ const PrinterSchema = new mongoose.Schema({
     IpAddress: { type: String }
 });
 
+const IpAddressSchema = new mongoose.Schema({
+    main: { type: String, required: true },         // Основной IP
+    secondary: [{ type: String }]                    // Массив второстепенных IP
+});
+
 // Описание основной схемы для equipment
 const EquipmentSchema = new mongoose.Schema({
     name: { type: String, required: true },              // Имя компьютера
-    ipAddress: [{ type: String, required: true }],       // Список IP-адресов компьютера
+    ipAddress: { type: IpAddressSchema, required: true },       // Список IP-адресов компьютера
     components: [ComponentSchema],                       // Список комплектующих (процессор, память, видеокарта и т.д.)
     disks: [DiskSchema],                                 // Массив с дисками
     anyDesk: { type: String },                           // ID AnyDesk
