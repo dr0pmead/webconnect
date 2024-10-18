@@ -61,7 +61,6 @@ const AllEquipmentTab = ({
         draggable: true,
         progress: undefined,
       });
-      setShowPassword('')
     }).catch(err => {
       toast.error('Не удалось скопировать пароль.', {
             position: 'bottom-right',
@@ -153,7 +152,7 @@ const AllEquipmentTab = ({
             </th>
             )}
             <th className="px-6 py-1 w-1/6">Название</th>
-            <th className="px-6 py-1 w-1/6">Пользователь</th>
+            <th className="px-6 py-1 w-1/2">Пользователь</th>
             <th className="px-6 py-1 w-1/6">AnyDesk</th>
             <th className="px-6 py-1 w-1/6">TeamViewer</th>
             <th className="px-6 py-1 w-1/6">IP Адрес</th>
@@ -197,15 +196,90 @@ const AllEquipmentTab = ({
             <td className="px-6 py-1">
             <HighlightText text={equipment.owner} highlight={searchTerm} />
             </td>
-            <td className="px-6 py-1">
-            <HighlightText text={equipment.anyDesk} highlight={searchTerm} />
+            <Tooltip 
+            content="Скопировать"
+            delay={0}
+            closeDelay={0}
+            showArrow={true}
+            motionProps={{
+                variants: {
+                exit: {
+                    opacity: 0,
+                    transition: {
+                    duration: 0.1,
+                    ease: "easeIn",
+                    }
+                },
+                enter: {
+                    opacity: 1,
+                    transition: {
+                    duration: 0.15,
+                    ease: "easeOut",
+                    }
+                },
+                },
+            }}
+            >
+            <td className="px-6 py-1 cursor-pointer " onClick={() => handleCopyToClipboard(equipment.anyDesk)}>
+             <HighlightText text={equipment.anyDesk} highlight={searchTerm} />
             </td>
-            <td className="px-6 py-1">
-            <HighlightText text={equipment.teamViewer} highlight={searchTerm} />
+            </Tooltip>
+            <Tooltip 
+            content="Скопировать"
+            delay={0}
+            closeDelay={0}
+            showArrow={true}
+            motionProps={{
+                variants: {
+                exit: {
+                    opacity: 0,
+                    transition: {
+                    duration: 0.1,
+                    ease: "easeIn",
+                    }
+                },
+                enter: {
+                    opacity: 1,
+                    transition: {
+                    duration: 0.15,
+                    ease: "easeOut",
+                    }
+                },
+                },
+            }}
+            >
+            <td className="px-6 py-1 cursor-pointer"  onClick={() => handleCopyToClipboard(equipment.teamViewer)}>
+            <HighlightText text={equipment.teamViewer} highlight={searchTerm}/>
             </td>
-            <td className="px-6 py-1">
+            </Tooltip>
+            <Tooltip 
+            content="Скопировать"
+            delay={0}
+            closeDelay={0}
+            showArrow={true}
+            motionProps={{
+                variants: {
+                exit: {
+                    opacity: 0,
+                    transition: {
+                    duration: 0.1,
+                    ease: "easeIn",
+                    }
+                },
+                enter: {
+                    opacity: 1,
+                    transition: {
+                    duration: 0.15,
+                    ease: "easeOut",
+                    }
+                },
+                },
+            }}
+            >
+            <td className="px-6 py-1 cursor-pointer" onClick={() => handleCopyToClipboard(equipment.ipAddress.main)}>
             <HighlightText text={equipment.ipAddress.main} highlight={searchTerm} />
             </td>
+            </Tooltip>
               <td className="px-6 py-1 ">
                 <div className="flex justify-between items-center ">
                   <ButtonGroup size="sm" isDisabled={!isAdmin && isTwofaEnabled}>

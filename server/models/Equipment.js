@@ -12,7 +12,8 @@ const ComponentSchema = new mongoose.Schema({
     Type: { type: String },                             // Тип (процессор, память, видеокарта)
     Name: { type: String },
     Manufacturer: { type: String },                     // Производитель для памяти (если применимо)
-    Quantity: { type: Number }                          // Количество памяти в ГБ
+    Quantity: { type: Number },                          // Количество памяти в ГБ
+    Data: {type: String}
 });
 
 // Описание схемы принтера
@@ -40,7 +41,11 @@ const EquipmentSchema = new mongoose.Schema({
     online: { type: Boolean, default: true },            // Статус онлайн
     owner: { type: String, required: true },             // Владелец компьютера
     department: { type: String, required: true },        // Отдел
-    lastUpdated: { type: Date, default: Date.now }       // Дата последнего обновления
+    division: {type: String},
+    lastUpdated: { type: Date, default: Date.now },       // Дата последнего обновления
+    osVersion: {type: String},
+    inventoryNumber: {type: String, default: 'Неизвестен'},
+    estimation: {type: Number}
 });
 
 // Экспортируем модель

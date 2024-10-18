@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fetchEquipment, useSocketEquipmentUpdates } from '@/components/pages/equipment/fetchEquipment';
 import AllEquipmentTab from '@/components/pages/equipment/AllEquipmentTab';
-import OfflineEquipmentTab from '@/components/pages/equipment/OfflineEquipmentTab';
 import OnlineEquipmentTab from '@/components/pages/equipment/OnlineEquipmentTab';
 import SelectedEquipmentForm from '@/components/pages/equipment/selectedEquipmentForm';
-import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent } from "@nextui-org/react";
+import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent, select } from "@nextui-org/react";
+import OfflineEquipmentTab from '@/components/pages/equipment/OfflineEquipmentTab';
 
 export default function EquipmentPage() {
   const user = useUser();
@@ -74,6 +74,7 @@ export default function EquipmentPage() {
     setSelectedEquipment(equipment);
     setSelectedTab('selectedEquipment');
   };
+ 
   
   const handleSelectAll = () => {
     if (isAllChecked) {
@@ -230,28 +231,50 @@ export default function EquipmentPage() {
                   )
                 ) : selectedTab === 'onlineEquipment' ? (
                   filteredEquipments.length > 0 ? (
-                  <OnlineEquipmentTab 
-                  equipment={equipments} 
-                  fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)} />
+                    <OnlineEquipmentTab
+                    equipments={filteredEquipments} 
+                    isAdmin={isAdmin}
+                    isTwofaEnabled={isTwofaEnabled} 
+                    searchTerm={searchTerm}
+                    handleSelectEquipmentTab={handleSelectEquipmentTab}
+                    setSelectedEquipmentTab={setSelectedEquipmentTab}
+                    selectedEquipments={selectedEquipments}
+                    fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)}
+                    isAllChecked={isAllChecked}
+                    isIndeterminate={isIndeterminate}
+                    handleSelectAll={handleSelectAll}
+                    handleSelectEquipment={handleSelectEquipment}
+                    />
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
                     <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
-                ) : selectedTab === 'offlineEquipment' && selectedEquipment ? (
+                ) : selectedTab === 'offlineEquipment' ? (
                   filteredEquipments.length > 0 ? (
-                  <OfflineEquipmentTab 
-                  equipment={equipments} 
-                  fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)} />
+                    <OfflineEquipmentTab
+                    equipments={filteredEquipments} 
+                    isAdmin={isAdmin}
+                    isTwofaEnabled={isTwofaEnabled} 
+                    searchTerm={searchTerm}
+                    handleSelectEquipmentTab={handleSelectEquipmentTab}
+                    setSelectedEquipmentTab={setSelectedEquipmentTab}
+                    selectedEquipments={selectedEquipments}
+                    fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)}
+                    isAllChecked={isAllChecked}
+                    isIndeterminate={isIndeterminate}
+                    handleSelectAll={handleSelectAll}
+                    handleSelectEquipment={handleSelectEquipment}
+                    />
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
                     <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
-                ) : selectedTab === 'selectEquipment' && selectedEquipment ? (
-                  <SelectedEquipmentForm selectedEquipments={selectedEquipments} fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)} />
+                ) : selectedTab === 'selectedEquipment' && selectedEquipment ? (
+                  <SelectedEquipmentForm selectedEquipment={selectedEquipment} setSelectedEquipment={setSelectedEquipment} isAdmin={isAdmin} fetchEquipment={() => fetchEquipment(setEquipment, setIsLoading)} />
                 ) : null
               )}
             </motion.div>
