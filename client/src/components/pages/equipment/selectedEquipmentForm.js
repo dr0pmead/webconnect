@@ -3,6 +3,7 @@ import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import { Progress, Chip, Tooltip } from '@nextui-org/react';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipment }) => {
 
@@ -17,39 +18,52 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
 
     // Обработчик нажатия на кнопку "Сохранить"
     const handleSaveClick = async () => {
-        // Обновляем только инвентарный номер в selectedEquipment
-        const updatedEquipment = {
-          ...selectedEquipment,
+   
+      try {
+        const response = await axios.put('http://localhost:5000/api/equipment/edit', {
+          _id: selectedEquipment._id,
           inventoryNumber: inventoryNumber
-        };
-      
-        // Обновляем выбранное оборудование локально
-        setSelectedEquipment(updatedEquipment);
-      
-        try {
-          // Отправляем обновлённое оборудование на сервер
-          const response = await fetch('http://localhost:5000/api/equipment/edit', {
-            method: 'POST', // Или 'PUT', в зависимости от того, как настроен сервер
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedEquipment)
+        });
+    
+        if (response.status === 200) {
+          // Успешное обновление на сервере
+          toast.success('Инвентарный номер успешно добавлен!', {
+            position: 'bottom-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
           });
-      
-          if (response.ok) {
-            // Успешное обновление на сервере
-            console.log('Оборудование обновлено на сервере');
-          } else {
-            // Обработка ошибок
-            console.error('Ошибка при обновлении на сервере');
-          }
-        } catch (error) {
-          console.error('Ошибка при обращении к серверу:', error);
+          setIsChanged(false);
+        } else {
+          // Обработка ошибок
+          toast.error('Ошибка сервера. Не удалось сохранить запись.', {
+            position: 'bottom-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          console.error(response.error)
         }
-      
-        setIsChanged(false); // Сбрасываем флаг изменений после сохранения
-      };
-
+      } catch (error) {
+        toast.error('Ошибка при обращении к серверу.', {
+          position: 'bottom-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        console.error(error)
+      }
+    };
+    
 
     const handleCopyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -85,7 +99,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className=" mb-4 flex items-center w-full justify-between">
+      <div className=" mb-4 flex items-start w-full justify-between">
         <div className="flex flex-col gap-1">
         <span className="flex items-center text-lg font-semibold  gap-4">Информация о компьютере: {selectedEquipment.name}
         {selectedEquipment.online ? (
@@ -102,29 +116,36 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             {selectedEquipment.owner} | {selectedEquipment.division} : {selectedEquipment.department}
         </span>
         </div>
-        <div className="flex items-center gap-2">
-            {isChanged && (
-              <motion.div
-              initial={{ x: 10, opacity: 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ x: 10, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              onClick={handleSaveClick}
-              className="bg-[#243F8F] text-white px-3 py-1 rounded-md hover:bg-[#243F8F]/85 duration-150 text-sm cursor-pointer"
-              >
-                Сохранить
-              </motion.div>
-            )}
-            <input
-                type="text"
-                placeholder="Пароль"
-                value={inventoryNumber}
-                onChange={handleInventoryChange} // Обработчик изменения значения
-                disabled={!isAdmin}
-                className="text-sm border w-full rounded-lg px-3 max-h-[30px] py-2 text-[#343F52] outline-none duration-150"
-            />
-            {/* Кнопка "Сохранить" появляется, только если есть изменения */}
-            </div>
+        {selectedEquipment.inventoryNumber === 'Неизвестно' ? (
+         <div className="flex items-center gap-2">
+         {isChanged && (
+           <motion.div
+           initial={{ x: 10, opacity: 0 }}
+           animate={{ opacity: 1, x: 0 }}
+           exit={{ x: 10, opacity: 1 }}
+           transition={{ duration: 0.3 }}
+           onClick={handleSaveClick}
+           className="bg-[#243F8F] text-white px-3 py-1 rounded-md hover:bg-[#243F8F]/85 duration-150 text-sm cursor-pointer"
+           >
+             Сохранить
+           </motion.div>
+         )}
+         <input
+             type="text"
+             placeholder="Инвентарный номер"
+             value={inventoryNumber}
+             onChange={handleInventoryChange} // Обработчик изменения значения
+             disabled={!isAdmin}
+             className="text-sm border w-full rounded-lg px-3 max-h-[30px] py-2 text-[#343F52] outline-none duration-150"
+         />
+         {/* Кнопка "Сохранить" появляется, только если есть изменения */}
+         </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-lg">#{inventoryNumber}</span>
+          </div>
+        )}
+       
 
       </div>
 
@@ -295,7 +316,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                     selectedEquipment.components
                     .filter(component => component.Type === 'Memory') // Фильтрация компонентов по типу 'Memory'
                     .map((memory, index) => (
-                        <div key={memory._id || index} className="border rounded-lgw-full">
+                        <div key={memory._id || index} className="w-full">
                         <h3 className="text-sm font-semibold text-nowrap">{memory.Manufacturer} {memory.Data} {memory.Quantity} ГБ</h3>
                         </div>
                     ))
@@ -311,7 +332,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                     selectedEquipment.components
                         .filter(component => component.Type === 'Processor') // Фильтруем компоненты по типу 'Processor'
                         .map((processor, index) => (
-                        <div key={processor._id || index} className="border rounded-lg w-full">
+                        <div key={processor._id || index} className=" w-full">
                             <h3 className="text-sm font-semibold text-nowrap">{processor.Name}</h3> {/* Поле Name для вывода имени процессора */}
                         </div>
                         ))
@@ -327,7 +348,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                     selectedEquipment.components
                         .filter(component => component.Type === 'Motherboard') // Фильтруем компоненты по типу 'Processor'
                         .map((motherboard, index) => (
-                        <div key={motherboard._id || index} className="border rounded-lg w-full">
+                        <div key={motherboard._id || index} className="w-full">
                             <h3 className="text-sm font-semibold">{motherboard.Name}</h3> {/* Поле Name для вывода имени процессора */}
                         </div>
                         ))
@@ -343,7 +364,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                     selectedEquipment.components
                         .filter(component => component.Type === 'Video') // Фильтруем компоненты по типу 'Processor'
                         .map((video, index) => (
-                        <div key={video._id || index} className="border rounded-lg w-full">
+                        <div key={video._id || index} className="w-full">
                             <h3 className="text-sm font-semibold">{video.Name}</h3> {/* Поле Name для вывода имени процессора */}
                         </div>
                         ))

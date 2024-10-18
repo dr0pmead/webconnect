@@ -1,5 +1,5 @@
 const express = require('express');
-const {addEquipment, ping, getEquipments} = require('../controller/equipmentController');
+const {addEquipment, ping, getEquipments, editEquipment} = require('../controller/equipmentController');
 
 const router = express.Router();
 
@@ -7,5 +7,6 @@ const router = express.Router();
 router.post('/api/createEquipment', addEquipment);
 router.post('/api/ping', ping);
 router.get('/api/equipments', getEquipments);
+router.put('/api/equipment/edit', editEquipment);
 
 module.exports = router;
