@@ -1,4 +1,5 @@
 const Equipment = require('../models/Equipment');  // Модель пользователя
+const QRCode = require('qrcode');
 
 const addEquipment = async (req, res) => {
     try {
@@ -25,38 +26,33 @@ const addEquipment = async (req, res) => {
                         FreeSpace: component.FreeSpace
                     });
                 } else {
-                    // Если диск уже существует, обновляем его
                     existingDisk.Size = component.Size;
                     existingDisk.FreeSpace = component.FreeSpace;
                 }
             } else if (component.Type === 'Memory') {
-                // Проверяем, существует ли такой компонент памяти уже в базе
                 const existingMemory = existingComponents.find(mem => mem.Type === 'Memory' && mem.Manufacturer === component.Manufacturer);
                 if (!existingMemory) {
                     components.push({
                         Type: 'Memory',
                         Manufacturer: component.Manufacturer,
-                        Quantity: component.Quantity, // В ГБ
-                        Data: component.Data  // Тип памяти (DDR4, DDR5 и т.д.)
+                        Quantity: component.Quantity,
+                        Data: component.Data
                     });
                 } else {
-                    // Обновляем существующую запись памяти
                     existingMemory.Quantity = component.Quantity;
                     existingMemory.Data = component.Data;
                 }
             } else {
-                // Проверяем другие компоненты (процессор, видеокарта и т.д.)
                 const existingComponent = existingComponents.find(comp => comp.Type === component.Type && comp.Name === component.Name);
                 if (!existingComponent) {
                     components.push(component);
                 } else {
-                    // Можно обновить другие атрибуты компонента
                     existingComponent.Name = component.Name;
                 }
             }
         });
 
-        // Добавляем в массив только новые данные (те, которых не было в базе)
+        // Добавляем в массив только новые данные
         const updatedComponents = [...existingComponents, ...components];
         const updatedDisks = [...existingDisks, ...disks];
 
@@ -65,20 +61,21 @@ const addEquipment = async (req, res) => {
             name: computerInfo.name,
             anyDesk: computerInfo.anyDesk || existingEquipment?.anyDesk,
             teamViewer: computerInfo.teamViewer || existingEquipment?.teamViewer,
-            osVersion: existingEquipment?.osVersion || computerInfo.osVersion, // Сохраняем старую версию ОС, если она есть
-            owner: existingEquipment?.owner || computerInfo.owner, // Не перезаписываем владельца
-            department: existingEquipment?.department || computerInfo.department, // Не перезаписываем отдел
-            division: existingEquipment?.division || computerInfo.division, // Не перезаписываем подразделение
-            components: updatedComponents,  // Обновленный массив компонентов
-            disks: updatedDisks,            // Обновленный массив дисков
+            osVersion: existingEquipment?.osVersion || computerInfo.osVersion,
+            owner: existingEquipment?.owner || computerInfo.owner,
+            department: existingEquipment?.department || computerInfo.department,
+            division: existingEquipment?.division || computerInfo.division,
+            components: updatedComponents,
+            disks: updatedDisks,
             ipAddress: {
                 main: computerInfo.ipAddress.main || existingEquipment?.ipAddress?.main,
                 secondary: computerInfo.ipAddress.secondary || existingEquipment?.ipAddress?.secondary
             },
-            printer: existingEquipment?.printer || computerInfo.printer, // Сохраняем существующую информацию о принтере
-            online: true, // Статус онлайн всегда обновляется
-            lastUpdated: Date.now(), // Обновляем дату обновления
+            printer: existingEquipment?.printer || computerInfo.printer,
+            online: true,
+            lastUpdated: Date.now(),
             inventoryNumber: existingEquipment?.inventoryNumber || computerInfo.inventoryNumber,
+            type: existingEquipment?.type || computerInfo.type,
         };
 
         // Условия для поиска и обновления
@@ -86,13 +83,21 @@ const addEquipment = async (req, res) => {
         const options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
         // Обновляем или создаем запись
-        const updatedEquipment = await Equipment.findOneAndUpdate(filter, equipmentData, options);
+        let updatedEquipment = await Equipment.findOneAndUpdate(filter, equipmentData, options);
 
         // Оценка производительности
         const estimation = calculateEstimation(updatedEquipment);
 
-        // Обновляем оборудование с оценкой
-        await Equipment.findOneAndUpdate(filter, { estimation }, options);
+        // Генерация QR-кода
+        const qrUrl = `http://localhost:5000/equipment/${computerInfo.name}`;
+        const qrCodeData = await QRCode.toDataURL(qrUrl); // Создаем QR-код в формате Base64
+
+        // Обновляем оборудование с оценкой и QR-кодом
+        updatedEquipment = await Equipment.findOneAndUpdate(
+            filter,
+            { estimation, qrcode: qrCodeData },
+            options
+        );
 
         res.status(200).json({
             message: 'Data received and stored successfully',
@@ -189,6 +194,21 @@ async function ping(req, res) {
     }
 }
 
+async function getInfoEquipment(req, res) {
+    const { name } = req.params;
+    try {
+      const equipmentData = await Equipment.findOne({ name });
+      if (!equipmentData) {
+        return res.status(404).json({ message: 'Оборудование не найдено' });
+      }
+      res.json(equipmentData);
+    } catch (error) {
+      console.error('Ошибка при поиске оборудования:', error);
+      res.status(500).json({ message: 'Ошибка сервера' });
+    }
+}
+
+
 // Function to check and update offline status of equipment based on lastUpdated
 async function checkLastUpdated(io) {
     try {
@@ -222,9 +242,49 @@ const getEquipments = async (req, res) => {
     }
 };
 
+const editEquipment = async (req, res) => {
+    const { _id, inventoryNumber, written } = req.body;
+
+    try {
+        console.log(`Полученные данные: _id=${_id}, inventoryNumber=${inventoryNumber}, written=${written}`);
+
+        // Находим запись по _id
+        const equipment = await Equipment.findById(_id);
+
+        if (!equipment) {
+            console.log('Оборудование не найдено');
+            return res.status(404).json({ message: 'Оборудование не найдено' });
+        }
+
+        // Проверим старое значение перед обновлением
+        console.log(`Старое значение written: ${equipment.written}`);
+
+        // Обновляем поля
+        equipment.inventoryNumber = inventoryNumber;
+        equipment.written = written;
+
+        // Сохраняем изменения
+        const updatedEquipment = await equipment.save();
+
+        // Логируем обновленное значение
+        console.log(`Новое значение written: ${updatedEquipment.written}`);
+
+        res.status(200).json({
+            message: 'Оборудование успешно обновлено',
+            data: updatedEquipment
+        });
+    } catch (error) {
+        console.error('Ошибка при обновлении оборудования:', error);
+        res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+    }
+};
+
+
 module.exports = {
     addEquipment,
     ping,
     checkLastUpdated,
-    getEquipments
+    getEquipments,
+    editEquipment,
+    getInfoEquipment
 };

@@ -1,55 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
-import { Progress, Chip, Tooltip } from '@nextui-org/react';
+import { Progress, Chip, Tooltip, Checkbox } from '@nextui-org/react';
 import { toast } from 'react-toastify';
 
 const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipment }) => {
 
     const [inventoryNumber, setInventoryNumber] = useState(selectedEquipment.inventoryNumber || '');
-    const [isChanged, setIsChanged] = useState(false); // Состояние для отслеживания изменений
+    const [isChanged, setIsChanged] = useState(false);
 
-      // Отслеживаем изменения в поле инвентарного номера
+    // Отслеживаем изменения в поле инвентарного номера
     const handleInventoryChange = (e) => {
-        setInventoryNumber(e.target.value);
-        setIsChanged(true); // Устанавливаем, что поле изменено
+      setInventoryNumber(e.target.value);
+      setIsChanged(true);
     };
 
     // Обработчик нажатия на кнопку "Сохранить"
     const handleSaveClick = async () => {
-        // Обновляем только инвентарный номер в selectedEquipment
-        const updatedEquipment = {
-          ...selectedEquipment,
-          inventoryNumber: inventoryNumber
-        };
-      
-        // Обновляем выбранное оборудование локально
-        setSelectedEquipment(updatedEquipment);
-      
-        try {
-          // Отправляем обновлённое оборудование на сервер
-          const response = await fetch('http://localhost:5000/api/equipment/edit', {
-            method: 'POST', // Или 'PUT', в зависимости от того, как настроен сервер
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedEquipment)
-          });
-      
-          if (response.ok) {
-            // Успешное обновление на сервере
-            console.log('Оборудование обновлено на сервере');
-          } else {
-            // Обработка ошибок
-            console.error('Ошибка при обновлении на сервере');
-          }
-        } catch (error) {
-          console.error('Ошибка при обращении к серверу:', error);
-        }
-      
-        setIsChanged(false); // Сбрасываем флаг изменений после сохранения
+      const updatedEquipment = {
+        ...selectedEquipment,
+        inventoryNumber: inventoryNumber,
       };
 
+      console.log(updatedEquipment)
+  
+      setSelectedEquipment(updatedEquipment);
+  
+      try {
+        const response = await fetch('http://localhost:5000/api/equipment/edit', {
+          method: 'POST', // Или 'PUT', в зависимости от конфигурации сервера
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedEquipment),
+        });
+  
+        if (response.ok) {
+          console.log('Оборудование успешно обновлено на сервере');
+        } else {
+          console.error('Ошибка при обновлении на сервере');
+        }
+      } catch (error) {
+        console.error('Ошибка при обращении к серверу:', error);
+      }
+  
+      setIsChanged(false);
+    };
 
     const handleCopyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -102,31 +98,40 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             {selectedEquipment.owner} | {selectedEquipment.division} : {selectedEquipment.department}
         </span>
         </div>
-        <div className="flex items-center gap-2">
-            {isChanged && (
-              <motion.div
-              initial={{ x: 10, opacity: 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ x: 10, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              onClick={handleSaveClick}
-              className="bg-[#243F8F] text-white px-3 py-1 rounded-md hover:bg-[#243F8F]/85 duration-150 text-sm cursor-pointer"
-              >
-                Сохранить
-              </motion.div>
-            )}
-            <input
-                type="text"
-                placeholder="Пароль"
-                value={inventoryNumber}
-                onChange={handleInventoryChange} // Обработчик изменения значения
-                disabled={!isAdmin}
-                className="text-sm border w-full rounded-lg px-3 max-h-[30px] py-2 text-[#343F52] outline-none duration-150"
-            />
-            {/* Кнопка "Сохранить" появляется, только если есть изменения */}
-            </div>
+        <div className="flex gap-2">
 
-      </div>
+            <div className="flex items-center gap-2">
+              {isChanged && (
+                <motion.div
+                  initial={{ x: 10, opacity: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ x: 10, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={handleSaveClick}
+                  className="bg-[#243F8F] text-white px-3 py-1 rounded-md hover:bg-[#243F8F]/85 duration-150 text-sm cursor-pointer"
+                >
+                  Сохранить
+                </motion.div>
+              )}
+              <label className="flex gap-2 text-nowrap items-center">
+                Инв. номер:
+                {!selectedEquipment.inventoryNumber ? (
+                  <input
+                    type="text"
+                    placeholder="Инвентарный номер"
+                    value={inventoryNumber}
+                    onChange={handleInventoryChange}
+                    disabled={!isAdmin}
+                    className="text-sm border w-full rounded-lg px-3 max-h-[30px] py-2 text-[#343F52] outline-none duration-150"
+                  />
+                ) : (
+                  <span>{inventoryNumber}</span>
+                )}
+              </label>
+            </div>
+          </div>
+        </div>
+        
 
       <div className="grid grid-cols-3 gap-4">
         {selectedEquipment.disks && selectedEquipment.disks.length > 0 ? (
@@ -274,9 +279,9 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
         </Tooltip>
       </div>
       <div className="flex w-full mt-4 flex-col gap-4">
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between border-b border-b-[#111]/10 pb-3">
             <h2 className="text-lg font-semibold flex items-center gap-4">
-                Техническая информация
+               Просмотр основных сведений о системе
             </h2>
             <div className="flex items-center gap-2">
             <span className="font-semibold ">Оценка производительности:</span>
@@ -288,69 +293,108 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             </div>
             </div>
         </div>
-            <div className="w-full flex items-center gap-4">
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
-                    selectedEquipment.components
-                    .filter(component => component.Type === 'Memory') // Фильтрация компонентов по типу 'Memory'
-                    .map((memory, index) => (
-                        <div key={memory._id || index} className="border rounded-lgw-full">
-                        <h3 className="text-sm font-semibold text-nowrap">{memory.Manufacturer} {memory.Data} {memory.Quantity} ГБ</h3>
-                        </div>
-                    ))
-                ) : (
-                    <p>Нет данных о памяти</p>
-                )}
-                </div>
-            </div>
+            <div className="w-full flex-col items-center gap-4">
 
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                    {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
-                    selectedEquipment.components
-                        .filter(component => component.Type === 'Processor') // Фильтруем компоненты по типу 'Processor'
-                        .map((processor, index) => (
-                        <div key={processor._id || index} className="border rounded-lg w-full">
-                            <h3 className="text-sm font-semibold text-nowrap">{processor.Name}</h3> {/* Поле Name для вывода имени процессора */}
-                        </div>
-                        ))
-                    ) : (
-                    <p>Нет данных о процессоре</p>
-                    )}
+            <div className="flex justify-between w-full pt-4">
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-black/50">Процессор: </span>
+                  {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
+                      selectedEquipment.components
+                          .filter(component => component.Type === 'Processor') // Фильтруем компоненты по типу 'Processor'
+                          .map((processor, index) => (
+                          <span key={processor._id || index} className="w-full">
+                              {processor.Name}
+                          </span>
+                          ))
+                      ) : (
+                      <p>Нет данных о процессоре</p>
+                      )}
                 </div>
-            </div>
 
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                    {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
+                <div className="flex items-center gap-2">
+                  <span className="w-full text-black/50">Оперативная память (ОЗУ): </span>
+                  {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
+                      selectedEquipment.components
+                      .filter(component => component.Type === 'Memory') // Фильтрация компонентов по типу 'Memory'
+                      .map((memory, index) => (
+                          <span key={memory._id || index} className="w-full text-nowrap">
+                            {memory.Manufacturer} {memory.Data} {memory.Quantity} ГБ
+                          </span>
+                      ))
+                  ) : (
+                      <p>Нет данных о памяти</p>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="text-nowrap text-black/50">Материнская плата: </span>
+                  {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
                     selectedEquipment.components
-                        .filter(component => component.Type === 'Motherboard') // Фильтруем компоненты по типу 'Processor'
-                        .map((motherboard, index) => (
-                        <div key={motherboard._id || index} className="border rounded-lg w-full">
-                            <h3 className="text-sm font-semibold">{motherboard.Name}</h3> {/* Поле Name для вывода имени процессора */}
-                        </div>
-                        ))
-                    ) : (
+                      .filter(component => component.Type === 'Motherboard') // Фильтруем компоненты по типу 'Motherboard'
+                      .map((motherboard, index) => {
+                        // Регулярное выражение для проверки производителя
+                        const manufacturerMatch = /(ASUS|ASRock|Gigabyte)/i.exec(motherboard.Manufacturer);
+
+                        // Если найдено совпадение, используем его, иначе оставляем пустым
+                        const manufacturerPrefix = manufacturerMatch ? manufacturerMatch[0] : "";
+
+                        return (
+                          <span key={motherboard._id || index} className="w-full text-nowrap">
+                            {manufacturerPrefix && `${manufacturerPrefix} `} {/* Добавляем производителя, если есть совпадение */}
+                            {motherboard.Name}
+                          </span>
+                        );
+                      })
+                  ) : (
                     <p>Нет данных о материнской плате</p>
-                    )}
+                  )}
                 </div>
-            </div>
 
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                    {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
+                <div className="flex items-center gap-2">
+                  <span className="text-nowrap text-black/50">Видеоадаптер: </span>
+                  {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
                     selectedEquipment.components
                         .filter(component => component.Type === 'Video') // Фильтруем компоненты по типу 'Processor'
                         .map((video, index) => (
-                        <div key={video._id || index} className="border rounded-lg w-full">
-                            <h3 className="text-sm font-semibold">{video.Name}</h3> {/* Поле Name для вывода имени процессора */}
-                        </div>
-                        ))
-                    ) : (
-                    <p>Нет данных о видеоядре</p>
-                    )}
+                          <span key={video._id || index} className="w-full text-nowrap">
+                            {video.Name}
+                          </span>
+                      ))
+                  ) : (
+                      <p>Встроенное видеоядро</p>
+                  )}
                 </div>
+
+              </div>
+              <div className="flex justify-end items-start">
+                {selectedEquipment.osVersion && (
+                  (() => {
+                    const osMatch = selectedEquipment.osVersion.match(/Windows\s\d+/); // Ищем 'Windows' + цифра
+                    const osVersion = osMatch ? osMatch[0] : '';
+
+                    // Определяем путь к картинке в зависимости от версии ОС
+                    const osImage = (() => {
+                      switch (osVersion) {
+                        case 'Windows 11':
+                          return '/assets/img/Windows_11_Logo.svg';
+                        case 'Windows 10':
+                          return '/assets/img/Windows_10_Logo.svg';
+                          case 'Windows 8':
+                          return '/assets/img/Windows_8_Logo.svg';
+                          case 'Windows 7':
+                          return '/assets/img/Windows_7_Logo.svg';
+                        default:
+                          return '/assets/img/Windows_10_Logo.svg'; // Картинка по умолчанию для других ОС
+                      }
+                    })();
+
+                    return (
+                      <img src={osImage} alt={osVersion} className="w-[80%]" />
+                    );
+                  })()
+                )}
+              </div>
             </div>
 
             </div>

@@ -32,6 +32,9 @@ function MyApp({ Component, pageProps }) {
           theme="colored" // Можно указать темную или светлую тему, по вашему желанию
         />
         {showHeader && <Header />}
+        <Head>
+          <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+        </Head>
         <Component {...pageProps} />
       </UserProvider>
     </AuthLayout>

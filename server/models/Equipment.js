@@ -45,7 +45,9 @@ const EquipmentSchema = new mongoose.Schema({
     lastUpdated: { type: Date, default: Date.now },       // Дата последнего обновления
     osVersion: {type: String},
     inventoryNumber: {type: String, default: 'Неизвестен'},
-    estimation: {type: Number}
+    estimation: {type: Number},
+    qrcode: {type: String},
+    type: {type: String},
 });
 
 // Экспортируем модель
