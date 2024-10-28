@@ -23,13 +23,13 @@ app.use((req, res, next) => {
 // Create Socket.IO server and attach to HTTP server
 const io = socketIo(server, {
     cors: {
-        origin: "http://localhost:3000",  // Client origin
+        origin: true,  // Client origin
         methods: ["GET", "POST"]
     }
 });
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: true,
     methods: ['GET', 'POST', 'DELETE', 'PUT'],
     credentials: true,
 }));

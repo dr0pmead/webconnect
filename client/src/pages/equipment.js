@@ -2,18 +2,17 @@ import { useUser } from '@/components/UserContext';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fetchEquipment, useSocketEquipmentUpdates } from '@/components/pages/equipment/fetchEquipment';
-import AllEquipmentTab from '@/components/pages/equipment/AllEquipmentTab';
-import OnlineEquipmentTab from '@/components/pages/equipment/OnlineEquipmentTab';
-import SelectedEquipmentForm from '@/components/pages/equipment/selectedEquipmentForm';
+import { fetchEquipment, useSocketEquipmentUpdates } from '@/pages/equipment/fetchEquipment';
+import AllEquipmentTab from '@/pages/equipment/AllEquipmentTab';
+import OnlineEquipmentTab from '@/pages/equipment/OnlineEquipmentTab';
+import SelectedEquipmentForm from '@/pages/equipment/selectedEquipmentForm';
 import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent, select } from "@nextui-org/react";
-import OfflineEquipmentTab from '@/components/pages/equipment/OfflineEquipmentTab';
+import OfflineEquipmentTab from '@/pages/equipment/OfflineEquipmentTab';
 import { saveAs } from 'file-saver';
+import { useRouter } from 'next/router';
 
 export default function EquipmentPage() {
   const user = useUser();
-  const isAdmin = user.admin === true;
-  const isTwofaEnabled = user.twofaEnable === true;
   const [selectedTab, setSelectedTab] = useState('allEquipment');
   const [isLoading, setIsLoading] = useState(false);
   const [equipments, setEquipment] = useState([]);
@@ -25,10 +24,19 @@ export default function EquipmentPage() {
   const [isAllChecked, setIsAllChecked] = useState(false);
   const [qrModalOpen, setQrModalOpen] = useState(false);
   const [object, setSelectetObject] = useState(null)
-  
+  const router = useRouter();
   if (!user) {
     return <div>Загрузка данных пользователя...</div>;
   }
+
+  useEffect(() => {
+    if (!user) {
+        router.push('/login');
+    }
+}, [user, router]);
+
+const isAdmin = user.admin === true;
+const isTwofaEnabled = user.twofaEnable === true;
 
   useEffect(() => {
     fetchEquipment(setEquipment, setIsLoading);
