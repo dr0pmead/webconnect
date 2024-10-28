@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
   const showHeader = router.pathname !== '/login';
 
   return (
+  
     <NextUIProvider>
     <AuthLayout>
       <UserProvider>

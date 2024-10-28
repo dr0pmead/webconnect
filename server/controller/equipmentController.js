@@ -243,6 +243,7 @@ const getEquipments = async (req, res) => {
 };
 
 const editEquipment = async (req, res) => {
+<<<<<<< HEAD
     const { _id, inventoryNumber, written } = req.body;
 
     try {
@@ -279,12 +280,45 @@ const editEquipment = async (req, res) => {
     }
 };
 
+=======
+    try {
+      const { _id, inventoryNumber } = req.body;
+  
+      if (!_id || !inventoryNumber) {
+        return res.status(400).json({ message: 'Отсутствует _id или inventoryNumber' });
+      }
+  
+      // Найти оборудование по _id и обновить inventoryNumber
+      const updatedEquipment = await Equipment.findByIdAndUpdate(
+        _id,
+        { $set: { inventoryNumber: inventoryNumber } }, // Обновляем только поле inventoryNumber
+        { new: true } // Возвращает обновлённую запись
+      );
+  
+      if (!updatedEquipment) {
+        return res.status(404).json({ message: 'Оборудование не найдено' });
+      }
+  
+      return res.status(200).json({
+        message: 'Инвентарный номер успешно обновлен',
+        data: updatedEquipment
+      });
+    } catch (error) {
+      console.error('Ошибка при обновлении инвентарного номера:', error);
+      return res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+    }
+  };
+>>>>>>> be08453fd1f45be9b94de471ac1af0d294465196
 
 module.exports = {
     addEquipment,
     ping,
     checkLastUpdated,
     getEquipments,
+<<<<<<< HEAD
     editEquipment,
     getInfoEquipment
+=======
+    editEquipment
+>>>>>>> be08453fd1f45be9b94de471ac1af0d294465196
 };
