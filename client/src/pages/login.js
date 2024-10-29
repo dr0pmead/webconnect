@@ -74,7 +74,7 @@ export default function Login() {
         console.log('Login form submitted:', data); // Логируем данные формы
       
         try {
-          const response = await axios.post('http://localhost:5000/api/login', data);
+          const response = await axios.post('http://webconnect.rubikom.kz/api/login', data);
           const { twofaRequired, user_id } = response.data;
       
           if (twofaRequired) {
@@ -128,7 +128,7 @@ export default function Login() {
         console.log(`2FA verification attempt for user: ${userId} with code: ${verificationCode}`); // Логируем код 2FA
       
         try {
-          const response = await axios.post(`http://localhost:5000/api/users/${userId}/2fa/2faauth`, {
+          const response = await axios.post(`http://webconnect.rubikom.kz/api/users/${userId}/2fa/2faauth`, {
             token: verificationCode,
           });
           console.log('2FA successful'); // Логируем успешную проверку 2FA

@@ -20,7 +20,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
     const handleSaveClick = async () => {
    
       try {
-        const response = await axios.put('http://localhost:5000/api/equipment/edit', {
+        const response = await axios.put('http://webconnect.rubikom.kz/api/equipment/edit', {
           _id: selectedEquipment._id,
           inventoryNumber: inventoryNumber
         });

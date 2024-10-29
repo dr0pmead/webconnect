@@ -16,7 +16,7 @@ const EquipmentDetailPage = () => {
     if (equipment) {
       const fetchEquipmentData = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/equipment/${equipment}`);
+          const response = await fetch(`http://webconnect.rubikom.kz/api/equipment/${equipment}`);
           if (!response.ok) {
             throw new Error("Данные о компьютере не найдены");
           }

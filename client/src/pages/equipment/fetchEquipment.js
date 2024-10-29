@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 export const fetchEquipment = async (setEquipment, setIsLoading) => {
   setIsLoading(true);
   try {
-      const response = await fetch('http://localhost:5000/api/equipments');
+      const response = await fetch('http://webconnect.rubikom.kz/api/equipments');
       const data = await response.json();
       setEquipment(data);
       setIsLoading(false);
@@ -16,7 +16,7 @@ export const fetchEquipment = async (setEquipment, setIsLoading) => {
 
 export const useSocketEquipmentUpdates = (setEquipment) => {
   useEffect(() => {
-      const socket = io('http://localhost:5000');
+      const socket = io('http://webconnect.rubikom.kz');
 
       socket.on('equipmentUpdated', (updatedEquipments) => {
                    // Преобразуем в массив, если это не массив

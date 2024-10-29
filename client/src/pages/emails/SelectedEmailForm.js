@@ -46,7 +46,7 @@ const SelectedEmailForm = ({ selectedEmail, fetchEmails }) => {
 
   const updateEmail = async (data) => {
     try {
-      const response = await axios.put('http://localhost:5000/api/update-email', {
+      const response = await axios.put('http://webconnect.rubikom.kz/api/update-email', {
         _id: selectedEmail._id,  // ID обновляемой почты
         username: data.username, // Новое имя пользователя
         password: data.password  // Новый пароль

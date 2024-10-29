@@ -1,0 +1,714 @@
+﻿Name;FullName;Description;Enable;DataSource;Authentication;Role;Groups;MailAddress;EmailForwarding;ItemLimit;DiskSizeLimit (kB);ConsumedItems;ConsumedSize (kB);OutgoingMessageLimit (kB);LastLogin (UTC);PublishInGAL;CleanOutItems;DomainRestriction
+5212359;Жукова Оксана;;Yes;Internal;Internal;No rights;;5212359;zhukova@rubikom.kz;;;6564;1094656;;2024-10-29 09:10;Yes;Domain defined;No
+539487;;;Yes;Internal;Internal;No rights;;539487;;;;14986;1767424;;2024-10-29 05:05;Yes;Domain defined;No
+897;;;Yes;Internal;Internal;No rights;;897;;;;89;6622;;2024-10-28 07:17;Yes;Domain defined;No
+a.openlender;;;Yes;Internal;Internal;No rights;;a.openlender;;;;573;8102;;2024-10-20 14:17;Yes;Domain defined;No
+abramova;Абрамова Юлия Ромуальдовна;;Yes;Internal;Internal;No rights;;abramova;;;;15;4975;;2024-10-29 02:56;Yes;Domain defined;No
+absibaev.mpk;Абсибаев Арман Канапьянович;;Yes;Internal;Internal;No rights;;absibaev.mpk;;;;9426;695239;;2024-10-29 03:15;Yes;Domain defined;No
+abulkairov;Абулкаиров Тимур;;Yes;Internal;Internal;No rights;;abulkairov;;;;1526;792180;;2024-10-29 09:04;Yes;Domain defined;No
+Admin;Administrator;;Yes;Internal;Internal;Read / write access;;Admin;;;;5374;1342464;;2024-10-29 09:07;Yes;Domain defined;No
+admin2;Емельяненко Александр;;Yes;Internal;Internal;No rights;;admin2;;;;9531;803388;;2024-10-29 09:00;Yes;Domain defined;No
+agafonov;Агафонов Игорь Игорьевич;;Yes;Internal;Internal;No rights;;agafonov;;;;610;173265;;2024-10-26 08:09;Yes;Domain defined;No
+ahmedov;Ахмедов Радион;;Yes;Internal;Internal;No rights;;ahmedov;;;;118;373;;2024-05-22 06:46;Yes;Domain defined;No
+ahmetulina;Ахметулина Камшат Магжановна;;Yes;Internal;Internal;No rights;;ahmetulina;;;;54;1829;;2024-10-29 08:42;Yes;Domain defined;No
+aldangorova;Алдангорова Айгул;;Yes;Internal;Internal;No rights;;aldangorova;;;;12;2330;;2024-10-28 11:30;Yes;Domain defined;No
+alekseeva.a;;;Yes;Internal;Internal;No rights;;alekseeva.a;;;;1;76;;;Yes;Domain defined;No
+alertinfo;Логин;;Yes;Internal;Internal;No rights;;alertinfo;;;;1988;8605;;;Yes;Domain defined;No
+alibekova;Алибекова Алма Испековна;;Yes;Internal;Internal;No rights;;alibekova;;;;67;572157;;2024-10-23 12:43;Yes;Domain defined;No
+aliev;;;Yes;Internal;Internal;No rights;;aliev;;;;2897;337761;;2024-10-21 11:37;Yes;Domain defined;No
+alimova.mpk;Алимова Алла Вагабулловна;;Yes;Internal;Internal;No rights;;alimova.mpk;;;;12804;1206272;;2024-10-29 08:58;Yes;Domain defined;No
+alizhanova;Алижанова Айдана Мержановна;;Yes;Internal;Internal;No rights;;alizhanova;;;;63;587;;;Yes;Domain defined;No
+Almuhashev;Альмухашев Нурлантай Бокетаевич;;Yes;Internal;Internal;No rights;;Almuhashev;;;;1;1916;;;Yes;Domain defined;No
+alpyspaeva.mpk;Алпыспаева Олеся Андреевна;;Yes;Internal;Internal;No rights;;alpyspaeva.mpk;;;;903;7556;;2024-02-14 03:28;Yes;Domain defined;No
+alzhanova;Алжанова;;Yes;Internal;Internal;No rights;;alzhanova;;;;1;1916;;;Yes;Domain defined;No
+Amrenov;Амренов Е.Ж.;;Yes;Internal;Internal;No rights;;Amrenov;;;;1;1916;;;Yes;Domain defined;No
+ananev;Ананьев А.С;;Yes;Internal;Internal;No rights;;ananev;;;;3;15;;;Yes;Domain defined;No
+ananeva.mpk;Ананьевна Наталья Юрьевна;;Yes;Internal;Internal;No rights;;ananeva.mpk;;;;667;3956;;2024-10-28 12:00;Yes;Domain defined;No
+anciferova;Анциферова Светлана;;Yes;Internal;Internal;No rights;;anciferova;;;;0;0;;2024-10-29 04:55;Yes;Domain defined;No
+andreev;Адреев Сергей Васильевич;;Yes;Internal;Internal;No rights;;andreev;;;;66;2349;;;Yes;Domain defined;No
+Andreev.a;Андреев Андрей Николаевич;;Yes;Internal;Internal;No rights;;Andreev.a;;;;1;1916;;;Yes;Domain defined;No
+andreeva;Андреева Лилия Васильевна;;Yes;Internal;Internal;No rights;;andreeva;;;;6115;7449600;;2024-10-29 09:00;Yes;Domain defined;No
+antsiferova;;;Yes;Internal;Internal;No rights;;antsiferova;;;;13196;1822720;;2024-10-29 09:10;Yes;Domain defined;No
+araj;Арай;;Yes;Internal;Internal;No rights;;araj;;;;0;0;;;Yes;Domain defined;No
+architect.pto;;;Yes;Internal;Internal;No rights;;architect.pto;;;;701;457629;;2024-09-24 09:59;Yes;Domain defined;No
+architector;;;Yes;Internal;Internal;No rights;;architector;;;;108;73856;;;Yes;Domain defined;No
+archive;Бабич Елена Викторовна;;Yes;Internal;Internal;No rights;;archive;;;;4198;320043;;2024-10-22 11:42;Yes;Domain defined;No
+artamonova;Артамонова;;Yes;Internal;Internal;No rights;;artamonova;;;;16344;1966080;;2024-10-29 09:08;Yes;Domain defined;No
+artemova.mpk;Артемова Галина;;Yes;Internal;Internal;No rights;;artemova.mpk;;;;3866;1647616;;2024-10-29 09:09;Yes;Domain defined;No
+artemyeva;Артемьева Яна Максимовна;;Yes;Internal;Internal;No rights;;artemyeva;;;;1856;1426432;;2023-09-21 08:30;Yes;Domain defined;No
+astana;ИТ Астана;;Yes;Internal;Internal;No rights;;astana;;;;15;8121;;2023-11-06 04:25;Yes;Domain defined;No
+atc;АТЦ;;Yes;Internal;Internal;No rights;;atc;;;;0;0;;;Yes;Domain defined;No
+avdienko.mpk;Авдиенко Юлия Сергеевна;;Yes;Internal;Internal;No rights;;avdienko.mpk;;;;1850;270743;;2024-10-29 09:10;Yes;Domain defined;No
+Avtokolonna;Avtokolonna;Автоколонна пассажирского транспорта;Yes;Internal;Internal;No rights;;Avtokolonna;;;;2;86;;2023-03-02 10:21;Yes;Domain defined;No
+babin;Бабин Алексей;;Yes;Internal;Internal;No rights;;babin;;;;6442;4313088;;2024-10-29 08:53;Yes;Domain defined;No
+bagdanov;Багдатов Кайыртас Бектасович;;Yes;Internal;Internal;No rights;;bagdanov;;;;108;455;;2024-05-21 09:27;Yes;Domain defined;No
+baharev.a.kkz;Бахарев Алексей Владимирович;;Yes;Internal;Internal;No rights;;baharev.a.kkz;;;;999;76813;;2023-04-03 05:13;Yes;Domain defined;No
+baharev.kkz;Бахарев Александр Владимирович;;Yes;Internal;Internal;No rights;;baharev.kkz;;;;3455;581290;;2023-11-14 05:03;Yes;Domain defined;No
+baidullin;Байдуллин Нурлан Сабитович;;Yes;Internal;Internal;No rights;;baidullin;;;;43;36575;;2023-04-11 10:10;Yes;Domain defined;No
+bailov.mpk;Байлов Андрей Александрович;;Yes;Internal;Internal;No rights;;bailov.mpk;;;;8845;5469184;;2024-10-29 06:04;Yes;Domain defined;No
+bajdildin;Байдильдин Ельнар Токанович;;Yes;Internal;Internal;No rights;;bajdildin;;;;1650;2074624;;2024-10-28 11:40;Yes;Domain defined;No
+bajer;Байер Вероника Фердинандовна;;Yes;Internal;Internal;No rights;;bajer;;;;894;187678;;2024-10-02 12:09;Yes;Domain defined;No
+bajkov;Байков Александр Николаевич;;Yes;Internal;Internal;No rights;;bajkov;;;;1;1916;;;Yes;Domain defined;No
+bajmuratova;Баймуратова Марьям Табрисовна;;Yes;Internal;Internal;No rights;;bajmuratova;;;;3;1921;;2023-11-20 06:48;Yes;Domain defined;No
+bajramov;Байрамов Ахмет Мурадович;;Yes;Internal;Internal;No rights;;bajramov;;;;1;1916;;;Yes;Domain defined;No
+bajramova;Байрамова Евгения Игоревна (Диспетчер ATЦ);;Yes;Internal;Internal;No rights;;bajramova;;;;2364;726836;;2024-10-24 03:08;Yes;Domain defined;No
+baluev;;;Yes;Internal;Internal;No rights;;baluev;;;;23935;5516288;;2024-10-29 09:04;Yes;Domain defined;No
+bandurko;Бандурко Анжелика Сергеевна;;Yes;Internal;Internal;No rights;;bandurko;;;;207;1006;;2024-07-10 04:16;Yes;Domain defined;No
+batovskaya.mpk;Батовская Алина Сергеевна;;Yes;Internal;Internal;No rights;;batovskaya.mpk;;;;11;43;;;Yes;Domain defined;No
+baturina;Батурина Валентина ;;Yes;Internal;Internal;No rights;;baturina;;;;16392;4686848;;2024-10-29 09:04;Yes;Domain defined;No
+batyrmall;Батырмолл;;Yes;Internal;Internal;No rights;;batyrmall;;;;0;0;;;Yes;Domain defined;No
+Bayandinov;Баяндинов Руслан Токтарканович;;Yes;Internal;Internal;No rights;;Bayandinov;;;;1;1916;;;Yes;Domain defined;No
+bazarbaeva.mpk;Базарбаева Жанат Абайкызы;;Yes;Internal;Internal;No rights;;bazarbaeva.mpk;;;;2412;53977;;2024-10-29 06:47;Yes;Domain defined;No
+beisembekov.mpk;Бейсембеков Ерлан Мылтыкбаевич;;No;Internal;Internal;No rights;;beisembekov.mpk;;;;0;0;;;Yes;Domain defined;No
+beisova.mpk;Беисова Нурсулу;;Yes;Internal;Internal;No rights;;beisova.mpk;;;;850;7776;;2023-10-11 08:24;Yes;Domain defined;No
+bekbaeva;Бекбаева Ляйля Маутаевна;;Yes;Internal;Internal;No rights;;bekbaeva;;;;631;255517;;2023-05-15 09:25;Yes;Domain defined;No
+Bekenova.mpk;Бекенова Арайлым Найзабековна;Фельдшерский здравпункт (МПК);No;Internal;Internal;No rights;;Bekenova.mpk;;;;18;78;;;Yes;Domain defined;No
+bekinbaev;Бекибаев Муратбек;;Yes;Internal;Internal;No rights;;bekinbaev;;;;4029;2689024;;2024-10-29 03:02;Yes;Domain defined;No
+bekova.mpk;;;Yes;Internal;Internal;No rights;;bekova.mpk;;;;1243;316523;;2024-10-29 09:05;Yes;Domain defined;No
+bektemirova;Бектемирова Шолпан Муратовна;;Yes;Internal;Internal;No rights;;bektemirova;;;;13;2356;;2024-10-07 11:22;Yes;Domain defined;No
+belan;Белан Любовь Валентиновна;;Yes;Internal;Internal;No rights;;belan;;;;7118;391652;;2024-09-18 04:00;Yes;Domain defined;No
+belc;Бельц Вячеслав;;Yes;Internal;Internal;No rights;;belc;;;;4;1929;;2023-12-19 03:19;Yes;Domain defined;No
+belousova;Белоусова Виктория Петровна;ККЗ;No;Internal;Internal;No rights;;belousova;;;;55;261;;2024-09-03 09:34;Yes;Domain defined;No
+belov;Белов Владимир Сергеевич;;Yes;Internal;Internal;No rights;;belov;;;;10;32;;2024-10-07 03:38;Yes;Domain defined;No
+belyaeva;Беляевна Ирина Сергеевна;;Yes;Internal;Internal;No rights;;belyaeva;;;;223;29017;;2023-07-25 08:01;Yes;Domain defined;No
+belyaeva.l;Беляева Лариса Сергеевна;;Yes;Internal;Internal;No rights;;belyaeva.l;;;;3146;5199872;;2023-03-14 02:54;Yes;Domain defined;No
+berkutova.kkz;;;Yes;Internal;Internal;No rights;;berkutova.kkz;;;;479;33464;;2024-10-15 11:40;Yes;Domain defined;No
+beskol;;;Yes;Internal;Internal;No rights;;beskol;;;;17;19363;;2021-08-11 14:38;Yes;Domain defined;No
+Bessembinov;Бессембинов Жуматай Шаркенович;;Yes;Internal;Internal;No rights;;Bessembinov;;;;1;1916;;;Yes;Domain defined;No
+bessmertnyj;Бессмертный Николай;;Yes;Internal;Internal;No rights;;bessmertnyj;;;;2153;15363;;2024-07-29 07:17;Yes;Domain defined;No
+bezrukov;Безруков Юрий Сергеевич;;Yes;Internal;Internal;No rights;;bezrukov;;;;3;75;;2023-11-09 03:29;Yes;Domain defined;No
+Bezshchekov;Безщеков Сергей Александрович;;Yes;Internal;Internal;No rights;;Bezshchekov;;;;1;1916;;;Yes;Domain defined;No
+bezverhova;Безверхова О.Д.;;Yes;Internal;Internal;No rights;;bezverhova;;;;120;502;;;Yes;Domain defined;No
+bezverhova.a;Безверхова Анастасия;;Yes;Internal;Internal;No rights;;bezverhova.a;;;;653;355266;;2024-10-29 09:09;Yes;Domain defined;No
+bibanov;Бибанов Максим Андреевич;;Yes;Internal;Internal;No rights;;bibanov;;;;13;598;;2024-10-29 09:00;Yes;Domain defined;No
+bilaya;Билая Валерия Александровна;дизайнер-архитектор ПТО;Yes;Internal;Internal;No rights;;bilaya;;;;27;133;;2024-09-11 06:58;Yes;Domain defined;No
+biryukova;Бирюкова Наталья;;Yes;Internal;Internal;No rights;;biryukova;;;;7677;7849984;;2024-10-29 08:56;Yes;Domain defined;No
+bitrix;Битрикс сервер;;Yes;Internal;Internal;No rights;;bitrix;;;;106;9150;;2024-09-27 04:18;Yes;Domain defined;No
+bittest;;;Yes;Internal;Internal;No rights;;bittest;;;;1290;8008;;2023-06-22 10:24;Yes;Domain defined;No
+bobileva.mpk;Бобылева Марина Александровна;;Yes;Internal;Internal;No rights;;bobileva.mpk;;;;5841;819788;;2024-10-29 07:22;Yes;Domain defined;No
+borisova;Борисова Татьяна;;Yes;Internal;Internal;No rights;;borisova;;;;36207;15065088;;2024-10-29 09:05;Yes;Domain defined;No
+borovikov.v;Боровиков Валерий Владимирович;;Yes;Internal;Internal;No rights;;borovikov.v;;;;55;137;;2024-10-09 08:16;Yes;Domain defined;No
+borovskih;;;Yes;Internal;Internal;No rights;;borovskih;;;;22;816;;;Yes;Domain defined;No
+borshchak;Борщак Олеся Евгеньевна;;Yes;Internal;Internal;No rights;;borshchak;;;;1957;765877;;2024-10-29 02:35;Yes;Domain defined;No
+borzyh.mpk;Борзых Виктория Анатольевна;;No;Internal;Internal;No rights;;borzyh.mpk;;;;4890;1618944;;2024-07-26 03:24;Yes;Domain defined;No
+bosnak;Боснак Анастасия Владимировна;;Yes;Internal;Internal;No rights;;bosnak;;;;161;501;;;Yes;Domain defined;No
+braun;Браун Никита Владимирович;;Yes;Internal;Internal;No rights;;braun;;;;284;307364;;2024-10-29 09:07;Yes;Domain defined;No
+brikunova;Брикунова Ие Викторовна;инженеру СМК;Yes;Internal;Internal;No rights;;brikunova;;;;191;63916;;2024-10-29 09:02;Yes;Domain defined;No
+bubnovskaya;Бубновская Наталья Алексеевна;;Yes;Internal;Internal;No rights;;bubnovskaya;;;;142;791;;2024-10-18 05:52;Yes;Domain defined;No
+buh;;;Yes;Internal;Internal;No rights;;buh;konovalova@rubikom.kz;;;3773;2024448;;2024-10-29 08:12;Yes;Domain defined;No
+buh.zhk;;;Yes;Internal;Internal;No rights;;buh.zhk;;;;1335;1744896;;2024-10-15 06:03;Yes;Domain defined;No
+buh3;;;Yes;Internal;Internal;No rights;;buh3;;;;355;283362;;;Yes;Domain defined;No
+buhaeva.mpk;Бухаева Дарига Муратовна;;Yes;Internal;Internal;No rights;;buhaeva.mpk;;;;9761;5261312;;2024-10-29 09:08;Yes;Domain defined;No
+buhgalter;;;Yes;Internal;Internal;No rights;;buhgalter;kostromina@rubikom.kz;;;3962;1645568;;2023-12-05 04:09;Yes;Domain defined;No
+buhgalter19;;;Yes;Internal;Internal;No rights;;buhgalter19;slepcova@rubikom.kz;;;536;429087;;2024-08-08 10:24;Yes;Domain defined;No
+buhgalter20;;;Yes;Internal;Internal;No rights;;buhgalter20;strukova@rubikom.kz;;;858;146620;;2023-07-05 11:00;Yes;Domain defined;No
+buhgalter4;;;Yes;Internal;Internal;No rights;;buhgalter4;;;;11794;1065984;;2023-10-04 11:39;Yes;Domain defined;No
+buhkapital;;;Yes;Internal;Internal;No rights;;buhkapital;denishchik@rubikom.kz;;;949;361483;;2023-01-24 12:02;Yes;Domain defined;No
+buhzp.mpk;Данько Наталья Александровна;;Yes;Internal;Internal;No rights;;buhzp.mpk;;;;4342;654738;;2022-02-24 03:17;Yes;Domain defined;No
+burkackaya;Буркацкая Марина Николаевна;;Yes;Internal;Internal;No rights;;burkackaya;;;;5;17;;;Yes;Domain defined;No
+burlyaeva;Бурляева Маргарита Николаевна;ревизор;Yes;Internal;Internal;No rights;;burlyaeva;;;;6;81;;2024-10-01 10:52;Yes;Domain defined;No
+butomenko;Бутоменко Марина Олеговна;;Yes;Internal;Internal;No rights;;butomenko;;;;16;1654;;2024-09-02 06:57;Yes;Domain defined;No
+butorina.mpk;Буторина ;;Yes;Internal;Internal;No rights;;butorina.mpk;;;;714;22422;;2024-10-29 08:31;Yes;Domain defined;No
+Caplin;Цаплин Анаталий Александрович;;Yes;Internal;Internal;No rights;;Caplin;;;;1;1916;;;Yes;Domain defined;No
+cent;;;Yes;Internal;Internal;No rights;;cent;;;;414;866604;;2020-09-30 03:36;Yes;Domain defined;No
+chadov;Чадов Петр Петрович;;Yes;Internal;Internal;No rights;;chadov;;;;1;1916;;;Yes;Domain defined;No
+chalyh;Чалых Артема;;Yes;Internal;Internal;No rights;;chalyh;;;;270;326946;;2024-07-15 09:12;Yes;Domain defined;No
+checkorders;;;Yes;Internal;Internal;No rights;;checkorders;;;;8;2011;;;Yes;Domain defined;No
+cherepanov;Черепанов Иван;;Yes;Internal;Internal;No rights;;cherepanov;;;;60;22740;;2024-10-29 06:54;Yes;Domain defined;No
+chernenko.mpk;Черненко Анжелика;;Yes;Internal;Internal;No rights;;chernenko.mpk;;;;27587;23852032;;2024-10-29 09:02;Yes;Domain defined;No
+chernyshyova;Чернышева Тамара;;Yes;Internal;Internal;No rights;;chernyshyova;;;;1724;726330;;2024-10-29 06:07;Yes;Domain defined;No
+chernyuk.atc;Чернюк Галина Диспетчер АТЦ;;Yes;Internal;Internal;No rights;;chernyuk.atc;;;;3771;204143;;2024-07-25 08:57;Yes;Domain defined;No
+chertkova;Черткова Анастасия;;Yes;Internal;Internal;No rights;;chertkova;;;;3148;4283392;;2024-10-29 06:57;Yes;Domain defined;No
+Chertov;Чертов Руслан Сергеевич;;Yes;Internal;Internal;No rights;;Chertov;;;;1;1916;;;Yes;Domain defined;No
+chesak;Чесак Татьяна Викторовна;;Yes;Internal;Internal;No rights;;chesak;;;;3306;18936832;;2024-10-23 04:49;Yes;Domain defined;No
+Chirkov;Чирков Сергей Анатольевич;;Yes;Internal;Internal;No rights;;Chirkov;;;;1;1916;;;Yes;Domain defined;No
+chokina.magazin;Чокина (Магазин);;Yes;Internal;Internal;No rights;;chokina.magazin;;;;77;6287;;2020-04-06 05:55;Yes;Domain defined;No
+chzhen;Чжен Станислав;;Yes;Internal;Internal;No rights;;chzhen;;;;449;776681;;2024-10-29 08:45;Yes;Domain defined;No
+cuguj;Цугуй Оксана;;Yes;Internal;Internal;No rights;;cuguj;;;;6049;397419;;2024-10-29 08:55;Yes;Domain defined;No
+Cyplakov;Цыплаков Евгений Васильевич;;Yes;Internal;Internal;No rights;;Cyplakov;;;;1;1916;;;Yes;Domain defined;No
+D.Namerekov;;;Yes;Internal;Internal;No rights;;D.Namerekov;;;;120;47508;;2024-10-29 09:01;Yes;Domain defined;No
+daf-022;;;Yes;Internal;Internal;No rights;;daf-022;;;;4;1923;;;Yes;Domain defined;No
+Daniyarov;Данияров Сергей Серикбаевич;;Yes;Internal;Internal;No rights;;Daniyarov;;;;1;1916;;;Yes;Domain defined;No
+danko;Данько Наталья;;Yes;Internal;Internal;No rights;;danko;;;;5728;1300480;;2020-09-11 11:17;Yes;Domain defined;No
+danko.mpk;Алексей Леонидович Данько;;Yes;Internal;Internal;No rights;;danko.mpk;;;;25946;35503104;;2024-10-29 08:58;Yes;Domain defined;No
+daribaeva.mpk;Дарибаева Шолпан Жанатбековна;;Yes;Internal;Internal;No rights;;daribaeva.mpk;;;;7148;325993;;2024-10-22 04:39;Yes;Domain defined;No
+dedeshina;Дедешина Ирина Викторовна;;Yes;Internal;Internal;No rights;;dedeshina;;;;627;1377280;;2022-11-15 04:15;Yes;Domain defined;No
+demchenko;Демченко Екатерина Анатольевна;;Yes;Internal;Internal;No rights;;demchenko;;;;6694;3352576;;2024-10-29 04:30;Yes;Domain defined;No
+demchenko.s;Демченко Сергей Иванович ;;Yes;Internal;Internal;No rights;;demchenko.s;;;;1219;482497;;2024-10-29 03:38;Yes;Domain defined;No
+demidov;Демидов Михаил Александрович;начальник автоколонны грузового транспорта (МПК);Yes;Internal;Internal;No rights;;demidov;;;;61;146;;;Yes;Domain defined;No
+derevyagina;Деревягина Олеся Алексеевна;;Yes;Internal;Internal;No rights;;derevyagina;;;;82;315;;2024-10-23 03:08;Yes;Domain defined;No
+derkach.mpk;Деркач Алла Александровна;;Yes;Internal;Internal;No rights;;derkach.mpk;;;;1100;34590;;2024-10-28 05:22;Yes;Domain defined;No
+director.atc;;;Yes;Internal;Internal;No rights;;director.atc;;;;2259;933325;;2023-02-06 06:21;Yes;Domain defined;No
+director.kkz;Управляющий элеватора;;Yes;Internal;Internal;No rights;;director.kkz;goenko@rubikom.kz;;;15646;2167808;;2024-10-29 09:10;Yes;Domain defined;No
+director.zhk;Управляющий ЖК;;No;Internal;Internal;No rights;;director.zhk;;;;3998;7624704;;2024-09-12 03:10;Yes;Domain defined;No
+Dobrovolskaya;Добровольская Розалия Рузальевна;;Yes;Internal;Internal;No rights;;Dobrovolskaya;;;;17;579;;2024-10-29 08:41;Yes;Domain defined;No
+docenko.g;Доценко Глеб Рустамович;;Yes;Internal;Internal;No rights;;docenko.g;;;;6;40;;2024-07-04 06:44;Yes;Domain defined;No
+docenko.sky;;;Yes;Internal;Internal;No rights;;docenko.sky;;;;5;100;;2024-07-15 03:23;Yes;Domain defined;No
+dombrovskij;Александр Домбровский;;Yes;Internal;Internal;No rights;;dombrovskij;;;;122;1497;;2024-10-29 03:06;Yes;Domain defined;No
+dosanova.mpk;Досанова Динара Басжигитовна;;Yes;Internal;Internal;No rights;;dosanova.mpk;;;;306;1363968;;2024-10-29 07:24;Yes;Domain defined;No
+dosmagambetov;Досмагамбетов Куаныш;;Yes;Internal;Internal;No rights;;dosmagambetov;;;;20;425;;2023-08-22 11:06;Yes;Domain defined;No
+dosmagulov;Досмагулов Куаныш;;Yes;Internal;Internal;No rights;;dosmagulov;;;;57;4598;;2023-08-28 06:26;Yes;Domain defined;No
+dubasenko.mpk;;;Yes;Internal;Internal;No rights;;dubasenko.mpk;;;;6162;216395;;2024-10-28 05:40;Yes;Domain defined;No
+dudchenko.mpk;Дудченко Ольга Викторовна;;Yes;Internal;Internal;No rights;;dudchenko.mpk;;;;16909;2299904;;2024-10-29 08:53;Yes;Domain defined;No
+dudenko;Дуденко Татьяна Васильевна;;Yes;Internal;Internal;No rights;;dudenko;;;;91;2448;;2024-07-09 05:13;Yes;Domain defined;No
+dundukov.mpk;Дундуков Александр Максимович;;Yes;Internal;Internal;No rights;;dundukov.mpk;;;;182;4164;;2024-09-05 03:41;Yes;Domain defined;No
+dushkina.mpk;Душкина Наталья Владимировна;;Yes;Internal;Internal;No rights;;dushkina.mpk;;;;15344;927341;;2024-10-29 09:05;Yes;Domain defined;No
+dymchenko;Дымченко Иван Дмитриевич;;Yes;Internal;Internal;No rights;;dymchenko;;;;2;1925;;2023-07-31 05:44;Yes;Domain defined;No
+dyrkov;Дырков Дмиртий Александрович;;Yes;Internal;Internal;No rights;;dyrkov;;;;107;2378;;;Yes;Domain defined;No
+dzagnidze;Дзагнидзе Марина Эдуардовна;;Yes;Internal;Internal;No rights;;dzagnidze;;;;291;4176;;2024-09-12 10:30;Yes;Domain defined;No
+dzhabaeva;Джабаева Седа Исаевна;;Yes;Internal;Internal;No rights;;dzhabaeva;;;;386;160172;;2024-10-18 07:26;Yes;Domain defined;No
+ebergardt;Эбергардт Татьяна Викторовна;;Yes;Internal;Internal;No rights;;ebergardt;;;;3;1926;;2024-07-04 06:26;Yes;Domain defined;No
+ebert.mpk;Эберт Лидии Евгеньевны;;Yes;Internal;Internal;No rights;;ebert.mpk;;;;54;311;;;Yes;Domain defined;No
+ecolog;;;Yes;Internal;Internal;No rights;;ecolog;shiryaj@rubikom.kz;;;1329;1473536;;2024-08-13 03:53;Yes;Domain defined;No
+economist;Татьяна Сергеевна Борисова;;Yes;Internal;Internal;No rights;;economist;borisova@rubikom.kz;;;1675;1059840;;2022-12-23 03:47;Yes;Domain defined;No
+economist.mpk;Петрухно Татьяна Владимировна;;Yes;Internal;Internal;No rights;;economist.mpk;;;;10878;3513344;;2024-10-28 07:37;Yes;Domain defined;No
+economist2;;;Yes;Internal;Internal;No rights;;economist2;baluev@rubikom.kz;;;990;925223;;2023-09-12 08:00;Yes;Domain defined;No
+economist4;;;Yes;Internal;Internal;No rights;;economist4;;;;1567;195588;;2024-02-02 08:37;Yes;Domain defined;No
+economistctrl;;;Yes;Internal;Internal;No rights;;economistctrl;;;;2;80;;;Yes;Domain defined;No
+efs;ЭСФ;;Yes;Internal;Internal;No rights;;efs;;;;6262;14369;;;Yes;Domain defined;No
+egorov;Егоров Владимир Владимирович ;;Yes;Internal;Internal;No rights;;egorov;;;;10;90;;2024-09-04 06:07;Yes;Domain defined;No
+emelyanova.a.mpk;;;Yes;Internal;Internal;No rights;;emelyanova.a.mpk;;;;539;2735;;;Yes;Domain defined;No
+enelane;Энелане Юрий Николаевич;;Yes;Internal;Internal;No rights;;enelane;;;;9704;28506112;;2023-04-21 07:25;Yes;Domain defined;No
+energetic;Паршуков Денис Александрович;;Yes;Internal;Internal;No rights;;energetic;;;;1847;4417536;;2024-10-28 11:19;Yes;Domain defined;No
+energetic2;;;Yes;Internal;Internal;No rights;;energetic2;;;;983;22068;;2024-10-28 11:19;Yes;Domain defined;No
+enginoev;Энгиноев Руслан Салманович;;Yes;Internal;Internal;No rights;;enginoev;;;;69;215;;;Yes;Domain defined;No
+enns.kkz;Эннс Андреана Андреевна;;Yes;Internal;Internal;No rights;;enns.kkz;;;;1024;188689;;2023-05-24 02:09;Yes;Domain defined;No
+epp;Эпп Сергей Валерьевич;;Yes;Internal;Internal;No rights;;epp;;;;41;11841;;2024-10-27 06:16;Yes;Domain defined;No
+Erkebaeva;Дана Еркебаева;hr менеджер;Yes;Internal;Internal;No rights;;Erkebaeva;;;;401;202204;;2022-11-18 05:28;Yes;Domain defined;No
+erp.mpk;Конференция;;Yes;Internal;Internal;No rights;;erp.mpk;;;;3;13;;2023-04-12 10:42;Yes;Domain defined;No
+eryomenko;Ерёменко Степан Николаевич ;;Yes;Internal;Internal;No rights;;eryomenko;;;;211;20547;;2024-10-28 07:14;Yes;Domain defined;No
+esenko.a;Есенко Александр Владимирович;;Yes;Internal;Internal;No rights;;esenko.a;;;;1;1916;;;Yes;Domain defined;No
+evsikov;Евсиков Анатолий Вячеславович;;Yes;Internal;Internal;No rights;;evsikov;;;;25;1921;;;Yes;Domain defined;No
+evstigneeva;Евстигнеева Инесса Владимировна;;Yes;Internal;Internal;No rights;;evstigneeva;;;;1234;238064;;2024-10-28 04:38;Yes;Domain defined;No
+fedorova;Федорова Ксения Александровна;;Yes;Internal;Internal;No rights;;fedorova;;;;36;181;;2024-08-19 04:35;Yes;Domain defined;No
+filippov;Филиппов Юрий Валерьевич;;Yes;Internal;Internal;No rights;;filippov;;;;592;12312;;2024-08-02 08:28;Yes;Domain defined;No
+findir;;;Yes;Internal;Internal;No rights;;findir;;;;23743;2920448;;2024-08-07 04:25;Yes;Domain defined;No
+flyunt;Флюнт Александра Александровна;;Yes;Internal;Internal;No rights;;flyunt;;;;2087;242974;;2024-10-29 09:04;Yes;Domain defined;No
+fomenko;Фоменко Виолетта Анатольенва;;Yes;Internal;Internal;No rights;;fomenko;;;;1938;13039;;2024-10-23 03:14;Yes;Domain defined;No
+frolova_i;;;Yes;Internal;Internal;No rights;;frolova_i;;;;6751;535919;;2023-02-07 04:15;Yes;Domain defined;No
+fursa;Фурса Александр;;Yes;Internal;Internal;No rights;;fursa;;;;29;523;;2024-10-29 07:18;Yes;Domain defined;No
+gadieva;Гадиева Яна Петровна;;Yes;Internal;Internal;No rights;;gadieva;;;;5118;1736704;;2024-10-29 04:52;Yes;Domain defined;No
+gajtukeeva.mpk;Гайтукеева Юлия Васильевна ;;Yes;Internal;Internal;No rights;;gajtukeeva.mpk;;;;22849;7739392;;2024-10-29 09:06;Yes;Domain defined;No
+galinicheva;Галиничева Дарья Константиновна;;Yes;Internal;Internal;No rights;;galinicheva;timoshko@rubikom.kz;;;1599;9042944;;2023-11-08 03:05;Yes;Domain defined;No
+galishcheva;Галищева Р.;;Yes;Internal;Internal;No rights;;galishcheva;;;;10;1972;;;Yes;Domain defined;No
+garand-stroj;Гаранд-Строй ПВЛ;;Yes;Internal;Internal;No rights;;garand-stroj;;;;542;558687;;2024-10-29 08:59;Yes;Domain defined;No
+gashimova;Гашимова Тамила Сабировна;;Yes;Internal;Internal;No rights;;gashimova;;;;1054;2450432;;2024-10-29 08:53;Yes;Domain defined;No
+gazieva;Газиева;;Yes;Internal;Internal;No rights;;gazieva;;;;240;1368;;;Yes;Domain defined;No
+gejnc.mpk;;;Yes;Internal;Internal;No rights;;gejnc.mpk;;;;24;2094;;;Yes;Domain defined;No
+gelmer;Гельмер Вадим Владимирович;;Yes;Internal;Internal;No rights;;gelmer;;;;67;191;;2024-10-28 02:58;Yes;Domain defined;No
+gendirector;;;Yes;Internal;Internal;No rights;;gendirector;;;;9;187;;2024-10-29 08:23;Yes;Domain defined;No
+gergert;Гергерт Валерий Яковлевич;начальник автоколонны спец.техники;Yes;Internal;Internal;No rights;;gergert;;;;61;146;;;Yes;Domain defined;No
+getman;Гетьман Анастасия Васильевна;;No;Internal;Internal;No rights;;getman;;;;110;2962;;2024-10-24 08:11;Yes;Domain defined;No
+gilazova.molkom;Гилазова Лариса Рашитовна;;Yes;Internal;Internal;No rights;;gilazova.molkom;;;;2;1921;;;Yes;Domain defined;No
+gk;;;Yes;Internal;Internal;No rights;;gk;;;;23288;6833152;;2020-03-06 03:15;Yes;Domain defined;No
+glebov;Глебов А.А.;;Yes;Internal;Internal;No rights;;glebov;;;;9;1954;;2024-02-12 05:18;Yes;Domain defined;No
+glebova.mpk;"Глебова Е,А";;Yes;Internal;Internal;No rights;;glebova.mpk;;;;224;697;;;Yes;Domain defined;No
+goenko;Гоенко Вера;;Yes;Internal;Internal;No rights;;goenko;;;;16441;4381696;;2024-10-29 03:12;Yes;Domain defined;No
+golcer;Гольцер Игорь Николаевич;;Yes;Internal;Internal;No rights;;golcer;;;;1;1916;;;Yes;Domain defined;No
+golikova;Голикова Валентина Валерьевна;;Yes;Internal;Internal;No rights;;golikova;;;;637;3009;;2024-10-28 11:59;Yes;Domain defined;No
+golubenkova;Голубенкова Елена Николаевна;;Yes;Internal;Internal;No rights;;golubenkova;;;;2348;784579;;2024-10-28 03:26;Yes;Domain defined;No
+golubko;Голубко Дмитрий Александрович;;Yes;Internal;Internal;No rights;;golubko;;;;5217;7660544;;2024-10-29 03:03;Yes;Domain defined;No
+golushchenko;Голущенко Виктор Михайлович;;Yes;Internal;Internal;No rights;;golushchenko;;;;1;1916;;;Yes;Domain defined;No
+golysheva;Голышева Ирина Владимировна;;Yes;Internal;Internal;No rights;;golysheva;;;;22;603;;;Yes;Domain defined;No
+goncharuk;Гончарук Юлия Сергеевна;;Yes;Internal;Internal;No rights;;goncharuk;;;;25879;8266752;;2024-10-28 08:45;Yes;Domain defined;No
+gora-belaya;Гора-Белая Антонина Юрьевна;;Yes;Internal;Internal;No rights;;gora-belaya;;;;3520;41230336;;2024-10-29 08:20;Yes;Domain defined;No
+gorbacheva;Горбачева Татьяна Николаевна;;Yes;Internal;Internal;No rights;;gorbacheva;;;;4614;12504064;;2024-10-29 02:50;Yes;Domain defined;No
+gorbovskaya.mpk;Гобовская;;Yes;Internal;Internal;No rights;;gorbovskaya.mpk;;;;10712;782859;;2024-10-29 02:42;Yes;Domain defined;No
+gordienko.mpk;Гордиенко Наталья Сергеевна;;Yes;Internal;Internal;No rights;;gordienko.mpk;;;;1122;622693;;2023-11-29 02:46;Yes;Domain defined;No
+gorodnichij;Городничий Сергей Михайлович;;Yes;Internal;Internal;No rights;;gorodnichij;;;;1;1916;;;Yes;Domain defined;No
+gorohova;Горохова Ирина Владимировна;;Yes;Internal;Internal;No rights;;gorohova;;;;1;1916;;;Yes;Domain defined;No
+goryachkina;Горячкина Александра Сергеевна;;Yes;Internal;Internal;No rights;;goryachkina;;;;17870;4798464;;2024-10-29 09:04;Yes;Domain defined;No
+gosaenko.mpk;Госаненко Юлия Анатольевна;;Yes;Internal;Internal;No rights;;gosaenko.mpk;;;;1;1916;;;Yes;Domain defined;No
+goss.mpk;Госс Елена;;Yes;Internal;Internal;No rights;;goss.mpk;;;;1768;656470;;2024-10-29 06:56;Yes;Domain defined;No
+gps.atc;Садовская Александра Дмитриевна;;Yes;Internal;Internal;No rights;;gps.atc;;;;2466;1594368;;2023-11-20 06:40;Yes;Domain defined;No
+gul;Кристина гуль;;Yes;Internal;Internal;No rights;;gul;;;;169;30980;;2024-10-29 09:10;Yes;Domain defined;No
+Gulsharipov;Гульшарипов Виталий Рафилович;;Yes;Internal;Internal;No rights;;Gulsharipov;;;;1;1916;;;Yes;Domain defined;No
+gurina;Гурина Анна Владимировна;;Yes;Internal;Internal;No rights;;gurina;;;;5;2027;;2023-11-13 04:39;Yes;Domain defined;No
+guseynov;Гусейнов Рустам;;Yes;Internal;Internal;No rights;;guseynov;;;;633;324645;;2024-07-03 06:46;Yes;Domain defined;No
+gushchin;Гущин Олег Сергеевич;;Yes;Internal;Internal;No rights;;gushchin;;;;1;1916;;;Yes;Domain defined;No
+guskov;Гуськов Вячеслав Александрович;;Yes;Internal;Internal;No rights;;guskov;;;;528;5003;;2024-10-29 09:04;Yes;Domain defined;No
+hafizova-fadeeva;Хафизова-Фадеева Альфия Радиковна;;Yes;Internal;Internal;No rights;;hafizova-fadeeva;;;;347;59718;;2024-10-29 08:54;Yes;Domain defined;No
+Hajdin;Хайдин Р.Р.;;Yes;Internal;Internal;No rights;;Hajdin;;;;1;1916;;;Yes;Domain defined;No
+ham;Хам Питер Корнелис;Директор МТФ;Yes;Internal;Internal;No rights;;ham;;;;489;291504;;2024-10-29 09:01;Yes;Domain defined;No
+hizhnyak.mpk;Хижняк Людмила Ивановна;;Yes;Internal;Internal;No rights;;hizhnyak.mpk;;;;17;1986;;;Yes;Domain defined;No
+hlushevsky.mpk;Хлущевский Андрей Фёдорович;;Yes;Internal;Internal;No rights;;hlushevsky.mpk;;;;628;4971;;2024-10-28 23:36;Yes;Domain defined;No
+hodeeva;Ходеева Екатерина Борисовна;;Yes;Internal;Internal;No rights;;hodeeva;;;;78;2602;;2024-10-29 07:20;Yes;Domain defined;No
+homutenko;Хомутенко Ирина Анатольевна;;Yes;Internal;Internal;No rights;;homutenko;;;;94;380;;;Yes;Domain defined;No
+Horolskij;Хорольский Андрей Михайлович;;Yes;Internal;Internal;No rights;;Horolskij;;;;1;1916;;;Yes;Domain defined;No
+hr-menedzher;Садреева Диана;;Yes;Internal;Internal;No rights;;hr-menedzher;;;;162;1286;;2024-09-19 05:01;Yes;Domain defined;No
+hrd;Еркебаева Дана;;Yes;Internal;Internal;No rights;;hrd;;;;3334;1025589;;2024-10-10 01:37;Yes;Domain defined;No
+hrisanidi;Хрисаниди Валерия;;Yes;Internal;Internal;No rights;;hrisanidi;;;;501;101621;;2024-10-29 08:59;Yes;Domain defined;No
+hristova;Христова Елена;;Yes;Internal;Internal;No rights;;hristova;;;;0;0;;;Yes;Domain defined;No
+huhareva;Хухарева Ольга;;Yes;Internal;Internal;No rights;;huhareva;;;;356;138515;;2024-10-29 03:54;Yes;Domain defined;No
+ibragimov.pto;ibragimov.pto;Ибрагимов Константин ;Yes;Internal;Internal;No rights;;ibragimov.pto;;;;883;8172;;2023-03-17 08:38;Yes;Domain defined;No
+ignatenko;Игнатенко Анастасия Петровна;;Yes;Internal;Internal;No rights;;ignatenko;;;;7201;2493440;;2024-10-29 09:04;Yes;Domain defined;No
+igsatova.mpk;Игсатова Танакёз Темирталуевна;;Yes;Internal;Internal;No rights;;igsatova.mpk;;;;332;3429;;2023-11-24 00:08;Yes;Domain defined;No
+imangaliev;Имангалиев Арман Кобжасарович;;Yes;Internal;Internal;No rights;;imangaliev;;;;891;18339;;2024-10-29 08:25;Yes;Domain defined;No
+imankulov;Иманкулов Аслан;;Yes;Internal;Internal;No rights;;imankulov;;;;227;1178;;2024-08-23 09:40;Yes;Domain defined;No
+info;info;;Yes;Internal;Internal;No rights;;info;;;;757;45658;;2024-10-29 08:00;Yes;Domain defined;No
+Inzhener.pto;Черезова Тамара Николаевна;;Yes;Internal;Internal;No rights;;Inzhener.pto;;;;200;48399;;2024-10-14 04:23;Yes;Domain defined;No
+isabekov;Исабеков Мадияр Кенжебекович;;Yes;Internal;Internal;No rights;;isabekov;;;;56;138;;;Yes;Domain defined;No
+isaeva.mpk;;;Yes;Internal;Internal;No rights;;isaeva.mpk;;;;1392;11303;;;Yes;Domain defined;No
+ishchenko.mpk;ищенко марина сергеевна;;Yes;Internal;Internal;No rights;;ishchenko.mpk;;;;11957;4037632;;2024-10-29 09:07;Yes;Domain defined;No
+islyamov;;;Yes;Internal;Internal;No rights;;islyamov;;;;1;76;;;Yes;Domain defined;No
+ismailov;Исмаилов Мелис Акылбекович;;Yes;Internal;Internal;No rights;;ismailov;;;;19;11964;;2024-06-28 12:24;Yes;Domain defined;No
+it-info;it-info;;Yes;Internal;Internal;No rights;;it-info;;;;4;1924;;;Yes;Domain defined;No
+it.mpk;;;Yes;Internal;Internal;No rights;;it.mpk;;;;2025;179408;;2024-10-28 09:00;Yes;Domain defined;No
+itinfo;Семиков Евгений;;Yes;Internal;Internal;No rights;;itinfo;;;;1122;228208;;2024-10-29 07:54;Yes;Domain defined;No
+its;ИТС;;Yes;Internal;Internal;No rights;;its;;;;1;2;;;Yes;Domain defined;No
+ivanov.a;Иванов Альберт Викторович;;Yes;Internal;Internal;No rights;;ivanov.a;;;;3922;132926;;2024-10-29 03:19;Yes;Domain defined;No
+ivashchenko;Иващенко Юрий Михайлович;;Yes;Internal;Internal;No rights;;ivashchenko;;;;1;1916;;;Yes;Domain defined;No
+kabyken;Кабыкен Зульфия Суиндыковна;"менеджер ТОО ""Корпоративное сопровождение""";Yes;Internal;Internal;No rights;;kabyken;;;;263;1451;;;Yes;Domain defined;No
+kakorina.mpk;Какорина Ирина Дьердьевна ;;Yes;Internal;Internal;No rights;;kakorina.mpk;;;;76;2200;;;Yes;Domain defined;No
+kaleshkin.kkz;Калешкин Евгений Сергеевич;;No;Internal;Internal;No rights;;kaleshkin.kkz;;;;583;8658;;2024-10-28 11:28;Yes;Domain defined;No
+kaleshkina;Калешкина;;Yes;Internal;Internal;No rights;;kaleshkina;;;;8;1954;;2024-10-28 11:17;Yes;Domain defined;No
+Kalinichev;Калиничев Игорь Иванович;;Yes;Internal;Internal;No rights;;Kalinichev;;;;1;1916;;;Yes;Domain defined;No
+kamsha.mpk;Камша Марина Александровна;;Yes;Internal;Internal;No rights;;kamsha.mpk;;;;20975;341141;;2024-10-29 08:36;Yes;Domain defined;No
+kamzina166;kamzina166;;Yes;Internal;Internal;No rights;;kamzina166;;;;1;1916;;;Yes;Domain defined;No
+kamzino;Камзино;;Yes;Internal;Internal;No rights;;kamzino;;;;0;0;;;Yes;Domain defined;No
+kapzhapar;Капжапар Кайрат;;Yes;Internal;Internal;No rights;;kapzhapar;;;;1;1916;;;Yes;Domain defined;No
+Karabasheva;Карабашева Дарья Николаевна;;Yes;Internal;Internal;No rights;;Karabasheva;;;;185;581;;2024-02-27 10:07;Yes;Domain defined;No
+karipbaeva;Карипбаева Диляра Талгатовна;;Yes;Internal;Internal;No rights;;karipbaeva;;;;1357;1327104;;2022-03-15 06:23;Yes;Domain defined;No
+kasainova;Касаинова Гульжан;;Yes;Internal;Internal;No rights;;kasainova;;;;176;18978;;2024-10-16 10:51;Yes;Domain defined;No
+kashcheeva;Кащеева Арина Федоровна;;Yes;Internal;Internal;No rights;;kashcheeva;;;;6086;2751488;;2024-10-29 09:10;Yes;Domain defined;No
+kasilgov.mpk;Касильгов Илья Александрович;;Yes;Internal;Internal;No rights;;kasilgov.mpk;;;;326;7486;;2024-10-25 02:54;Yes;Domain defined;No
+kassa;Зарецкая Светлана Александровна;;Yes;Internal;Internal;No rights;;kassa;;;;1190;1216512;;2024-10-29 07:47;Yes;Domain defined;No
+kassa2;Ланглиц Анна Анатольевна;;Yes;Internal;Internal;No rights;;kassa2;;;;981;584934;;2021-11-30 03:37;Yes;Domain defined;No
+kasyanov.mpk;;;Yes;Internal;Internal;No rights;;kasyanov.mpk;;;;10486;500571;;2024-10-29 07:17;Yes;Domain defined;No
+kasyanova.mpk;Касьянова Кристина Геннадьевна;;Yes;Internal;Internal;No rights;;kasyanova.mpk;;;;3116;608870;;2024-10-29 02:50;Yes;Domain defined;No
+katkova;Каткова Юлия Владимировна;;Yes;Internal;Internal;No rights;;katkova;;;;1;1;;2024-10-29 07:44;Yes;Domain defined;No
+kazachkova.ok;Казачкова Илона Олеговна;Отдел Кадров;Yes;Internal;Internal;No rights;;kazachkova.ok;;;;2;10;;2024-10-09 05:59;Yes;Domain defined;No
+Kazakov;Казаков А.П.;;Yes;Internal;Internal;No rights;;Kazakov;;;;1;1916;;;Yes;Domain defined;No
+kekshina;Кекшина Ольга;;Yes;Internal;Internal;No rights;;kekshina;;;;4673;248526;;2024-10-29 05:05;Yes;Domain defined;No
+kemen;Кемен Юлия Витальевна;;Yes;Internal;Internal;No rights;;kemen;;;;0;0;;;Yes;Domain defined;No
+kirdyashkin;Кирдяшкин А.В.;;Yes;Internal;Internal;No rights;;kirdyashkin;;;;107;322;;;Yes;Domain defined;No
+kirdyashkin.d;Кирдяшкин Данил Александрович;;No;Internal;Internal;No rights;;kirdyashkin.d;;;;59;268;;2024-09-03 09:35;Yes;Domain defined;No
+Kirichenko;Кириченко Александр Степанович;;Yes;Internal;Internal;No rights;;Kirichenko;;;;1;1916;;;Yes;Domain defined;No
+kiselyov;Киселёв Никита Александрович;;Yes;Internal;Internal;No rights;;kiselyov;;;;220;190042;;2024-10-29 09:02;Yes;Domain defined;No
+kisenkov;Кисенков Юрий Николаевич;;Yes;Internal;Internal;No rights;;kisenkov;;;;1;1916;;;Yes;Domain defined;No
+kisenkov.n;Кисенков Николай Владимирович;;Yes;Internal;Internal;No rights;;kisenkov.n;;;;1;1916;;;Yes;Domain defined;No
+kiyakov;Кияков Тимур Амантаевич;;Yes;Internal;Internal;No rights;;kiyakov;;;;3192;2266112;;2023-10-26 08:42;Yes;Domain defined;No
+kkz;;;Yes;Internal;Internal;No rights;;kkz;;;;56;37764;;;Yes;Domain defined;No
+klimenko;Клименко Владислав Сергеевич;геодезист;Yes;Internal;Internal;No rights;;klimenko;;;;0;0;;;Yes;Domain defined;No
+klimova.mpk;Климова Анжелика Гергиевна ;;Yes;Internal;Internal;No rights;;klimova.mpk;;;;46;936;;2023-11-25 06:43;Yes;Domain defined;No
+klyueva.mpk;Клюева Нина;;Yes;Internal;Internal;No rights;;klyueva.mpk;;;;3099;2811904;;2024-10-29 08:51;Yes;Domain defined;No
+knel.atc;Кнель Ирина;;Yes;Internal;Internal;No rights;;knel.atc;;;;1678;36469760;;2024-10-29 08:46;Yes;Domain defined;No
+Knutas;Кнутас Александр Сергеевич;;Yes;Internal;Internal;No rights;;Knutas;;;;1;1916;;;Yes;Domain defined;No
+kolesnikov;Колесников Николай Григорьевич;;Yes;Internal;Internal;No rights;;kolesnikov;;;;153;30591;;2024-10-29 03:34;Yes;Domain defined;No
+kolpakov;Колпаков Данил Юрьевич;Заведующему свинокомплексом;Yes;Internal;Internal;No rights;;kolpakov;;;;745;82202;;2024-10-29 03:47;Yes;Domain defined;No
+kondrateva;Кондратьева Оксана Ивановна;;Yes;Internal;Internal;No rights;;kondrateva;;;;5359;2682880;;2023-05-19 04:20;Yes;Domain defined;No
+kondrushina;Кондрушина Наталья;;Yes;Internal;Internal;No rights;;kondrushina;;;;226;124753;;2024-09-03 10:41;Yes;Domain defined;No
+konferenciya;;;Yes;Internal;Internal;No rights;;konferenciya;;;;43;45329;;2023-10-03 05:23;Yes;Domain defined;No
+kononov.mpk;Кононов Алексей Валериевич;;Yes;Internal;Internal;No rights;;kononov.mpk;;;;21716;1545216;;2024-09-30 03:50;Yes;Domain defined;No
+konovalov;Коновалов С.С.;;Yes;Internal;Internal;No rights;;konovalov;;;;6;7235;;2023-04-19 04:47;Yes;Domain defined;No
+konovalova;Коновалова Анна Владимировна;;Yes;Internal;Internal;No rights;;konovalova;;;;7306;5203968;;2024-10-29 08:12;Yes;Domain defined;No
+kontrolyor;платёжный контролёр;;Yes;Internal;Internal;No rights;;kontrolyor;;;;2324;195945;;2024-10-29 08:58;Yes;Domain defined;No
+kopilova;Копылова Елена;;Yes;Internal;Internal;No rights;;kopilova;;;;132;500;;2024-07-10 12:31;Yes;Domain defined;No
+kopylov;Копылов Сергей Дмитриевич;;Yes;Internal;Internal;No rights;;kopylov;;;;71;229;;;Yes;Domain defined;No
+korel.mpk;;;Yes;Internal;Internal;No rights;;korel.mpk;;;;500;36023;;;Yes;Domain defined;No
+korobova;Коробова Ирина Владимировна;;Yes;Internal;Internal;No rights;;korobova;;;;14257;8940544;;2024-10-29 08:59;Yes;Domain defined;No
+korp;korp;;Yes;Internal;Internal;No rights;;korp;;;;1611;15289;;2024-10-29 09:10;Yes;Domain defined;No
+korsun.mpk; Корсун Владимир Валерьевич;;Yes;Internal;Internal;No rights;;korsun.mpk;;;;35715;1343488;;2024-10-28 07:17;Yes;Domain defined;No
+kosherbaeva;Кошербаева Дамира Бейбытовна;;Yes;Internal;Internal;No rights;;kosherbaeva;;;;6;1943;;;Yes;Domain defined;No
+kosmonavtov;Космонавтов 1/1;;Yes;Internal;Internal;No rights;;kosmonavtov;;;;59;4987;;2022-04-11 06:06;Yes;Domain defined;No
+kostromina;Костромина Ольга Александровна;;Yes;Internal;Internal;No rights;;kostromina;;;;12023;5746688;;2024-10-29 08:51;Yes;Domain defined;No
+kostyuk;Костюк А.А;;Yes;Internal;Internal;No rights;;kostyuk;;;;50;23569;;2024-10-29 08:58;Yes;Domain defined;No
+kotlyarov.mpk;Котляров Владимир Сергеевич;;Yes;Internal;Internal;No rights;;kotlyarov.mpk;;;;2357;160876;;2023-04-04 02:23;Yes;Domain defined;No
+kovalenko.mpk;Коваленко Марина Борисовна;;Yes;Internal;Internal;No rights;;kovalenko.mpk;;;;1991;17892;;2024-10-28 12:06;Yes;Domain defined;No
+kovaleva.m;Ковалева Марина Петровна;заведущий складом;Yes;Internal;Internal;No rights;;kovaleva.m;;;;79;1650;;;Yes;Domain defined;No
+Kovalik.mpk;Ковалик Светлана Николаевна;;Yes;Internal;Internal;No rights;;Kovalik.mpk;;;;25;258;;2022-11-03 02:00;Yes;Domain defined;No
+kovtunov;Ковтунов Виталий Дмитриевич;;Yes;Internal;Internal;No rights;;kovtunov;;;;1;1916;;;Yes;Domain defined;No
+kozhaeva;Кожаева Алима Алмасовна;;Yes;Internal;Internal;No rights;;kozhaeva;;;;622;4275;;2024-03-28 11:51;Yes;Domain defined;No
+kozhukalo.kkz;Кожукало Алине Васильевне;;Yes;Internal;Internal;No rights;;kozhukalo.kkz;;;;1838;806762;;2024-10-29 09:09;Yes;Domain defined;No
+kpp.mpk;КПП МПК;;Yes;Internal;Internal;No rights;;kpp.mpk;;;;80426;572478;;;Yes;Domain defined;No
+Kravchuk;Кравчук Е.В.;;Yes;Internal;Internal;No rights;;Kravchuk;;;;1;1916;;;Yes;Domain defined;No
+Kravchuk.l;Кравчук Леонид Леонидович;;Yes;Internal;Internal;No rights;;Kravchuk.l;;;;1;1916;;;Yes;Domain defined;No
+Kravchuk.S;Кравчук Сергей Александрович;Технолог;Yes;Internal;Internal;No rights;;Kravchuk.S;;;;15;503;;2023-05-04 04:15;Yes;Domain defined;No
+kravcova.mpk; Кравцова Наталья Омаровна;;Yes;Internal;Internal;No rights;;kravcova.mpk;;;;368;7942;;2024-10-28 07:25;Yes;Domain defined;No
+kronos;Кронос;;Yes;Internal;Internal;No rights;;kronos;;;;2;17;;2024-10-29 09:10;Yes;Domain defined;No
+krutov;;;Yes;Internal;Internal;No rights;;krutov;;;;504;640254;;2024-06-07 08:39;Yes;Domain defined;No
+krylov.mpk;;;Yes;Internal;Internal;No rights;;krylov.mpk;;;;3;1996;;;Yes;Domain defined;No
+kryukova;;;Yes;Internal;Internal;No rights;;kryukova;;;;1764;2813952;;2024-10-29 09:01;Yes;Domain defined;No
+Kuanyshev;Куанышев Бауржан Болтабаевич;;Yes;Internal;Internal;No rights;;Kuanyshev;;;;1;1916;;;Yes;Domain defined;No
+kucher;Кучер Екатерина Владимировна;;Yes;Internal;Internal;No rights;;kucher;;;;6494;6789120;;2024-10-29 08:59;Yes;Domain defined;No
+kulanov;Куланов Владимир Николаевич ;;No;Internal;Internal;No rights;;kulanov;;;;35272;253739;;2024-09-16 06:22;Yes;Domain defined;No
+kunakov.mpk;Кунаков Асхат Талгатович;;Yes;Internal;Internal;No rights;;kunakov.mpk;;;;1334;14695;;2024-10-28 18:39;Yes;Domain defined;No
+kusagro;;;Yes;Internal;Internal;No rights;;kusagro;;;;2;1917;;2023-05-24 16:57;Yes;Domain defined;No
+Kutishchev;Кутищев Андрей Васильевич;;Yes;Internal;Internal;No rights;;Kutishchev;;;;1;1916;;;Yes;Domain defined;No
+kutuzova157;Автолавка Кутузова157;;Yes;Internal;Internal;No rights;;kutuzova157;;;;3;1921;;;Yes;Domain defined;No
+kuznecov;Кузнецов Евгений;;Yes;Internal;Internal;No rights;;kuznecov;;;;30601;71445504;;2024-10-29 08:59;Yes;Domain defined;No
+kuznecov.mpk;Кузнецов Александр Александрович;;Yes;Internal;Internal;No rights;;kuznecov.mpk;;;;688;6124;;2024-10-29 08:26;Yes;Domain defined;No
+kuznetsov.l;;;Yes;Internal;Internal;No rights;;kuznetsov.l;;;;1953;232587;;;Yes;Domain defined;No
+laboratory;;;Yes;Internal;Internal;No rights;;laboratory;;;;9;2187;;2020-07-31 04:12;Yes;Domain defined;No
+ladynina;Ладынина Елена Владимировна;;Yes;Internal;Internal;No rights;;ladynina;;;;2388;18404;;2024-10-29 07:08;Yes;Domain defined;No
+laer;Лаер Ольга Ивановна;;Yes;Internal;Internal;No rights;;laer;;;;4692;14388224;;2024-10-28 02:59;Yes;Domain defined;No
+langlic.a;;;Yes;Internal;Internal;No rights;;langlic.a;;;;7;163;;2024-02-22 11:01;Yes;Domain defined;No
+langlits.v;;;Yes;Internal;Internal;No rights;;langlits.v;;;;1967;2777088;;2024-10-28 11:57;Yes;Domain defined;No
+lashkov;Лашков Юрий Петрович;;Yes;Internal;Internal;No rights;;lashkov;;;;1;1916;;;Yes;Domain defined;No
+lavrenteva;Лаврентьева Валентина;;Yes;Internal;Internal;No rights;;lavrenteva;;;;3;82;;2023-09-06 04:55;Yes;Domain defined;No
+lawer3;;;Yes;Internal;Internal;No rights;;lawer3;babin@rubikom.kz;;;10509;11663360;;2024-10-29 08:53;Yes;Domain defined;No
+levanova;Леванова Анна Сергеевна;Кладовщик Затон;Yes;Internal;Internal;No rights;;levanova;;;;3;27;;2024-09-13 03:58;Yes;Domain defined;No
+li;Ли Марина Вячеславовна;;Yes;Internal;Internal;No rights;;li;;;;60;182;;2024-03-13 04:49;Yes;Domain defined;No
+lider.snab;;;Yes;Internal;Internal;No rights;;lider.snab;;;;26482;13003776;;2023-09-12 03:01;Yes;Domain defined;No
+litvinova;;;No;Internal;Internal;No rights;;litvinova;;;;11937;12522496;;2023-11-02 06:22;Yes;Domain defined;No
+logist;;;Yes;Internal;Internal;No rights;;logist;;;;5607;3187712;;2024-10-29 08:49;Yes;Domain defined;No
+logsklad;Логистический склад ;;Yes;Internal;Internal;No rights;;logsklad;;;;1642;523263;;2024-10-28 09:34;Yes;Domain defined;No
+lukash;Лукаш Николай Николаевич;;Yes;Internal;Internal;No rights;;lukash;;;;101;446;;2024-10-04 06:46;Yes;Domain defined;No
+lukyanova;Лукьянова Светлана Вячеславовна;;Yes;Internal;Internal;No rights;;lukyanova;;;;11;232;;2024-06-10 05:20;Yes;Domain defined;No
+lysenko.snab;;;Yes;Internal;Internal;No rights;;lysenko.snab;;;;2677;3059712;;2024-10-29 09:08;Yes;Domain defined;No
+lyudvig;Людвиг Инна Геннадьевна;;Yes;Internal;Internal;No rights;;lyudvig;;;;360;17795;;2024-10-29 02:46;Yes;Domain defined;No
+lyuft;Люфт Александр Васильевич;;Yes;Internal;Internal;No rights;;lyuft;;;;2;1920;;;Yes;Domain defined;No
+machneva;Мачнева Людмила Геннадьевна;;Yes;Internal;Internal;No rights;;machneva;;;;0;0;;;Yes;Domain defined;No
+magilnov.mpk;Магильнов Владимир Алексеевич;;Yes;Internal;Internal;No rights;;magilnov.mpk;;;;932;8018;;2023-12-28 05:39;Yes;Domain defined;No
+makarenko;Макаренко Ирина Дмитриевна;;Yes;Internal;Internal;No rights;;makarenko;;;;1013;563742;;2024-10-29 03:46;Yes;Domain defined;No
+Maksimenkov;Максименков Сергей Равильевич;;Yes;Internal;Internal;No rights;;Maksimenkov;;;;1;1916;;;Yes;Domain defined;No
+malgin;Мальгин Александр;;Yes;Internal;Internal;No rights;;malgin;;;;3395;4011008;;2024-10-29 07:18;Yes;Domain defined;No
+Malikova.mpk;Маликова Татьяна;;Yes;Internal;Internal;No rights;;Malikova.mpk;;;;874;2859008;;2024-10-28 09:48;Yes;Domain defined;No
+malko;Малько Юлия ;;Yes;Internal;Internal;No rights;;malko;;;;500;300033;;2024-10-29 02:33;Yes;Domain defined;No
+malkov.mpk;Малков Денис Александрович;;Yes;Internal;Internal;No rights;;malkov.mpk;;;;3871;117654;;2024-10-02 05:46;Yes;Domain defined;No
+maluda;Малуда Александр Михайлович;;Yes;Internal;Internal;No rights;;maluda;;;;1;1916;;;Yes;Domain defined;No
+mamina.mpk;Мамина Галина Ивановна;;Yes;Internal;Internal;No rights;;mamina.mpk;;;;7577;686043;;2024-10-29 03:32;Yes;Domain defined;No
+mamonova;Мамонова Лариса;Кладовщик МТФ;Yes;Internal;Internal;No rights;;mamonova;;;;12;47;;2024-09-24 10:40;Yes;Domain defined;No
+mansurova;Мансурова  Ольга Викторовна;;Yes;Internal;Internal;No rights;;mansurova;;;;7537;3418112;;2024-10-29 09:00;Yes;Domain defined;No
+marchel.zhk;Мархель Мария Алексеевна;;Yes;Internal;Internal;No rights;;marchel.zhk;;;;187;71538;;2024-10-27 03:09;Yes;Domain defined;No
+marinkina;Маринкина Наталья Павловна;;Yes;Internal;Internal;No rights;;marinkina;;;;625;14791;;2024-10-24 06:51;Yes;Domain defined;No
+market;;;Yes;Internal;Internal;No rights;;market;;;;7249;1245184;;2023-03-26 22:37;Yes;Domain defined;No
+martynova.mpk;;;Yes;Internal;Internal;No rights;;martynova.mpk;;;;9126;2364416;;2024-10-29 09:06;Yes;Domain defined;No
+mashaev.mpk;Машаев Фархат Ерболатович;;Yes;Internal;Internal;No rights;;mashaev.mpk;;;;3250;1752064;;2024-10-29 08:54;Yes;Domain defined;No
+mashtalyar;Машталяр Павел;;Yes;Internal;Internal;No rights;;mashtalyar;;;;29;96;;2024-08-28 07:15;Yes;Domain defined;No
+maslacov.mpk;Маслацов Руслан Александрович;;Yes;Internal;Internal;No rights;;maslacov.mpk;;;;12;19332;;;Yes;Domain defined;No
+maslatcova.mpk;Маслацова Наталья Владимировна;;Yes;Internal;Internal;No rights;;maslatcova.mpk;;;;28706;9826304;;2024-10-29 07:23;Yes;Domain defined;No
+matsepyrina;Мацепурина Ирина;;Yes;Internal;Internal;No rights;;matsepyrina;;;;296;288936;;2024-10-29 09:01;Yes;Domain defined;No
+maximonko.mpk;Максимонько Светлана Васильевна;;Yes;Internal;Internal;No rights;;maximonko.mpk;;;;22665;3815424;;2024-10-29 07:00;Yes;Domain defined;No
+mayboroda;;;Yes;Internal;Internal;No rights;;mayboroda;;;;215;1393;;;Yes;Domain defined;No
+medpunkt.mpk;;;Yes;Internal;Internal;No rights;;medpunkt.mpk;;;;4215;7550976;;2024-10-29 09:10;Yes;Domain defined;No
+medvedeva.mpk;Медведева И.А.;;Yes;Internal;Internal;No rights;;medvedeva.mpk;;;;856;6708;;2024-10-24 10:31;Yes;Domain defined;No
+mel;Мель Дмитрий Иванович;;Yes;Internal;Internal;No rights;;mel;;;;1;1916;;;Yes;Domain defined;No
+melekhov;Мелехов Николай Николаевич;;Yes;Internal;Internal;No rights;;melekhov;;;;1;1916;;;Yes;Domain defined;No
+melnik;Мельник Анастасия Владимировна;;Yes;Internal;Internal;No rights;;melnik;;;;1971;313517;;2024-10-29 07:32;Yes;Domain defined;No
+metlushko;Метлушко Ксения Олеговна;;Yes;Internal;Internal;No rights;;metlushko;;;;1992;210342;;2023-12-05 06:48;Yes;Domain defined;No
+mgrsnab;Руденок Петр;;Yes;Internal;Internal;No rights;;mgrsnab;;;;14019;8935424;;2023-02-09 09:56;Yes;Domain defined;No
+michikova;Мичикова Ольга Аркадьевна;ККЗ;Yes;Internal;Internal;No rights;;michikova;;;;4;1944;;2024-09-09 11:28;Yes;Domain defined;No
+mihalochkin.mpk;Михалочкин Артем Игоревич ;;Yes;Internal;Internal;No rights;;mihalochkin.mpk;;;;959;71877;;2024-10-29 07:12;Yes;Domain defined;No
+mihel.a;Михель Александр Александрович;;Yes;Internal;Internal;No rights;;mihel.a;;;;298;14737;;2024-05-23 04:14;Yes;Domain defined;No
+mira42;Магазин мира 42;;Yes;Internal;Internal;No rights;;mira42;;;;58;4987;;;Yes;Domain defined;No
+miroshnichenko.v;Мирошниченко Владимир Иванович;;Yes;Internal;Internal;No rights;;miroshnichenko.v;;;;1;1916;;;Yes;Domain defined;No
+Misfahitdinov;Мисфахитдинов Рашид Михайлович;;Yes;Internal;Internal;No rights;;Misfahitdinov;;;;1;1916;;;Yes;Domain defined;No
+mokan.mpk;Мокан Станислав Игоревич;;Yes;Internal;Internal;No rights;;mokan.mpk;;;;5475;240536;;2024-10-29 06:37;Yes;Domain defined;No
+moldakassov;Молдакасов Гумар Канатович;;Yes;Internal;Internal;No rights;;moldakassov;;;;148;938;;2024-10-29 03:05;Yes;Domain defined;No
+molkom;Молком;;Yes;Internal;Internal;No rights;;molkom;;;;0;0;;;Yes;Domain defined;No
+mpk_zp;;;Yes;Internal;Internal;No rights;;mpk_zp;;;;70;16073;;2023-11-02 10:32;Yes;Domain defined;No
+mtf;МТФ;;Yes;Internal;Internal;No rights;;mtf;;;;3;20325;;;No;Domain defined;No
+muhametkalieva;Мухаметкалиева Лейла Ринатовна;;Yes;Internal;Internal;No rights;;muhametkalieva;;;;366;126243;;2023-05-23 04:33;Yes;Domain defined;No
+muratov;Муратов Адиль Канатович;;Yes;Internal;Internal;No rights;;muratov;;;;230;23131;;2024-09-17 09:09;Yes;Domain defined;No
+mustafenova;Мустафенова Диана Мунтбаевна;;Yes;Internal;Internal;No rights;;mustafenova;;;;297;382993;;2024-10-28 07:25;Yes;Domain defined;No
+Mustafin;Мустафин Амангельды Омарович;;Yes;Internal;Internal;No rights;;Mustafin;;;;1;1916;;;Yes;Domain defined;No
+nachalniksmeny.mpk;Начальник Смены МПК;;Yes;Internal;Internal;No rights;;nachalniksmeny.mpk;;;;399;3739;;2024-08-22 03:38;Yes;Domain defined;No
+naglij;Наглий Василий Иванович;;Yes;Internal;Internal;No rights;;naglij;;;;1;1916;;;Yes;Domain defined;No
+naumenko;Науменко Ольга;;Yes;Internal;Internal;No rights;;naumenko;;;;25692;574895;;2024-10-07 05:29;Yes;Domain defined;No
+Nazarenko;Назаренко Иван Юрьевич;;Yes;Internal;Internal;No rights;;Nazarenko;;;;197;47893;;2024-10-28 08:20;Yes;Domain defined;No
+nekrytova;Некрытова Виктория Александровна;;Yes;Internal;Internal;No rights;;nekrytova;;;;2348;3965952;;2024-10-23 12:03;Yes;Domain defined;No
+nesterenya;Нестереня Василий Николаевич;;Yes;Internal;Internal;No rights;;nesterenya;;;;1;1916;;;Yes;Domain defined;No
+news;;;Yes;Internal;Internal;No rights;;news;;;;5739;1740800;;2024-10-29 09:00;Yes;Domain defined;No
+nikishina;Никишина Елена Борисовна;;Yes;Internal;Internal;No rights;;nikishina;;;;13;230;;2024-02-28 04:11;Yes;Domain defined;No
+nikitin;Никитин Федор;;No;Internal;Internal;No rights;;nikitin;;;;1815;991648;;2024-07-23 03:54;Yes;Domain defined;No
+nikitin.n;Никитин Николай Владимирович;;Yes;Internal;Internal;No rights;;nikitin.n;;;;120;527;;;Yes;Domain defined;No
+nikitina;Никитина Марина Анатольевна;;Yes;Internal;Internal;No rights;;nikitina;;;;54;108805;;2024-08-19 07:33;Yes;Domain defined;No
+nikonov.mpk;;;Yes;Internal;Internal;No rights;;nikonov.mpk;;;;33788;21061632;;2024-10-29 08:57;Yes;Domain defined;No
+nikonova;Никонова;;Yes;Internal;Internal;No rights;;nikonova;;;;416;192478;;2024-10-29 09:01;Yes;Domain defined;No
+nikulina.mpk;Никулина Ольга Олеговна;;Yes;Internal;Internal;No rights;;nikulina.mpk;;;;8761;2857984;;2024-10-29 08:56;Yes;Domain defined;No
+nk.osinsky;Осинский Никита;;Yes;Internal;Internal;No rights;;nk.osinsky;;;;618;4458;;2024-10-29 07:59;Yes;Domain defined;No
+no-reply;;;Yes;Internal;Internal;No rights;;no-reply;;;;7;435;;2024-10-29 08:00;Yes;Domain defined;No
+nosik;Носик Евгения Вячеславовна;;Yes;Internal;Internal;No rights;;nosik;;;;640;21126;;2024-10-18 07:51;Yes;Domain defined;No
+notification;;;Yes;Internal;Internal;No rights;;notification;;;;105;2232;;2020-10-24 16:43;Yes;Domain defined;No
+novakovskij;Новаковский Станислав Валерьевич;;Yes;Internal;Internal;No rights;;novakovskij;;;;1;1916;;;Yes;Domain defined;No
+Novikov;Новиков А.А.;;Yes;Internal;Internal;No rights;;Novikov;;;;2;2255;;;Yes;Domain defined;No
+novikov.s;Новиков Сергей Иванович; ТОО Гарант Строй ПВ-рук.строительного проекта;Yes;Internal;Internal;No rights;;novikov.s;;;;53;250;;2024-09-03 03:34;Yes;Domain defined;No
+Novikov.v;Новиков Виктор Васильевич;;Yes;Internal;Internal;No rights;;Novikov.v;;;;1;1916;;;Yes;Domain defined;No
+novochenko.mpk;Новоченко Андрей Сергеевич;;Yes;Internal;Internal;No rights;;novochenko.mpk;;;;877;27674;;2024-10-29 07:02;Yes;Domain defined;No
+nurmagambetova.mpk;Нурмагамбетова Камила Сериковна;;Yes;Internal;Internal;No rights;;nurmagambetova.mpk;;;;394;688550;;2024-10-29 07:27;Yes;Domain defined;No
+nurumbetov;Нурумбетов Талгат Балтабекович;;Yes;Internal;Internal;No rights;;nurumbetov;;;;36;13548;;2023-04-20 08:26;Yes;Domain defined;No
+obezverkhov;Безверхов Олег Григорьевич;;Yes;Internal;Internal;No rights;;obezverkhov;;;;13701;16942080;;2024-10-29 08:03;Yes;Domain defined;No
+obrazcova;Образцова Людмила Юрьевна;;Yes;Internal;Internal;No rights;;obrazcova;;;;68;2084;;2023-07-28 03:21;Yes;Domain defined;No
+odnorozhenko;Однороженко Максима Ивановича ;;Yes;Internal;Internal;No rights;;odnorozhenko;;;;4255;1320960;;2024-10-28 06:05;Yes;Domain defined;No
+office;;;Yes;Internal;Internal;No rights;;office;;;;96846;51909632;;2024-10-29 09:00;Yes;Domain defined;No
+office.tor52;Алдабергенова Анель Рустамовна;;Yes;Internal;Internal;No rights;;office.tor52;;;;102;875;;2024-06-03 04:41;Yes;Domain defined;No
+ok;Стройкина Татьяна Анатольевна;;Yes;Internal;Internal;No rights;;ok;;;;20645;3948544;;2024-04-17 05:38;Yes;Domain defined;No
+ok.mpk;Левенца Наталья Николаевна;;Yes;Internal;Internal;No rights;;ok.mpk;;;;14325;2968576;;2024-10-28 12:06;Yes;Domain defined;No
+ok_mpk;Отдел Кадров МПК;;Yes;Internal;Internal;No rights;;ok_mpk;;;;97;1167;;2024-10-29 05:06;Yes;Domain defined;No
+ok2;;;Yes;Internal;Internal;No rights;;ok2;;;;6231;1847296;;2024-10-29 04:43;Yes;Domain defined;No
+olejnik.v;Олейник Валерий Николаевич;;Yes;Internal;Internal;No rights;;olejnik.v;;;;1;1916;;;Yes;Domain defined;No
+omurzakov;Омурзаков Имангали Амангельдыулы;;Yes;Internal;Internal;No rights;;omurzakov;;;;8;133;;2024-08-22 05:33;Yes;Domain defined;No
+operator.sgp;Операторы СГП;;Yes;Internal;Internal;No rights;;operator.sgp;;;;185;448;;;Yes;Domain defined;No
+opoveshcheniya1c;;;Yes;Internal;Internal;No rights;;opoveshcheniya1c;;;;1;1916;;2019-11-26 08:38;Yes;Domain defined;No
+orel.d;;;Yes;Internal;Internal;No rights;;orel.d;;;;1;1916;;;Yes;Domain defined;No
+orion;Орион МПК;;Yes;Internal;Internal;No rights;;orion;;;;74;278;;;Yes;Domain defined;No
+osinskaya;Осинская Елена Юрьевна;;Yes;Internal;Internal;No rights;;osinskaya;;;;45690;12514304;;2024-10-29 06:55;Yes;Domain defined;No
+ospanov;Оспанов Дархан;;Yes;Internal;Internal;No rights;;ospanov;;;;1734;6352896;;2024-10-29 08:49;Yes;Domain defined;No
+otstavnaya;Отставная Елена Альбертовна;Экономист;Yes;Internal;Internal;No rights;;otstavnaya;;;;181;38580;;2024-10-28 12:42;Yes;Domain defined;No
+ott;Отт Юлиана Николаевна;;Yes;Internal;Internal;No rights;;ott;;;;3475;5438464;;2024-10-29 04:56;Yes;Domain defined;No
+pahomova;Пахомова Елизавета Александровна;;Yes;Internal;Internal;No rights;;pahomova;;;;0;0;;;Yes;Domain defined;No
+panasenko;Панасенко Владимир Николаевич;механик автоколонны пассажирского транспорта (МПК);Yes;Internal;Internal;No rights;;panasenko;;;;62;153;;;Yes;Domain defined;No
+parfenova;;;Yes;Internal;Internal;No rights;;parfenova;;;;1;1916;;;Yes;Domain defined;No
+Pashkan;Пашкан Алексей Иванович;;Yes;Internal;Internal;No rights;;Pashkan;;;;1;1916;;;Yes;Domain defined;No
+paskar;Паскарь Светлана Ивановна;;Yes;Internal;Internal;No rights;;paskar;;;;4392;59794;;2024-02-29 05:47;Yes;Domain defined;No
+pavlenko;Павленко Надежда Владимировна;административно-управленческий персонал ККЗ;Yes;Internal;Internal;No rights;;pavlenko;;;;57;210;;2024-10-09 12:01;Yes;Domain defined;No
+perina.mpk;Перина Ксения Витальевна;Ветеринарная служба МПК;Yes;Internal;Internal;No rights;;perina.mpk;;;;173;2073;;2024-10-29 07:33;Yes;Domain defined;No
+permyakov_a;Щукин Владимир;;Yes;Internal;Internal;No rights;;permyakov_a;;;;142;58735;;2024-02-05 09:31;Yes;Domain defined;No
+petcevich;;;Yes;Internal;Internal;No rights;;petcevich;;;;4;39;;2024-09-04 06:07;Yes;Domain defined;No
+petin.mpk;Петин Сергей Александрович;;Yes;Internal;Internal;No rights;;petin.mpk;;;;511;4377;;2024-09-20 10:43;Yes;Domain defined;No
+petrica;Петрица Олег Владимирович;;Yes;Internal;Internal;No rights;;petrica;;;;1;1916;;;Yes;Domain defined;No
+pichkov.kkz;Пишков Андрей Олегович;;No;Internal;Internal;No rights;;pichkov.kkz;;;;18;20385;;2024-09-03 05:14;Yes;Domain defined;No
+pirogova.mpk;Пирогова Светлана Владимировна;;Yes;Internal;Internal;No rights;;pirogova.mpk;;;;4283;3164160;;2024-10-29 09:10;Yes;Domain defined;No
+Piskovec;Писковец В.Н.;;Yes;Internal;Internal;No rights;;Piskovec;;;;1;1916;;;Yes;Domain defined;No
+podporenkova.mpk;Подпоренкова Светлана Сергеевна;;Yes;Internal;Internal;No rights;;podporenkova.mpk;;;;3637;9010176;;2024-10-28 09:12;Yes;Domain defined;No
+pomoshchnikok.mpk;Фоменко Юлия;;Yes;Internal;Internal;No rights;;pomoshchnikok.mpk;;;;1;1916;;;Yes;Domain defined;No
+popova.mpk;Попов Л.Н;;Yes;Internal;Internal;No rights;;popova.mpk;;;;5;1983;;;Yes;Domain defined;No
+postyrnak;Постырнак Сергей;;Yes;Internal;Internal;No rights;;postyrnak;;;;20;4571;;;Yes;Domain defined;No
+praktikarubikom;Практика;;Yes;Internal;Internal;No rights;;praktikarubikom;;;;1;10;;2021-09-01 03:14;Yes;Domain defined;No
+Prejsel;Прейсель Иван Александрович;;Yes;Internal;Internal;No rights;;Prejsel;;;;1;1916;;;Yes;Domain defined;No
+prijmak.mpk;Приймак Сергея Сергеевича ;;Yes;Internal;Internal;No rights;;prijmak.mpk;;;;24349;1862656;;2024-10-29 06:14;Yes;Domain defined;No
+privalov;Привалов Евгений Сергеевич;;Yes;Internal;Internal;No rights;;privalov;;;;599;38729;;;Yes;Domain defined;No
+privalov.mpk;Привалов Евгений Сергеевич;;Yes;Internal;Internal;No rights;;privalov.mpk;;;;1696;1715200;;2024-10-29 08:30;Yes;Domain defined;No
+priymak.mpk;Приймак Алевтина Валентиновна;;Yes;Internal;Internal;No rights;;priymak.mpk;;;;3426;1273856;;2024-10-29 09:09;Yes;Domain defined;No
+prmanager;;;Yes;Internal;Internal;No rights;;prmanager;;;;594;23459;;2024-10-29 09:00;Yes;Domain defined;No
+procuremen;;;Yes;Internal;Internal;No rights;;procuremen;;;;0;0;;;Yes;Domain defined;No
+procurement;;;Yes;Internal;Internal;No rights;;procurement;;;;2;3;;2024-07-15 05:33;Yes;Domain defined;No
+programmist;;;Yes;Internal;Internal;No rights;;programmist;;;;347;132802;;2024-08-18 14:18;Yes;Domain defined;No
+Prohorov;Прохоров Игорь Александрович;;Yes;Internal;Internal;No rights;;Prohorov;;;;0;0;;;Yes;Domain defined;No
+prohorov.a;Прохоров Анатолий Витальевич;;Yes;Internal;Internal;No rights;;prohorov.a;;;;4;32;;;Yes;Domain defined;No
+prohorova.i;Прохорова Ирина Андреевна;;Yes;Internal;Internal;No rights;;prohorova.i;;;;62;180;;2024-08-23 09:24;Yes;Domain defined;No
+projectmgmt;Администратор ПО управления задач;;Yes;Internal;Internal;No rights;;projectmgmt;;;;0;0;;;Yes;Domain defined;No
+proskuryakov;Проскуряков Роман Дмитриевич;;Yes;Internal;Internal;No rights;;proskuryakov;;;;121;101878;;2024-10-28 09:24;Yes;Domain defined;No
+pryadko.g.v;Прядко Галина Валерьевна;;Yes;Internal;Internal;No rights;;pryadko.g.v;;;;6807;16808960;;2024-07-16 10:29;Yes;Domain defined;No
+putikova;Путикова Ольга Васильевна;"менеджер ТОО ""Корпоративное сопровождение""";Yes;Internal;Internal;No rights;;putikova;;;;1246;100721;;2024-10-28 12:02;Yes;Domain defined;No
+pylaevoj;Пылаевой Е.И.;;Yes;Internal;Internal;No rights;;pylaevoj;;;;13;2200;;2024-04-22 03:36;Yes;Domain defined;No
+pyshnyj.mpk;;;Yes;Internal;Internal;No rights;;pyshnyj.mpk;;;;564;5276;;2024-08-22 04:21;Yes;Domain defined;No
+r-traco;;;Yes;Internal;Internal;No rights;;r-traco;;;;594;84483;;2023-02-17 04:43;Yes;Domain defined;No
+ramazanova;Рамазанова Сандугаш Жасулановна ;ККЗ;Yes;Internal;Internal;No rights;;ramazanova;;;;31;2018;;2024-02-26 04:32;Yes;Domain defined;No
+realizaciya.mpk;Релазация МПК;;Yes;Internal;Internal;No rights;;realizaciya.mpk;;;;19937;2456576;;2024-10-29 09:07;Yes;Domain defined;No
+redkozubov;Редкозубов Александр Борисович;;Yes;Internal;Internal;No rights;;redkozubov;;;;100;2644;;2024-01-10 18:14;Yes;Domain defined;No
+reutova;Реутова Татьяна Ильинична;;No;Internal;Internal;No rights;;reutova;;;;150;536;;2024-10-29 04:54;Yes;Domain defined;No
+revisor;Ермакова Виктория Викторовна;;Yes;Internal;Internal;No rights;;revisor;;;;447;104784;;2024-10-29 07:32;Yes;Domain defined;No
+romancova;Романцова Е.В.;;Yes;Internal;Internal;No rights;;romancova;;;;10;21;;;Yes;Domain defined;No
+rotman;Ротман Юлия Андреевна;;Yes;Internal;Internal;No rights;;rotman;;;;83;25034;;2024-10-21 03:15;Yes;Domain defined;No
+rozhko;Рожко И.Б;;Yes;Internal;Internal;No rights;;rozhko;;;;1693;78122;;2024-10-28 04:01;Yes;Domain defined;No
+ruslankyzy;Айгерим Русланкызы;;Yes;Internal;Internal;No rights;;ruslankyzy;;;;555;364938;;2024-10-29 07:44;Yes;Domain defined;No
+Ryabopolov;Рябополов Михаил Олегович;;Yes;Internal;Internal;No rights;;Ryabopolov;;;;1;1916;;;Yes;Domain defined;No
+ryazanova;Рязанова Виктория Александровна;;Yes;Internal;Internal;No rights;;ryazanova;;;;304;386501;;2024-10-29 07:15;Yes;Domain defined;No
+ryazanova.mpk;Виктория Рязанова;;Yes;Internal;Internal;No rights;;ryazanova.mpk;;;;930;130139;;2024-10-29 07:15;Yes;Domain defined;No
+sadenova;Саденова Сания;;Yes;Internal;Internal;No rights;;sadenova;;;;330;7081;;2024-10-29 09:02;Yes;Domain defined;No
+sadvakasova.a;Садвакасова Айслу Жумабайкызы;;Yes;Internal;Internal;No rights;;sadvakasova.a;;;;467;38049;;2024-10-29 07:44;Yes;Domain defined;No
+sadykova.n.mpk;Садыкова Наталья Георгиевна;;Yes;Internal;Internal;No rights;;sadykova.n.mpk;;;;154;83739;;2024-10-29 03:00;Yes;Domain defined;No
+salamackij;;;Yes;Internal;Internal;No rights;;salamackij;;;;944;483605;;2023-10-10 04:21;Yes;Domain defined;No
+samieva;Самиева Айман;Учебный центер;Yes;Internal;Internal;No rights;;samieva;;;;464;30742;;2024-10-28 11:22;Yes;Domain defined;No
+sarkenova;;;Yes;Internal;Internal;No rights;;sarkenova;;;;271;1181;;2024-08-20 04:00;Yes;Domain defined;No
+Saurbaeva;Саурбаева Татьяна Григорьевна;;Yes;Internal;Internal;No rights;;Saurbaeva;;;;2941;245685;;2023-06-30 06:59;Yes;Domain defined;No
+sbezverkhov;Безверхов Сергей Григорьевич;;Yes;Internal;Internal;No rights;;sbezverkhov;;;;5169;6052864;;2023-11-15 15:34;Yes;Domain defined;No
+secretar.mpk;Секретарь МПК;;Yes;Internal;Internal;No rights;;secretar.mpk;;;;12;22256;;;Yes;Domain defined;No
+secretary.mk;Приёмная МПК;;Yes;Internal;Internal;No rights;;secretary.mk;;;;8498;8360960;;2024-10-29 07:02;Yes;Domain defined;No
+security.mpk;Охрана МПК;;Yes;Internal;Internal;No rights;;security.mpk;;;;522;66961;;2024-10-25 02:53;Yes;Domain defined;No
+sed;;;Yes;Internal;Internal;No rights;;sed;;;;1;1916;;;Yes;Domain defined;No
+selechova.mpk;;;Yes;Internal;Internal;No rights;;selechova.mpk;;;;43662;22700032;;2024-10-29 09:03;Yes;Domain defined;No
+selektor;;;Yes;Internal;Internal;No rights;;selektor;;;;2;24;;2022-08-19 05:05;Yes;Domain defined;No
+Semakin;Семакин Владимир Иванович;;Yes;Internal;Internal;No rights;;Semakin;;;;1;1916;;;Yes;Domain defined;No
+semyonova.e;Семёнова Елена Николаевна;;Yes;Internal;Internal;No rights;;semyonova.e;;;;292;199354;;2024-10-29 07:41;Yes;Domain defined;No
+semyonova.mpk;Семёнова Елена Николаевна;;Yes;Internal;Internal;No rights;;semyonova.mpk;;;;0;0;;;Yes;Domain defined;No
+serenko.k;Серенко Константин Дмитриевич;;Yes;Internal;Internal;No rights;;serenko.k;;;;191;576;;;Yes;Domain defined;No
+Sergienko;Сергиенко Сергей Викторович ;;Yes;Internal;Internal;No rights;;Sergienko;;;;436;62644;;2024-10-28 03:30;Yes;Domain defined;No
+Settarova;Сеттарова Наталья Вениаминовна;;Yes;Internal;Internal;No rights;;Settarova;;;;3364;4561920;;2024-10-29 07:50;Yes;Domain defined;No
+shajzadinov.mpk;Шайзадинов Мурат Агибаевич;;Yes;Internal;Internal;No rights;;shajzadinov.mpk;;;;8;33;;;Yes;Domain defined;No
+shakirova;Шакирова Гульмира Аутаевна;;Yes;Internal;Internal;No rights;;shakirova;;;;224;583;;2024-09-09 08:56;Yes;Domain defined;No
+sharabarin;Шарабарин Виктор Николаевич;;Yes;Internal;Internal;No rights;;sharabarin;;;;1;1916;;;Yes;Domain defined;No
+shashlova;Шашлова Валерия Анатольевна;;Yes;Internal;Internal;No rights;;shashlova;;;;1463;1327104;;2024-10-29 03:07;Yes;Domain defined;No
+shcherbakov.a.mpk;Щербаков Алексей Викторович;;Yes;Internal;Internal;No rights;;shcherbakov.a.mpk;;;;6865;2625536;;2024-10-29 08:59;Yes;Domain defined;No
+shchevelev.kkz;Щевелев Александр Александрович;;Yes;Internal;Internal;No rights;;shchevelev.kkz;;;;161;2684;;2024-09-12 04:52;Yes;Domain defined;No
+shchukin.snab;Щукин Владимир;;Yes;Internal;Internal;No rights;;shchukin.snab;;;;10925;11984896;;2024-10-29 09:04;Yes;Domain defined;No
+sheludchenko.mpk;Шелудченко Альбина Витальевна;;Yes;Internal;Internal;No rights;;sheludchenko.mpk;;;;374;168429;;2024-10-29 08:27;Yes;Domain defined;No
+shenfeld.mpk;Шенфельд Я.В;;Yes;Internal;Internal;No rights;;shenfeld.mpk;;;;77;215;;2024-10-09 09:02;Yes;Domain defined;No
+shermatova;Шерматова Анастасия Олеговна;;Yes;Internal;Internal;No rights;;shermatova;;;;3818;7998464;;2024-10-23 06:48;Yes;Domain defined;No
+Shiganov;Шиганов Сергей Юрьевич;;Yes;Internal;Internal;No rights;;Shiganov;;;;1;1916;;;Yes;Domain defined;No
+shilonosov.mpk;Шилоносов Вадим Михайлович;;Yes;Internal;Internal;No rights;;shilonosov.mpk;;;;9556;263532;;2024-10-04 05:09;Yes;Domain defined;No
+shipicin;Щипицын Георгий Георгиевич;;Yes;Internal;Internal;No rights;;shipicin;;;;22;170;;;Yes;Domain defined;No
+shirokova;Широкова Ольга Вячеславовна;;Yes;Internal;Internal;No rights;;shirokova;;;;689;476761;;2024-10-29 03:11;Yes;Domain defined;No
+shiryaj;Ширяй;;Yes;Internal;Internal;No rights;;shiryaj;;;;4419;4575232;;2024-10-29 09:03;Yes;Domain defined;No
+shishinov;Шишинов Юрий;;Yes;Internal;Internal;No rights;;shishinov;;;;4;1935;;2023-12-19 03:19;Yes;Domain defined;No
+shishkova;Шишкова Любовь Николаевна;;No;Internal;Internal;No rights;;shishkova;;;;217;23490;;2024-04-15 11:16;Yes;Domain defined;No
+shishova.mpk;Наталия Валерьевна Шишова;;Yes;Internal;Internal;No rights;;shishova.mpk;;;;22390;94053376;;2024-08-02 05:12;Yes;Domain defined;No
+shkulepa;Шкулепа Евгения Николаевна;;Yes;Internal;Internal;No rights;;shkulepa;;;;26;2183;;2024-10-29 08:34;Yes;Domain defined;No
+shmalc;Шмальц А.А.;;Yes;Internal;Internal;No rights;;shmalc;;;;128;523;;2024-08-01 05:47;Yes;Domain defined;No
+shmeleva;Шмелева М;;Yes;Internal;Internal;No rights;;shmeleva;;;;21;2173;;2024-04-17 10:16;Yes;Domain defined;No
+shokbatarov;Шокбатаров Талгат;;Yes;Internal;Internal;No rights;;shokbatarov;;;;183;324453;;2024-08-01 06:08;Yes;Domain defined;No
+shpanskaya; Шпанская Анастасия Сергеевна;;Yes;Internal;Internal;No rights;;shpanskaya;;;;660;194164;;2023-07-11 10:28;Yes;Domain defined;No
+shpyrna.mpk;начальник цеха формовки;;No;Internal;Internal;No rights;;shpyrna.mpk;;;;22562;867318;;2024-04-04 08:57;Yes;Domain defined;No
+Shramko;Шрамко Михаил Михайлович;;Yes;Internal;Internal;No rights;;Shramko;;;;1;1916;;;Yes;Domain defined;No
+shtil.mpk;Штиль;;Yes;Internal;Internal;No rights;;shtil.mpk;;;;8202;342550;;2024-08-02 09:06;Yes;Domain defined;No
+shumilina;Шумилина Мария Александровна ;;Yes;Internal;Internal;No rights;;shumilina;;;;48;3156;;2024-10-24 11:59;Yes;Domain defined;No
+shunko.mpk;Щунько;;Yes;Internal;Internal;No rights;;shunko.mpk;;;;23531;2366464;;2024-10-29 09:08;Yes;Domain defined;No
+sidelnikova;Сидельникова Динара Муратовна;;Yes;Internal;Internal;No rights;;sidelnikova;;;;6;80;;2024-05-27 06:11;Yes;Domain defined;No
+sidorenko;Сидоренко Мария Сергеевна;;Yes;Internal;Internal;No rights;;sidorenko;;;;77;272;;;Yes;Domain defined;No
+simkova;Симкова Татьяна;;Yes;Internal;Internal;No rights;;simkova;;;;9823;1707008;;2024-10-29 08:00;Yes;Domain defined;No
+simkova.t;;;Yes;Internal;Internal;No rights;;simkova.t;;;;3611;859413;;2024-10-29 08:41;Yes;Domain defined;No
+Sirenko;Сиренко Юлия;;Yes;Internal;Internal;No rights;;Sirenko;;;;5;106;;2023-08-28 11:54;Yes;Domain defined;No
+skatov;Скатов Валерий Германович;;Yes;Internal;Internal;No rights;;skatov;;;;35;2290;;2023-04-04 10:36;Yes;Domain defined;No
+sklyarenko;;;Yes;Internal;Internal;No rights;;sklyarenko;;;;32;2593;;2024-07-09 05:12;Yes;Domain defined;No
+sklyarova.mpk;Склярова;;Yes;Internal;Internal;No rights;;sklyarova.mpk;;;;5689;2084864;;2024-10-29 04:16;Yes;Domain defined;No
+skotskih;Скотских Анастасия Юрьевна;;Yes;Internal;Internal;No rights;;skotskih;;;;1162;570053;;2024-10-28 02:25;Yes;Domain defined;No
+slan;;;Yes;Internal;Internal;No rights;;slan;;;;623;779600;;2020-08-26 08:01;Yes;Domain defined;No
+slastihina;Сластихина Анастасия Валерьевна;;Yes;Internal;Internal;No rights;;slastihina;;;;10819;9731072;;2024-10-29 03:43;Yes;Domain defined;No
+slepcova;Слепцова Татьяна Сергеевна;;Yes;Internal;Internal;No rights;;slepcova;;;;5788;3174400;;2024-10-08 09:30;Yes;Domain defined;No
+slobodenyuk;Слободенюк Екатерина;;Yes;Internal;Internal;No rights;;slobodenyuk;;;;4365;4355072;;2024-10-29 08:57;Yes;Domain defined;No
+slynyavuk;Слынявук Дмитрий Анатольевич ;;Yes;Internal;Internal;No rights;;slynyavuk;;;;179;460;;2023-12-07 09:42;Yes;Domain defined;No
+slyusareva.mpk;Слюсарева Елена Сергеевна;;Yes;Internal;Internal;No rights;;slyusareva.mpk;;;;9239;430260;;2024-10-29 04:32;Yes;Domain defined;No
+smagulov;Смагулов Бейбут Амангельдиевич;;Yes;Internal;Internal;No rights;;smagulov;;;;7;2048;;2023-12-14 07:55;Yes;Domain defined;No
+smeta;;;Yes;Internal;Internal;No rights;;smeta;;;;193;10369;;2023-05-16 03:34;Yes;Domain defined;No
+smirnyagin.mpk;Смирнягин Данил Сергеевич;;Yes;Internal;Internal;No rights;;smirnyagin.mpk;;;;8946;6490112;;2024-10-29 09:05;Yes;Domain defined;No
+snab;Игорь Цуренков;;Yes;Internal;Internal;No rights;;snab;;;;18234;18672640;;2024-10-29 09:04;Yes;Domain defined;No
+snabmgr;Лысенко Федор ;;Yes;Internal;Internal;No rights;;snabmgr;;;;21378;11982848;;2024-10-29 08:59;Yes;Domain defined;No
+soboleva;Соболева Ольга Олеговна;;Yes;Internal;Internal;No rights;;soboleva;;;;75;86387;;2024-10-29 09:08;Yes;Domain defined;No
+Sobyanin;Собянин Е.В.;;Yes;Internal;Internal;No rights;;Sobyanin;;;;1;1916;;;Yes;Domain defined;No
+sokolov.mpk;Соколов Владимир Александрович;;Yes;Internal;Internal;No rights;;sokolov.mpk;;;;13748;898526;;2024-10-29 03:38;Yes;Domain defined;No
+sokolovskij;Соколовский Валерий Анатольевич;;Yes;Internal;Internal;No rights;;sokolovskij;;;;1;1916;;;Yes;Domain defined;No
+sokolyuk;Валерий Соколюк;;Yes;Internal;Internal;No rights;;sokolyuk;;;;305;3993;;;Yes;Domain defined;No
+solodovnikova;Солодовникова Анастасия Александровна;;Yes;Internal;Internal;No rights;;solodovnikova;;;;52;308;;;Yes;Domain defined;No
+solodovnikova.mpk;Солодовникова А.А.;;Yes;Internal;Internal;No rights;;solodovnikova.mpk;;;;167;568;;;Yes;Domain defined;No
+solovev;Соловьев Александр Витальевич;;Yes;Internal;Internal;No rights;;solovev;;;;479;2269;;2024-09-30 10:00;Yes;Domain defined;No
+Soltanov;Солтанов Садиг Гырымхан оглы;;Yes;Internal;Internal;No rights;;Soltanov;;;;1;1916;;;Yes;Domain defined;No
+sorokina;Сорокина ;;Yes;Internal;Internal;No rights;;sorokina;;;;203;2672;;2024-10-29 06:11;Yes;Domain defined;No
+sorokina.o;Сорокина Ольга Ивановна;;Yes;Internal;Internal;No rights;;sorokina.o;;;;431;60631;;2024-09-12 03:16;Yes;Domain defined;No
+soromotin;Соромотин Константин Александрович;;Yes;Internal;Internal;No rights;;soromotin;;;;227;12356;;2024-10-29 03:08;Yes;Domain defined;No
+sotnikov;Сотников Александр Валерьевич;;Yes;Internal;Internal;No rights;;sotnikov;;;;280;135003;;2023-02-22 04:59;Yes;Domain defined;No
+starovojtova.mpk;Старовойтова Алла Геннадьевна;;Yes;Internal;Internal;No rights;;starovojtova.mpk;;;;1;1916;;;Yes;Domain defined;No
+statist.zhk;Юнак Александра;;Yes;Internal;Internal;No rights;;statist.zhk;;;;12;258;;2024-10-26 07:59;Yes;Domain defined;No
+stegura;Стегура Людмила Вячиславовна;;Yes;Internal;Internal;No rights;;stegura;;;;18680;33916928;;2024-10-29 08:41;Yes;Domain defined;No
+stegura.l;;;Yes;Internal;Internal;No rights;;stegura.l;;;;3294;354825;;2024-10-29 08:41;Yes;Domain defined;No
+stepanov.mpk;Степанов Владислав Романович;;Yes;Internal;Internal;No rights;;stepanov.mpk;;;;391;3407;;2023-11-28 10:51;Yes;Domain defined;No
+stepanova1;скайп;;Yes;Internal;Internal;No rights;;stepanova1;;;;6;147;;2024-04-19 03:26;Yes;Domain defined;No
+stepina;Степина;;Yes;Internal;Internal;No rights;;stepina;;;;10;2057;;2024-01-03 03:37;Yes;Domain defined;No
+suhovarova;Суховарова Александра;;Yes;Internal;Internal;No rights;;suhovarova;;;;200;18931;;2024-10-29 02:50;Yes;Domain defined;No
+Sulejmenov;Сулейменов Азамат Айтмагамбетович;;Yes;Internal;Internal;No rights;;Sulejmenov;;;;1;1916;;;Yes;Domain defined;No
+sulejmenov.i;Сулейменов И.О;;Yes;Internal;Internal;No rights;;sulejmenov.i;;;;5351;173333;;2022-07-20 01:57;Yes;Domain defined;No
+Sultanov;Султанов Даулет Абаевич;;Yes;Internal;Internal;No rights;;Sultanov;;;;1;1916;;;Yes;Domain defined;No
+sultanova;Султанова Шафоъат Назирджоновна;;Yes;Internal;Internal;No rights;;sultanova;;;;128;67214;;2024-08-20 07:59;Yes;Domain defined;No
+surinan;Сурина Наталья Сергеевна;;Yes;Internal;Internal;No rights;;surinan;;;;24141;41532416;;2024-10-28 12:37;Yes;Domain defined;No
+svist;Свист Ирина Валерьевна;;Yes;Internal;Internal;No rights;;svist;;;;2596;8609792;;2024-10-16 06:14;Yes;Domain defined;No
+svyatogor;Святогор Владимир Иванович;;Yes;Internal;Internal;No rights;;svyatogor;;;;1;1916;;;Yes;Domain defined;No
+syutkin;Сюткин Вячеслав Евгеньевич;;Yes;Internal;Internal;No rights;;syutkin;;;;110;322;;2024-08-01 05:47;Yes;Domain defined;No
+tagirova.mpk;Тагирова Марина;;Yes;Internal;Internal;No rights;;tagirova.mpk;;;;473;253521;;2024-10-28 17:40;Yes;Domain defined;No
+tamoshin;Тамошин Виктор Генадьевич;;Yes;Internal;Internal;No rights;;tamoshin;;;;57;524;;2024-10-29 02:52;Yes;Domain defined;No
+tarasenko;Тарасенко Кристина Геннадьевна;инспектора ОК ЖК;Yes;Internal;Internal;No rights;;tarasenko;;;;61;181;;2024-09-02 11:55;Yes;Domain defined;No
+tatusyak;Татусяк Сергей;;Yes;Internal;Internal;No rights;;tatusyak;;;;15;2139;;2023-12-19 03:19;Yes;Domain defined;No
+tb;Волокитина Румия Гумаровна;;Yes;Internal;Internal;No rights;;tb;;;;4201;416369;;2024-10-23 09:36;Yes;Domain defined;No
+tb2;;;Yes;Internal;Internal;No rights;;tb2;;;;3474;1121280;;2024-10-29 09:08;Yes;Domain defined;No
+td;Волокитина Румия Гумаровна;;Yes;Internal;Internal;No rights;;td;;;;8;1571;;;Yes;Domain defined;No
+tehnolog.bk.kkz;tehnolog.bk.kkz;Технолог Бункерная;Yes;Internal;Internal;No rights;;tehnolog.bk.kkz;;;;4;61;;2020-08-28 07:32;Yes;Domain defined;No
+temperatura.mpk;;;Yes;Internal;Internal;No rights;;temperatura.mpk;;;;2;1918;;;Yes;Domain defined;No
+tets;;;Yes;Internal;Internal;No rights;;tets;;;;0;0;;;Yes;Domain defined;No
+tikhonov;Тихонов Артем ;Тихонов Артем ;Yes;Internal;Internal;No rights;;tikhonov;;;;26282;18706432;;2024-10-29 09:05;Yes;Domain defined;No
+timchenko;Тимченко Наталья ;;Yes;Internal;Internal;No rights;;timchenko;;;;3033;1827840;;2024-10-29 09:10;Yes;Domain defined;No
+timoshenko;Тимошенко Павел Владмирович;;Yes;Internal;Internal;No rights;;timoshenko;;;;9736;550732;;2024-10-29 09:10;Yes;Domain defined;No
+timoshko;Тимошко Дарья;;Yes;Internal;Internal;No rights;;timoshko;;;;1114;2993152;;2024-10-29 09:06;Yes;Domain defined;No
+tkachenko;;;Yes;Internal;Internal;No rights;;tkachenko;;;;2004;1444864;;2024-08-08 10:35;Yes;Domain defined;No
+toboyakov.mpk;Тобояков Рустем;;Yes;Internal;Internal;No rights;;toboyakov.mpk;;;;20;2006;;2023-03-14 02:47;Yes;Domain defined;No
+toleu;Төлеу Оралды Ардақұлы;;Yes;Internal;Internal;No rights;;toleu;;;;16;666;;;Yes;Domain defined;No
+toleugali.mpk;Толеугали Айман Амангельдиевна;;Yes;Internal;Internal;No rights;;toleugali.mpk;;;;68;11189;;2024-07-23 08:03;Yes;Domain defined;No
+toleuov;Толеуов Еламан;;Yes;Internal;Internal;No rights;;toleuov;;;;1015;1266688;;2024-10-29 07:26;Yes;Domain defined;No
+tolmacheva;Толмачева Алиса Эдуардовна;;Yes;Internal;Internal;No rights;;tolmacheva;;;;7;69;;2024-08-13 03:01;Yes;Domain defined;No
+tolmacheva.e.mpk;Толмачева Екатерина Вадимовна;;Yes;Internal;Internal;No rights;;tolmacheva.e.mpk;;;;1197;157814;;2024-10-29 05:15;Yes;Domain defined;No
+tomilina;Томилина Ольга Пантелеевна;;Yes;Internal;Internal;No rights;;tomilina;;;;3669;3106816;;2021-04-09 10:37;Yes;Domain defined;No
+tonkonog;Тонконог Екатерина Александровна;;Yes;Internal;Internal;No rights;;tonkonog;;;;9706;9571328;;2024-10-29 09:09;Yes;Domain defined;No
+topol.mpk;Тополь Александру Леонидовичу;;Yes;Internal;Internal;No rights;;topol.mpk;;;;54;2487;;2022-11-28 01:25;Yes;Domain defined;No
+torajgyrova36;Торайгырова 36;;Yes;Internal;Internal;No rights;;torajgyrova36;;;;58;4988;;;Yes;Domain defined;No
+tovaroved;Андреев Александр;;Yes;Internal;Internal;No rights;;tovaroved;;;;108;9004;;2024-10-11 03:25;Yes;Domain defined;No
+Trapeznikov;Трапезников Валерий Владимирович;;Yes;Internal;Internal;No rights;;Trapeznikov;;;;1;1916;;;Yes;Domain defined;No
+traut;Траут Дарья Андреевна;;Yes;Internal;Internal;No rights;;traut;;;;6033;6390784;;2024-10-29 09:07;Yes;Domain defined;No
+tribosynova;Трибосынова Света Джумабековна;;Yes;Internal;Internal;No rights;;tribosynova;;;;2;14;;2024-09-11 14:57;Yes;Domain defined;No
+trifonov;;;Yes;Internal;Internal;No rights;;trifonov;;;;166;3023;;2023-12-19 03:19;Yes;Domain defined;No
+Trofimov;Трофимов Сергей Юрьевич;;Yes;Internal;Internal;No rights;;Trofimov;;;;1;1916;;;Yes;Domain defined;No
+troshina.zhk;Трошина Людмила Валерьевна ;;Yes;Internal;Internal;No rights;;troshina.zhk;;;;25;2302;;2024-10-28 11:17;Yes;Domain defined;No
+tukenov;Тукенов Дархан Нурланович;;Yes;Internal;Internal;No rights;;tukenov;;;;192;632;;2024-02-02 07:08;Yes;Domain defined;No
+tuleubayeva;Тулеубаева Асима Тулеугалиевна;;Yes;Internal;Internal;No rights;;tuleubayeva;;;;176;950;;2024-10-29 02:52;Yes;Domain defined;No
+tumanova;Туманова Юлия Валерьевна;кладовщик;Yes;Internal;Internal;No rights;;tumanova;;;;2;14;;2024-10-16 03:15;Yes;Domain defined;No
+tungisbaeva.mpk;Тунгышбаева Гуляйм Корабаевна;;Yes;Internal;Internal;No rights;;tungisbaeva.mpk;;;;0;0;;;Yes;Domain defined;No
+tungyshbaeva;Тунгышбаева Гуляйм Корабаевна;;Yes;Internal;Internal;No rights;;tungyshbaeva;;;;4264;651508;;2024-10-29 03:44;Yes;Domain defined;No
+tusupova;Тусупова Асель;;Yes;Internal;Internal;No rights;;tusupova;;;;1152;435440;;2024-10-28 10:17;Yes;Domain defined;No
+tyavin.mpk;Тявин Виталий Евгеньевич;;Yes;Internal;Internal;No rights;;tyavin.mpk;;;;1078;148574;;2024-10-28 10:44;Yes;Domain defined;No
+unik98;;;Yes;Internal;Internal;No rights;;unik98;;;;1;1916;;2021-09-17 09:16;Yes;Domain defined;No
+uraev;Ураев Олжас Рахимович;;Yes;Internal;Internal;No rights;;uraev;;;;1032;160591;;2024-10-29 09:04;Yes;Domain defined;No
+urovaeva;Уроваева Ольга Викторовна;;Yes;Internal;Internal;No rights;;urovaeva;;;;156;25048;;2024-10-28 12:10;Yes;Domain defined;No
+ushatov;Ушатов Алмат;;Yes;Internal;Internal;No rights;;ushatov;;;;1;1916;;;Yes;Domain defined;No
+vagner;Вагнер С.А;;Yes;Internal;Internal;No rights;;vagner;;;;445;26488;;2022-09-07 20:45;Yes;Domain defined;No
+Vahrushev;Вахрушев Валерий Николаевич;;Yes;Internal;Internal;No rights;;Vahrushev;;;;1;1916;;;Yes;Domain defined;No
+varfolomeeva.mpk;;;Yes;Internal;Internal;No rights;;varfolomeeva.mpk;;;;11667;127924;;2024-10-29 08:57;Yes;Domain defined;No
+veber;Вебер Инна Анатольевна;Логистический склад ККЗ;Yes;Internal;Internal;No rights;;veber;;;;3;17;;2024-10-10 11:26;Yes;Domain defined;No
+veles;Велес;;Yes;Internal;Internal;No rights;;veles;;;;1;11;;2024-10-29 09:10;Yes;Domain defined;No
+verc.mpk;Верц Марина Анатольевна;;Yes;Internal;Internal;No rights;;verc.mpk;;;;1735;72062;;2024-10-29 03:31;Yes;Domain defined;No
+verichev;Артем Веричев;;Yes;Internal;Internal;No rights;;verichev;;;;314;95642;;2024-10-29 08:45;Yes;Domain defined;No
+vesauto;Весовая Авто ККЗ;;Yes;Internal;Internal;No rights;;vesauto;;;;6;1966;;2022-10-26 15:43;Yes;Domain defined;No
+vesdzhd;;;Yes;Internal;Internal;No rights;;vesdzhd;;;;6;174;;2020-10-08 05:59;Yes;Domain defined;No
+vesnina;Веснина Ксения Андреевна;кладовщик;Yes;Internal;Internal;No rights;;vesnina;;;;2;14;;2024-10-17 11:19;Yes;Domain defined;No
+vesovayaZK;vesovayaZK;ЖК Весовая;Yes;Internal;Internal;No rights;;vesovayaZK;;;;3;82;;2022-11-15 03:09;Yes;Domain defined;No
+Vitkov;Витков Вячеслав Васильевич;;Yes;Internal;Internal;No rights;;Vitkov;;;;2;26330;;;Yes;Domain defined;No
+vitkovskaya.mpk;Витковская Екатерина Михайловна;;Yes;Internal;Internal;No rights;;vitkovskaya.mpk;;;;26520;18146304;;2024-10-29 07:11;Yes;Domain defined;No
+vitushinskij;Витушинский Владимир Ярославович;;Yes;Internal;Internal;No rights;;vitushinskij;;;;1;1916;;;Yes;Domain defined;No
+vitvickij;Витвицкий Евгений Владимирович;;Yes;Internal;Internal;No rights;;vitvickij;;;;97;28771;;2024-03-29 06:20;Yes;Domain defined;No
+vitvitckaya;Наталья витвицкая ;;Yes;Internal;Internal;No rights;;vitvitckaya;;;;17498;13133824;;2023-10-17 08:21;Yes;Domain defined;No
+vizichkanich;Визичканич Анна Николаевна;бухгалтер по работе с покупателями;Yes;Internal;Internal;No rights;;vizichkanich;;;;5;9;;;Yes;Domain defined;No
+vojtenko;Войтенко Андрей Александрович;ачальник автоколонны пассажирского транспорта (МПК);Yes;Internal;Internal;No rights;;vojtenko;;;;62;149;;;Yes;Domain defined;No
+volchenko.mpk;Волченко;;Yes;Internal;Internal;No rights;;volchenko.mpk;;;;31885;6605824;;2024-10-29 08:57;Yes;Domain defined;No
+volokitin;Волокитин Руслан Гуанович;;No;Internal;Internal;No rights;;volokitin;;;;9420;11854848;;2023-11-07 02:46;Yes;Domain defined;No
+volynkina.mpk;;;Yes;Internal;Internal;No rights;;volynkina.mpk;;;;18791;46552064;;2024-10-29 09:08;Yes;Domain defined;No
+vorotilova;Воротилова Надежда Владимировна;;Yes;Internal;Internal;No rights;;vorotilova;;;;340;11217;;2024-10-29 08:48;Yes;Domain defined;No
+Vukolov;Вуколов Дмитрий Юрьевич;;Yes;Internal;Internal;No rights;;Vukolov;;;;1;1916;;;Yes;Domain defined;No
+Vursatev;Вурсатьев Сергей Петрович;Механник АТЦ;Yes;Internal;Internal;No rights;;Vursatev;;;;71;326;;2022-11-15 05:06;Yes;Domain defined;No
+webkassa.garant;Вебкасса Гарант;;Yes;Internal;Internal;No rights;;webkassa.garant;;;;10;2209;;2024-08-05 09:47;Yes;Domain defined;No
+webmaster;;;Yes;Internal;Internal;No rights;;webmaster;;;;679;39429;;;Yes;Domain defined;No
+yacishin;Яцышин Павел Олегович;;No;Internal;Internal;No rights;;yacishin;;;;14;181;;2023-08-14 05:47;Yes;Domain defined;No
+yackevich;;;Yes;Internal;Internal;No rights;;yackevich;;;;24;17059;;2024-10-29 08:50;Yes;Domain defined;No
+yackevich.snab;;;Yes;Internal;Internal;No rights;;yackevich.snab;;;;21405;10128384;;2024-10-29 08:50;Yes;Domain defined;No
+yakovenko;Яковенко Александр Арсентьевич;;Yes;Internal;Internal;No rights;;yakovenko;;;;184;21617;;2023-06-09 11:21;Yes;Domain defined;No
+yakovenko.t;Яковенко Татьяна;;Yes;Internal;Internal;No rights;;yakovenko.t;;;;2316;1079296;;2024-10-29 03:27;Yes;Domain defined;No
+yakovlev;Яковлев Сергей Николаевич;;Yes;Internal;Internal;No rights;;yakovlev;;;;1;1916;;;Yes;Domain defined;No
+yashkina.mpk;Яшкина Я.А.;;Yes;Internal;Internal;No rights;;yashkina.mpk;;;;1456;10731;;2023-11-23 23:53;Yes;Domain defined;No
+yastrebov;Ястребов;;Yes;Internal;Internal;No rights;;yastrebov;;;;48;630;;2024-06-14 03:55;Yes;Domain defined;No
+yefremova;Ефремова Ирина Леонидовна;;Yes;Internal;Internal;No rights;;yefremova;;;;1231;671950;;2024-10-29 08:40;Yes;Domain defined;No
+yurchenko;Юрченко Инна Семёновна;;Yes;Internal;Internal;No rights;;yurchenko;;;;5539;1302528;;2024-10-29 09:01;Yes;Domain defined;No
+zabolotnaya;Заболотная Ирина;;Yes;Internal;Internal;No rights;;zabolotnaya;;;;4;1934;;2023-12-19 03:19;Yes;Domain defined;No
+zajcev;Зайцев Василий Валерьевич;;Yes;Internal;Internal;No rights;;zajcev;;;;1392;275145;;2024-10-29 08:45;Yes;Domain defined;No
+zakirov;Закиров Эмиль Ильясович;;Yes;Internal;Internal;No rights;;zakirov;;;;6097;53820416;;2024-10-29 06:54;Yes;Domain defined;No
+zakirova;Закирова;;Yes;Internal;Internal;No rights;;zakirova;;;;3318;1068032;;2024-10-29 02:56;Yes;Domain defined;No
+zaretskaya;;;Yes;Internal;Internal;No rights;;zaretskaya;;;;10042;106309;;2023-01-12 04:24;Yes;Domain defined;No
+zaton;;;Yes;Internal;Internal;No rights;;zaton;tolmacheva@rubikom.kz;;;0;0;;;Yes;Domain defined;No
+zavtrikovas;Завтриковас Светлана Константинасовна;;Yes;Internal;Internal;No rights;;zavtrikovas;;;;163;90302;;2024-10-29 02:58;Yes;Domain defined;No
+zayceva.mpk;Зайцева Дарья Владимировна;;Yes;Internal;Internal;No rights;;zayceva.mpk;;;;29;124;;;Yes;Domain defined;No
+zaykina;Зайкина Сабина Дмитриевна;;Yes;Internal;Internal;No rights;;zaykina;;;;82;315;;2023-08-18 03:03;Yes;Domain defined;No
+zdorovova.mpk;Здоровова Айгерим Баймуратовна;;Yes;Internal;Internal;No rights;;zdorovova.mpk;;;;1229;67877;;2024-10-29 04:24;Yes;Domain defined;No
+zelinsky.mpk;Зелинский Илья Сергеевич;;Yes;Internal;Internal;No rights;;zelinsky.mpk;;;;1;1916;;;Yes;Domain defined;No
+zenger.snab;;;Yes;Internal;Internal;No rights;;zenger.snab;zenger.a@rubikom.kz;;;7452;3989504;;2024-10-29 09:04;Yes;Domain defined;No
+Zhakiyanov;Жакиянов Кайрат Амирбекович;;Yes;Internal;Internal;No rights;;Zhakiyanov;;;;1;1916;;;Yes;Domain defined;No
+zhakupov;Жакупов Мархат Байтанович;;Yes;Internal;Internal;No rights;;zhakupov;;;;42;28382;;2024-10-29 02:59;Yes;Domain defined;No
+zhaniya;Жания Махмет;;Yes;Internal;Internal;No rights;;zhaniya;;;;6;2052;;2023-04-19 05:45;Yes;Domain defined;No
+zhanmailova;Жанмаилова Гульнур Шакияровна;;Yes;Internal;Internal;No rights;;zhanmailova;;;;0;0;;;Yes;Domain defined;No
+zhdanov;Жданов Никита Игоревич;;Yes;Internal;Internal;No rights;;zhdanov;;;;257;145427;;2024-08-14 02:53;Yes;Domain defined;No
+zhdanova;Жданова Надежда Викторовна;;Yes;Internal;Internal;No rights;;zhdanova;;;;2089;3520512;;2023-07-14 03:04;Yes;Domain defined;No
+zherbak;Щербак Екатерина Юрьевна;;Yes;Internal;Internal;No rights;;zherbak;;;;77;425;;2024-09-06 07:33;Yes;Domain defined;No
+zhevelev;Щевелев А.А.;;Yes;Internal;Internal;No rights;;zhevelev;;;;5;10;;;Yes;Domain defined;No
+zhilyaev;;;Yes;Internal;Internal;No rights;;zhilyaev;;;;287;823759;;2024-10-29 08:01;Yes;Domain defined;No
+ZHK;просто для скайпа;;Yes;Internal;Internal;No rights;;ZHK;;;;16;317;;2024-08-05 04:36;Yes;Domain defined;No
+zhukova;Жукова Оксана;;Yes;Internal;Internal;No rights;;zhukova;;;;651;331170;;2024-10-28 07:14;Yes;Domain defined;No
+zhulavskaya;Жулавская Евгения;;Yes;Internal;Internal;No rights;;zhulavskaya;;;;944;1541120;;2024-10-29 08:58;Yes;Domain defined;No
+zhumabaev;Жумабаев Тимур;;Yes;Internal;Internal;No rights;;zhumabaev;;;;70;410;;;Yes;Domain defined;No
+zhumabaeva;Жумабаева Гульмира Темиржановна;;Yes;Internal;Internal;No rights;;zhumabaeva;;;;6;61;;2024-10-14 09:31;Yes;Domain defined;No
+Zhunusov;Жунусов Ерсин Крыкбаевич;;Yes;Internal;Internal;No rights;;Zhunusov;;;;1;1916;;;Yes;Domain defined;No
+zhunusova;Жунусова Сания;;Yes;Internal;Internal;No rights;;zhunusova;;;;763;26580;;2023-08-04 06:03;Yes;Domain defined;No
+zhylkajdarova;Жылкайдарова Айгерим;;Yes;Internal;Internal;No rights;;zhylkajdarova;;;;4038;5059584;;2024-07-16 09:35;Yes;Domain defined;No
+zigangirov;Зигангиров Наиль Галимович;;Yes;Internal;Internal;No rights;;zigangirov;;;;18;82;;;Yes;Domain defined;No
+zimin.mpk;;;Yes;Internal;Internal;No rights;;zimin.mpk;;;;21;2308;;;Yes;Domain defined;No
+zinchenko.a.mpk;Зинченко Александра Романовича;;Yes;Internal;Internal;No rights;;zinchenko.a.mpk;;;;6183;84013;;2024-08-02 09:05;Yes;Domain defined;No
+zinkov;Зиньков Михаил Юрьевич;СССО;Yes;Internal;Internal;No rights;;zinkov;;;;11;32;;2024-10-09 04:58;Yes;Domain defined;No
+znajdenko;Знайденко Наталья Петровна;;Yes;Internal;Internal;No rights;;znajdenko;;;;63;14573;;2023-09-14 05:56;Yes;Domain defined;No
+zoom.ok;Zoom для отдел кадров;;Yes;Internal;Internal;No rights;;zoom.ok;;;;99;4069;;2024-02-29 09:30;Yes;Domain defined;No
+zootekhnik;;;Yes;Internal;Internal;No rights;;zootekhnik;;;;1;1916;;;Yes;Domain defined;No
+zubov;Зубов Игорь Алексеевич;;Yes;Internal;Internal;No rights;;zubov;;;;1;1916;;;Yes;Domain defined;No
+zueva.kkz;Зуева Алена;;Yes;Internal;Internal;No rights;;zueva.kkz;;;;1853;23260;;2024-10-28 11:28;Yes;Domain defined;No
+zyulkovsky.mpk;Зюльковский Максим Викторович;;Yes;Internal;Internal;No rights;;zyulkovsky.mpk;;;;20238;1010595;;2024-10-29 07:24;Yes;Domain defined;No

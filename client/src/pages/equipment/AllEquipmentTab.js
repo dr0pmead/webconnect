@@ -38,7 +38,7 @@ const AllEquipmentTab = ({
       setIsLoading(true);
       try {
         // Make the API request to delete the equipment here
-        const response = await axios.delete(`http://localhost:5000/api/equipments/${equipmentToDelete._id}`);
+        const response = await axios.delete(`http://webconnect.rubikom.kz/api/equipments/${equipmentToDelete._id}`);
         console.log('equipment deleted:', response.data);
         setDeleteModalOpen(false);
         setIsLoading(false);

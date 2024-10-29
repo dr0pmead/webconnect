@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const userId = Cookies.get('user_id');
         if (userId) {
-            axios.get(`http://localhost:5000/api/user/${userId}`)
+            axios.get(`http://webconnect.rubikom.kz/api/user/${userId}`)
                 .then(response => {
                     const user = response.data;
                     setUserData(user);

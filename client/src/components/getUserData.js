@@ -11,7 +11,7 @@ class UserController {
     const userId = Cookies.get('user_id');
     if (userId) {
       try {
-        const response = await axios.get(`http://localhost:5000/api/user/${userId}`);
+        const response = await axios.get(`http://webconnect.rubikom.kz/api/user/${userId}`);
         this.userData = response.data;
         return this.userData;  // Возвращаем данные пользователя
       } catch (error) {

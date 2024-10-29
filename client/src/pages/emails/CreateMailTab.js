@@ -35,7 +35,7 @@ const CreateMailTab = ({ fetchEmails }) => {
   const checkUsernameUniqueness = async (email) => {
     try {
       // Передаём объект с email вместо строки
-      const response = await axios.post('http://localhost:5000/api/check-username', { email });
+      const response = await axios.post('http://webconnect.rubikom.kz/api/check-username', { email });
       return response.data.isUnique;
     } catch (error) {
       console.error('Ошибка при проверке уникальности почты:', error);
@@ -109,7 +109,7 @@ const CreateMailTab = ({ fetchEmails }) => {
       };
 
       // Отправка запроса на сервер для создания email
-      const response = await axios.post('http://localhost:5000/api/emails', payload);
+      const response = await axios.post('http://webconnect.rubikom.kz/api/emails', payload);
   
       if (response.status === 200) {
         toast.success('Email успешно создан!', {

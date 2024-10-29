@@ -133,7 +133,7 @@ export default function EmailsPage() {
       setIsLoading(true);
       try {
         // Можете добавить свой код API для удаления
-        await axios.post('http://localhost:5000/api/delete-emails', { ids: selectedEmails });
+        await axios.post('http://webconnect.rubikom.kz/api/delete-emails', { ids: selectedEmails });
   
         // Очищаем выбранные почты и закрываем модальное окно
         setSelectedEmails([]);

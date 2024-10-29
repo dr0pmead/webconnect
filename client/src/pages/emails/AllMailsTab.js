@@ -40,7 +40,7 @@ const AllMailsTab = ({
       setIsLoading(true);
       try {
         // Make the API request to delete the email here
-        const response = await axios.delete(`http://localhost:5000/api/emails/${emailToDelete._id}`);
+        const response = await axios.delete(`http://webconnect.rubikom.kz/api/emails/${emailToDelete._id}`);
         console.log('Email deleted:', response.data);
         setDeleteModalOpen(false);
         setIsLoading(false);

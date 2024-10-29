@@ -12,7 +12,7 @@ const TwoFAModal = ({ isOpen, onRequestClose, onOpenChange, user }) => {
   useEffect(() => {
     const fetchQRCode = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/${user._id}/2fa`);
+        const response = await axios.get(`http://webconnect.rubikom.kz/api/users/${user._id}/2fa`);
         setQrCode(response.data.qrCodeUrl);
         setManualCode(response.data.manualCode);  // Код для ручного ввода
       } catch (error) {
@@ -71,7 +71,7 @@ const TwoFAModal = ({ isOpen, onRequestClose, onOpenChange, user }) => {
   const handleVerification = async () => {
     const verificationCode = code.join('');
     try {
-      const response = await axios.post(`http://localhost:5000/api/users/${user._id}/2fa/verify`, {
+      const response = await axios.post(`http://webconnect.rubikom.kz/api/users/${user._id}/2fa/verify`, {
         token: verificationCode,
       });
       toast.success('Двухфакторная аутентификация активирована!', {
