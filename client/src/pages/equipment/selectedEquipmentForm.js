@@ -313,35 +313,6 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             </div>
         </div>
             <div className="w-full flex items-center gap-4">
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
-                    selectedEquipment.components
-                    .filter(component => component.Type === 'Memory') // Фильтрация компонентов по типу 'Memory'
-                    .map((memory, index) => (
-                        <div key={memory._id || index} className="w-full">
-                        <h3 className="text-sm font-semibold text-nowrap">{memory.Manufacturer} {memory.Data} {memory.Quantity} ГБ</h3>
-                        </div>
-                    ))
-                ) : (
-                    <p>Нет данных о памяти</p>
-                )}
-                </div>
-            </div>
-
-            <div className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex gap-4">
-                <div className="flex flex-col gap-1">
-                    {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
-                    selectedEquipment.components
-                        .filter(component => component.Type === 'Processor') // Фильтруем компоненты по типу 'Processor'
-                        .map((processor, index) => (
-                        <div key={processor._id || index} className=" w-full">
-                            <h3 className="text-sm font-semibold text-nowrap">{processor.Name}</h3> {/* Поле Name для вывода имени процессора */}
-                        </div>
-                        ))
-                    ) : (
-                    <p>Нет данных о процессоре</p>
-                    )}
             <div className="w-full flex-col items-center gap-4">
 
             <div className="flex justify-between w-full pt-4">
@@ -377,7 +348,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                 </div>
 
                 <div className="flex items-center gap-2">
-                <span className="font-semibold">Материнская плата:</span>
+                <span className="text-black/50">Материнская плата:</span>
                   <span>
                     {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
                       selectedEquipment.components
@@ -403,10 +374,10 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                   {selectedEquipment.components && selectedEquipment.components.length > 0 ? (
                     selectedEquipment.components
                         .filter(component => component.Type === 'Video') // Фильтруем компоненты по типу 'Processor'
-                        .map((video, index) => (
-                        <div key={video._id || index} className="w-full">
-                            <h3 className="text-sm font-semibold">{video.Name}</h3> {/* Поле Name для вывода имени процессора */}
-                        </div>
+                        .map((video, index) => (                        
+                        <span key={video._id || index} className="w-full text-nowrap">
+                          {video.Name}
+                        </span>
                         ))
                     ) : (
                     <p>Нет данных о видеоядре</p>
@@ -445,8 +416,6 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             </div>
 
             </div>
-      </div>
-      </div>
       </div>
       </div>
     </motion.div>

@@ -4,10 +4,10 @@ import '@/styles/globals.css';
 import { useRouter } from 'next/router';
 import AuthLayout from '@/components/AuthLayout';
 import { UserProvider } from '@/components/UserContext'; 
-import { ToastContainer } from 'react-toastify'; // Импортируем ToastContainer
-import 'react-toastify/dist/ReactToastify.css'; // Импортируем стили Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head';
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -15,30 +15,52 @@ function MyApp({ Component, pageProps }) {
   // Определяем, нужно ли скрыть Header для страницы логина
   const showHeader = router.pathname !== '/login';
 
+  // Определяем, должна ли страница быть без AuthLayout
+  const isPublicRoute = router.asPath.startsWith('/equipment/');
   return (
-  
     <NextUIProvider>
-    <AuthLayout>
-      <UserProvider>
-        <ToastContainer // Добавляем ToastContainer для алертов
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored" // Можно указать темную или светлую тему, по вашему желанию
-        />
-        {showHeader && <Header />}
-        <Head>
-          <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-        </Head>
-        <Component {...pageProps} />
-      </UserProvider>
-    </AuthLayout>
+      {isPublicRoute ? (
+        <>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+          <Head>
+            <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+          </Head>
+          <Component {...pageProps} />
+        </>
+      ) : (
+        <AuthLayout>
+          <UserProvider>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+            {showHeader && <Header />}
+            <Head>
+              <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+            </Head>
+            <Component {...pageProps} />
+          </UserProvider>
+        </AuthLayout>
+      )}
     </NextUIProvider>
   );
 }

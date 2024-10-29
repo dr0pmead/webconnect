@@ -3,16 +3,15 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AllMailsTab from '@/components/pages/emails/AllMailsTab';
-import CreateMailTab from '@/components/pages/emails/CreateMailTab';
-import SelectedEmailForm from '@/components/pages/emails/SelectedEmailForm';
-import { fetchEmails } from '@/components/pages/emails/fetchEmails';
+import AllMailsTab from '@/pages/emails/AllMailsTab';
+import CreateMailTab from '@/pages/emails/CreateMailTab';
+import SelectedEmailForm from '@/pages/emails/SelectedEmailForm';
+import { fetchEmails } from '@/pages/emails/fetchEmails';
 import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent } from "@nextui-org/react";
-
+import { useRouter } from 'next/router';
 export default function EmailsPage() {
   const user = useUser();
-  const isAdmin = user.admin === true;
-  const isTwofaEnabled = user.twofaEnable === true;
+
   const [selectedTab, setSelectedTab] = useState('allMails');
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [selectedEmails, setSelectedEmails] = useState([]);
@@ -27,11 +26,21 @@ export default function EmailsPage() {
   const [mathProblem, setMathProblem] = useState(''); // для хранения примера
   const [mathAnswer, setMathAnswer] = useState(null); // для хранения ответа на пример
   const [emailToDelete, setEmailToDelete] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+        router.push('/login');
+    }
+}, [user, router]);
 
   useEffect(() => {
     fetchEmails(setEmails, setIsLoading);
   }, []);
 
+  const isAdmin = user.admin === true;
+  const isTwofaEnabled = user.twofaEnable === true;
+  
   useEffect(() => {
     // Фильтрация почт по email и username в зависимости от поискового запроса
     const filtered = emails.filter(

@@ -197,14 +197,14 @@ async function ping(req, res) {
 async function getInfoEquipment(req, res) {
     const { name } = req.params;
     try {
-      const equipmentData = await Equipment.findOne({ name });
-      if (!equipmentData) {
-        return res.status(404).json({ message: 'Оборудование не найдено' });
-      }
-      res.json(equipmentData);
+        const equipmentData = await Equipment.findOne({ name });
+        if (!equipmentData) {
+            return res.status(404).json({ message: 'Оборудование не найдено' });
+        }
+        res.json(equipmentData);
     } catch (error) {
-      console.error('Ошибка при поиске оборудования:', error);
-      res.status(500).json({ message: 'Ошибка сервера' });
+        console.error('Ошибка при поиске оборудования:', error);
+        res.status(500).json({ message: 'Ошибка сервера' });
     }
 }
 
