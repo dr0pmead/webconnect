@@ -1,14 +1,23 @@
 import { useUser } from '@/components/UserContext';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-
+import { useRouter } from 'next/router';
 export default function HomePage() {
   const user = useUser();
+  const router = useRouter();
+  useEffect(() => {
+    if (!user) {
+        router.push('/login');
+    }
+}, [user, router]);
+
 
   // Проверяем, загружены ли данные пользователя
   if (!user) {
     return <div>Загрузка данных пользователя...</div>;
   }
 
+  
   return (
     <>
     <Head>

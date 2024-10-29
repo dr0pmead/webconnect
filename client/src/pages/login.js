@@ -6,7 +6,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { parseCookies } from 'nookies';
 import { motion } from "framer-motion";
-
+import Head from 'next/head';
 const schema = yup.object().shape({
   emailOrLogin: yup
     .string()
@@ -177,6 +177,11 @@ export default function Login() {
       };
 
   return (
+    <>
+    <Head>
+      <title>Авторизация</title>
+      <meta name="description" content="Авторизация WebConnect" />
+    </Head>
     <div className="overflow-hidden mx-auto w-full flex items-center justify-center h-screen">
       <div className="flex items-center justify-center flex-col max-w-md w-full">
 
@@ -363,5 +368,6 @@ export default function Login() {
     )}
       </div>
     </div>
+    </>
   );
 }
