@@ -2,7 +2,7 @@ import { useUser } from '@/components/UserContext';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fetchEquipment, useSocketEquipmentUpdates } from '@/utils/fetchEquipment';
+import { fetchEquipmentData, useSocketEquipmentUpdates } from '@/utils/fetchEquipment';
 import AllEquipmentTab from '@/pages/equipment/AllEquipmentTab';
 import OnlineEquipmentTab from '@/pages/equipment/OnlineEquipmentTab';
 import SelectedEquipmentForm from '@/pages/equipment/selectedEquipmentForm';
@@ -37,11 +37,11 @@ export default function EquipmentPage({ initialEquipments }) {
   const isTwofaEnabled = user.twofaEnable === true;
 
   useEffect(() => {
-    if (!initialEquipments || initialEquipments.length === 0) {
-        // Логика для повторной загрузки данных, если они не переданы
-        fetchEquipment().then(setEquipments);
-    }
-}, [initialEquipments]);
+      const loadEquipment = async () => {
+          await fetchEquipmentData(setEquipment, setIsLoading);
+      };
+      loadEquipment();
+  }, []);
 
   useSocketEquipmentUpdates(setEquipment); // вызов отдельно, вне useEffect
 

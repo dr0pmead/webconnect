@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import io from 'socket.io-client';
 
-export const fetchEquipment = async (setEquipment, setIsLoading) => {
+export const fetchEquipmentData = async (setEquipment, setIsLoading) => {
   setIsLoading(true);
   try {
       const response = await fetch('http://webconnect.rubikom.kz/api/equipments');
