@@ -39,7 +39,7 @@ export default function EquipmentPage({ initialEquipments }) {
   useEffect(() => {
     if (!initialEquipments || initialEquipments.length === 0) {
         // Логика для повторной загрузки данных, если они не переданы
-        fetchEquipmentData().then(setEquipments);
+        fetchEquipment().then(setEquipments);
     }
 }, [initialEquipments]);
 

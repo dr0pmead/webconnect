@@ -42,13 +42,13 @@ export default function Header() {
         }
         fetchUserData();
       }, [user]);
-      
+
   return (
     <header className="w-full bg-white p-8 py-3 border-b border-[#E9EBF3]">
         <div className="max-w-1320 mx-auto flex flex-col justify-between gap-6">
             <div className="flex justify-between items-center">
                 <div>
-                    <Image src="/assets/Image/webconnect_logo_second.svg" alt="webconnect"/>
+                    <Image src="/assets/img/webconnect_logo_second.svg" alt="webconnect"/>
                 </div>
                 <div className="w-10 h-10 rounded-md bg-[#E9EBF3] flex items-center justify-center relative">
                     <span id="user-name" className="font-semibold text-lg text-black">
