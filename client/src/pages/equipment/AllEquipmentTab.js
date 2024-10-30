@@ -33,6 +33,10 @@ const AllEquipmentTab = ({
     setDeleteModalOpen(true); // Открываем модальное окно
   };
 
+  if (!filteredEquipments) {
+    return <p>Пожалуйста, выберите оборудование для отображения данных.</p>;
+}
+
   const handleDelete = async () => {
     if (confirmText === equipmentToDelete.equipment) {
       setIsLoading(true);
@@ -74,24 +78,20 @@ const AllEquipmentTab = ({
         });
     });
   };
+// eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+          // Функция для обновления количества записей в зависимости от высоты окна
+          const handleResize = () => {
+              setEquipmentsPerPage(window.innerHeight <= 800 ? 5 : 7);
+          };
 
-    // Обновляем количество записей на странице в зависимости от разрешения экрана
-    useEffect(() => {
-        const handleResize = () => {
-          if (window.innerHeight <= 800) {
-            setEquipmentsPerPage(5); // При небольшой высоте показываем 5 записей
-          } else {
-            setEquipmentsPerPage(7); // При большей высоте показываем 7 записей
-          }
-        };
-      
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Устанавливаем изначально в зависимости от текущей высоты
-      
-        return () => window.removeEventListener('resize', handleResize);
+          window.addEventListener('resize', handleResize);
+          handleResize(); // Установка начального значения на основе текущей высоты
+
+          return () => window.removeEventListener('resize', handleResize);
       }, []);
     
-      // Обрабатываем фильтрацию по поисковому запросу
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       useEffect(() => {
         if (searchTerm) {
             const filtered = equipments.filter((equipment) => {

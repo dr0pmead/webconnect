@@ -7,7 +7,7 @@ import axios from 'axios';
 import Image from 'next/image';
 const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipment }) => {
 
-    const [inventoryNumber, setInventoryNumber] = useState(selectedEquipment.inventoryNumber || '');
+    const [inventoryNumber, setInventoryNumber] = useState(selectedEquipment?.inventoryNumber || '');
     const [isChanged, setIsChanged] = useState(false);
 
     // Отслеживаем изменения в поле инвентарного номера
@@ -16,6 +16,10 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
       setIsChanged(true);
     };
 
+    if (!selectedEquipment) {
+      return <p>Пожалуйста, выберите оборудование для отображения данных.</p>;
+  }
+  
     // Обработчик нажатия на кнопку "Сохранить"
     const handleSaveClick = async () => {
    
@@ -88,8 +92,6 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
         });
     });
     };
-
-    
 
   return (
     <motion.div

@@ -65,6 +65,7 @@ export default function EquipmentPage({ initialEquipments }) {
 
             return nameMatch || ownerMatch || anyDeskMatch || teamViewerMatch || ipAddressMatch;
         });
+        
         setFilteredEquipments(filtered);
     } else {
         setFilteredEquipments(equipments);
