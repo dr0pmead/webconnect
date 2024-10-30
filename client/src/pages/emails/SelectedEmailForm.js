@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
-import { handleShowPassword } from '@/utils/passwordUtils';
+
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -34,15 +34,15 @@ const SelectedEmailForm = ({ selectedEmail, fetchEmails }) => {
 
   useEffect(() => {
     if (selectedEmail) {
-      handleShowPassword(
-        selectedEmail._id,
-        setLoadingStates,
-        showPassword,
-        setShowPassword,
-        setDecryptedPasswords
-      );
+        handleShowPassword(
+            selectedEmail._id,
+            setLoadingStates,
+            showPassword,
+            setShowPassword,
+            setDecryptedPasswords
+        );
     }
-  }, [selectedEmail]);
+}, [selectedEmail, showPassword]);
 
   const updateEmail = async (data) => {
     try {

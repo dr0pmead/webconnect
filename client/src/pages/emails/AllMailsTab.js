@@ -5,6 +5,7 @@ import { handleShowPassword } from '@/utils/passwordUtils'; // Импорт фу
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input, Checkbox, ButtonGroup, Tooltip, Pagination} from '@nextui-org/react';
 import { toast } from 'react-toastify';
 import { HighlightText } from '@/components/HighlightText';
+import Image from 'next/image';
 
 const AllMailsTab = ({
   emails,
@@ -231,8 +232,8 @@ const AllMailsTab = ({
                         isLoading={loadingStates[email._id]}
                         className="bg-transparent border hover:bg-[#e5e7eb] px-0 max-w-[30px] min-w-[30px] rounded-md max-h-[30px]"
                     >
-                        <img
-                        src={showPassword[email._id] ? '/assets/img/mdi_eye_off.svg' : '/assets/img/mdi_eye.svg'}
+                        <Image
+                        src={showPassword[email._id] ? '/assets/Image/mdi_eye_off.svg' : '/assets/Image/mdi_eye.svg'}
                         alt="toggle-password"
                         className={`w-4 h-4 ${loadingStates[email._id] ? 'hidden' : ''}`}
                         />
@@ -300,36 +301,36 @@ const AllMailsTab = ({
             >
             <ModalContent>
                 <ModalHeader>
-                <div>Удаление</div>
+                    <div>Удаление</div>
                 </ModalHeader>
                 <ModalBody>
-                <div>Для удаления почты введите "<strong>{emailToDelete.email}</strong>" ниже и нажмите подтвердить.</div>
-                <Input
-                    clearable
-                    fullWidth
-                    bordered
-                    size="lg"
-                    placeholder={`Введите "${emailToDelete.email}" для подтверждения`}
-                    value={confirmText}
-                    onChange={(e) => setConfirmText(e.target.value)}
-                />
+                    <div>Для удаления почты введите &quot;<strong>{emailToDelete.email}</strong>&quot; ниже и нажмите подтвердить.</div>
+                    <Input
+                        clearable
+                        fullWidth
+                        bordered
+                        size="lg"
+                        placeholder={`Введите "${emailToDelete.email}" для подтверждения`}
+                        value={confirmText}
+                        onChange={(e) => setConfirmText(e.target.value)}
+                    />
                 </ModalBody>
                 <ModalFooter>
-                <Button flat color="error" onClick={() => {
-                    setDeleteModalOpen(false);
-                    setConfirmText(''); // Сбрасываем поле
-                }}>
-                    Закрыть
-                </Button>
-                <Button 
-                    auto 
-                    isDisabled={confirmText !== emailToDelete.email} // Кнопка будет отключена, если текст не совпадает с email
-                    className="bg-[#FF5A67] text-white"
-                    onClick={handleDelete}
-                    isLoading={isLoading}
-                >
-                    Подтвердить
-                </Button>
+                    <Button flat color="error" onClick={() => {
+                        setDeleteModalOpen(false);
+                        setConfirmText(''); // Сбрасываем поле
+                    }}>
+                        Закрыть
+                    </Button>
+                    <Button 
+                        auto 
+                        isDisabled={confirmText !== emailToDelete.email} // Кнопка будет отключена, если текст не совпадает с email
+                        className="bg-[#FF5A67] text-white"
+                        onClick={handleDelete}
+                        isLoading={isLoading}
+                    >
+                        Подтвердить
+                    </Button>
                 </ModalFooter>
             </ModalContent>
             </Modal>

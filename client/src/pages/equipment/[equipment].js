@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Progress, Chip, Tooltip, Checkbox } from '@nextui-org/react';
 
+import Image from 'next/image';
+
 const EquipmentDetailPage = () => {
   const router = useRouter();
   const { equipment } = router.query;
@@ -59,21 +61,21 @@ const EquipmentDetailPage = () => {
       
       <div className="flex w-full flex-col gap-4 mt-4">
           <a className="border p-4 rounded-lg bg-[#FC4136] w-full flex items-center gap-4 duration-150 text-white">
-              <img src="/assets/img/simple-icons_anydesk.svg" alt="anydesk" className="w-14 h-14"/>
+              <Image src="/assets/Image/simple-icons_anydesk.svg" alt="anydesk" className="w-14 h-14"/>
               <div className="flex flex-col justify-start">
                   <span className="text-sm">AnyDesk</span>
                   <span className="font-bold text-lg">{equipmentData.anyDesk}</span>
               </div>
           </a>
           <div className="border p-4 rounded-lg bg-[#0669CC] w-full flex items-center gap-4 text-white cursor-pointer duration-150">
-              <img src="/assets/img/mdi_teamviewer.svg" alt="teamviewer" className="w-14 h-14"/>
+              <Image src="/assets/Image/mdi_teamviewer.svg" alt="teamviewer" className="w-14 h-14"/>
               <div className="flex flex-col justify-start">
                   <span className="text-sm">TeamViewer</span>
                   <span className="font-bold text-lg">{equipmentData.teamViewer}</span>
               </div>
           </div>
           <a className="border p-4 rounded-lg bg-[#25C03D] w-full flex items-center gap-4 duration-150 text-white">
-              <img src="/assets/img/mdi_ip.svg" alt="anydesk" className="w-14 h-14"/>
+              <Image src="/assets/Image/mdi_ip.svg" alt="anydesk" className="w-14 h-14"/>
               <div className="flex flex-col justify-start">
                   <span className="text-sm">IP Адрес</span>
                   <span className="font-bold text-lg">{equipmentData.ipAddress.main}</span>
@@ -95,7 +97,7 @@ const EquipmentDetailPage = () => {
                 key={disk._id || index} // Используем _id, если он есть, иначе индекс
                 className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex items-center gap-2 relative"
                 >
-                <img src="/assets/img/proicons_hard-drive.svg" alt="hard-drive" className="w-16 h-16 opacity-75"/>
+                <Image src="/assets/Image/proicons_hard-drive.svg" alt="hard-drive" className="w-16 h-16 opacity-75"/>
 
                 <span className={`absolute -right-2 -top-2 w-4 h-4 bg-[#FFDE5A] rounded-full ${!isLowSpace ? 'hidden' : ''}`}></span>
                 <span className={`absolute -right-2 -top-2 w-4 h-4 bg-[#FFDE5A] rounded-full animate-ping ${!isLowSpace ? 'hidden' : ''}`}></span>

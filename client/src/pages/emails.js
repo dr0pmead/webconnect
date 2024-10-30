@@ -6,9 +6,11 @@ import axios from 'axios';
 import AllMailsTab from '@/pages/emails/AllMailsTab';
 import CreateMailTab from '@/pages/emails/CreateMailTab';
 import SelectedEmailForm from '@/pages/emails/SelectedEmailForm';
-import { fetchEmails } from '@/pages/emails/fetchEmails';
+import { fetchEmails } from '@/utils/fetchEmails';
 import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, ModalContent } from "@nextui-org/react";
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+
 export default function EmailsPage() {
   const user = useUser();
 
@@ -97,15 +99,16 @@ export default function EmailsPage() {
     setIsIndeterminate(selectedEmails.length > 0 && selectedEmails.length < emails.length);
   };
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (selectedEmails.length === 0) {
-      setIsAllChecked(false);
-      setIsIndeterminate(false);
+        setIsAllChecked(false);
+        setIsIndeterminate(false);
     } else if (selectedEmails.length === emails.length) {
-      setIsAllChecked(true);
-      setIsIndeterminate(false);
+        setIsAllChecked(true);
+        setIsIndeterminate(false);
     } else {
-      setIsIndeterminate(true);
+        setIsIndeterminate(true);
     }
   }, [selectedEmails, emails]);
 
@@ -217,7 +220,7 @@ export default function EmailsPage() {
                       labelPlacement="outside"
                       value={searchTerm} // Привязка к состоянию
                       onChange={handleSearch} // Обработчик изменения
-                      endContent={<img src="/assets/img/octicon_search-16.svg" alt="" />}
+                      endContent={<Image src="/assets/Image/octicon_search-16.svg" alt="" />}
                     />
                   </div>
                   
@@ -261,7 +264,7 @@ export default function EmailsPage() {
             ) : (
               // Контейнер с картинкой и сообщением об отсутствии записей
               <div className="flex flex-col items-center justify-center p-24">
-                <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
               </div>
             )
           ) : selectedTab === 'createMail' ? (
@@ -302,7 +305,7 @@ export default function EmailsPage() {
                 <div>Удаление</div>
                 </ModalHeader>
                 <ModalBody>
-                <div>Для удаления почты введите "<strong>{mathProblem}</strong>" ниже и нажмите подтвердить.</div>
+                <div>Для удаления почты введите <strong>{mathProblem}</strong> ниже и нажмите подтвердить.</div>
                 <Input
                     clearable
                     fullWidth

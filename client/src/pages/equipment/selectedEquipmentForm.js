@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Progress, Chip, Tooltip, Checkbox } from '@nextui-org/react';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-
+import Image from 'next/image';
 const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipment }) => {
 
     const [inventoryNumber, setInventoryNumber] = useState(selectedEquipment.inventoryNumber || '');
@@ -164,7 +164,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                 key={disk._id || index} // Используем _id, если он есть, иначе индекс
                 className="border p-4 rounded-lg bg-[#E9EBF3] w-full flex items-center gap-2 relative"
                 >
-                <img src="/assets/img/proicons_hard-drive.svg" alt="hard-drive" className="w-16 h-16 opacity-75"/>
+                <Image src="/assets/Image/proicons_hard-drive.svg" alt="hard-drive" className="w-16 h-16 opacity-75"/>
 
                 <span className={`absolute -right-2 -top-2 w-4 h-4 bg-[#FFDE5A] rounded-full ${!isLowSpace ? 'hidden' : ''}`}></span>
                 <span className={`absolute -right-2 -top-2 w-4 h-4 bg-[#FFDE5A] rounded-full animate-ping ${!isLowSpace ? 'hidden' : ''}`}></span>
@@ -225,7 +225,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
       }}
     >
         <a href={`anydesk://${selectedEquipment.anyDesk}`} className="border p-4 rounded-lg bg-[#FC4136] w-full flex items-center gap-4 duration-150 text-white hover:opacity-hover">
-            <img src="/assets/img/simple-icons_anydesk.svg" alt="anydesk" className="w-14 h-14"/>
+            <Image src="/assets/Image/simple-icons_anydesk.svg" alt="anydesk" className="w-14 h-14"/>
             <div className="flex flex-col justify-start">
                 <span className="text-sm">AnyDesk</span>
                 <span className="font-bold text-lg">{selectedEquipment.anyDesk}</span>
@@ -257,7 +257,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
       }}
     >
         <div onClick={() => handleCopyToClipboard(selectedEquipment.teamViewer)} className="border p-4 rounded-lg bg-[#0669CC] w-full flex items-center gap-4 text-white cursor-pointer duration-150 hover:opacity-hover">
-            <img src="/assets/img/mdi_teamviewer.svg" alt="teamviewer" className="w-14 h-14"/>
+            <Image src="/assets/Image/mdi_teamviewer.svg" alt="teamviewer" className="w-14 h-14"/>
             <div className="flex flex-col justify-start">
                 <span className="text-sm">TeamViewer</span>
                 <span className="font-bold text-lg">{selectedEquipment.teamViewer}</span>
@@ -289,7 +289,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
       }}
     >
         <a href={`rms://${selectedEquipment.ipAddress.main}`} onClick={() => handleCopyToClipboard(selectedEquipment.ipAddress.main)} className="border p-4 rounded-lg bg-[#25C03D] w-full flex items-center gap-4 duration-150 text-white hover:opacity-hover">
-            <img src="/assets/img/mdi_ip.svg" alt="anydesk" className="w-14 h-14"/>
+            <Image src="/assets/Image/mdi_ip.svg" alt="anydesk" className="w-14 h-14"/>
             <div className="flex flex-col justify-start">
                 <span className="text-sm">IP Адрес</span>
                 <span className="font-bold text-lg">{selectedEquipment.ipAddress.main}</span>
@@ -306,7 +306,7 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
             <span className="font-semibold ">Оценка производительности:</span>
             <div 
             className="w-10 h-10 bg-no-repeat bg-cover flex items-center justify-center font-bold text-2xl text-white" 
-            style={{ backgroundImage: 'url(/assets/img/estimation.png)' }}
+            style={{ backgroundImage: 'url(/assets/Image/estimation.png)' }}
             >
             <span>{selectedEquipment.estimation}</span>
             </div>
@@ -395,20 +395,20 @@ const SelectedEquipmentForm = ({ selectedEquipment, isAdmin, setSelectedEquipmen
                     const osImage = (() => {
                       switch (osVersion) {
                         case 'Windows 11':
-                          return '/assets/img/Windows_11_Logo.svg';
+                          return '/assets/Image/Windows_11_Logo.svg';
                         case 'Windows 10':
-                          return '/assets/img/Windows_10_Logo.svg';
+                          return '/assets/Image/Windows_10_Logo.svg';
                           case 'Windows 8':
-                          return '/assets/img/Windows_8_Logo.svg';
+                          return '/assets/Image/Windows_8_Logo.svg';
                           case 'Windows 7':
-                          return '/assets/img/Windows_7_Logo.svg';
+                          return '/assets/Image/Windows_7_Logo.svg';
                         default:
-                          return '/assets/img/Windows_10_Logo.svg'; // Картинка по умолчанию для других ОС
+                          return '/assets/Image/Windows_10_Logo.svg'; // Картинка по умолчанию для других ОС
                       }
                     })();
 
                     return (
-                      <img src={osImage} alt={osVersion} className="w-[80%]" />
+                      <Image src={osImage} alt={osVersion} className="w-[80%]" />
                     );
                   })()
                 )}

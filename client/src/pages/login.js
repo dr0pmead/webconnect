@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Image from 'next/image';
 import { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -186,7 +187,7 @@ export default function Login() {
       <div className="flex items-center justify-center flex-col max-w-md w-full">
 
         <div className="mb-10">
-          <img src="/assets/img/webconnect_logo_first.svg" alt="webconnect" />
+          <Image src="/assets/Image/webconnect_logo_first.svg" alt="webconnect" />
         </div>
         
         {/* Сообщение об ошибке, если форма была отправлена и есть ошибки */}
@@ -319,7 +320,7 @@ export default function Login() {
                 className="flex items-center justify-center px-3 py-1.5 bg-[#FAFAFC] border-l-0 border border-[#E9EBF3] cursor-pointer rounded-r-lg max-w-[40px]"
                 onClick={togglePasswordVisibility}
               >
-                <img src={showPassword ? '/assets/img/mdi_eye_off.svg' : '/assets/img/mdi_eye.svg'} alt="toggle-password" className="w-4 h-4"/>
+                <Image src={showPassword ? '/assets/Image/mdi_eye_off.svg' : '/assets/Image/mdi_eye.svg'} alt="toggle-password" className="w-4 h-4"/>
               </span>
               {/* Галочка или крестик внутри инпута */}
               <span className="absolute right-12 top-3">

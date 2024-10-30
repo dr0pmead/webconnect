@@ -2,7 +2,7 @@ import { useUser } from '@/components/UserContext';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fetchEquipment, useSocketEquipmentUpdates } from '@/pages/equipment/fetchEquipment';
+import { fetchEquipment, useSocketEquipmentUpdates } from '@/utils/fetchEquipment';
 import AllEquipmentTab from '@/pages/equipment/AllEquipmentTab';
 import OnlineEquipmentTab from '@/pages/equipment/OnlineEquipmentTab';
 import SelectedEquipmentForm from '@/pages/equipment/selectedEquipmentForm';
@@ -10,12 +10,13 @@ import { Spinner, Input, Button, Modal, ModalHeader, ModalFooter, ModalBody, Mod
 import OfflineEquipmentTab from '@/pages/equipment/OfflineEquipmentTab';
 import { saveAs } from 'file-saver';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
-export default function EquipmentPage() {
+export default function EquipmentPage({ initialEquipments }) {
   const user = useUser();
   const [selectedTab, setSelectedTab] = useState('allEquipment');
   const [isLoading, setIsLoading] = useState(false);
-  const [equipments, setEquipment] = useState([]);
+  const [equipments, setEquipment] = useState(initialEquipments);
   const [filteredEquipments, setFilteredEquipments] = useState([]); // Состояние для фильтрованных email
   const [selectedEquipment, setSelectedEquipment] = useState(null);
   const [selectedEquipments, setSelectedEquipments] = useState([]);
@@ -25,22 +26,24 @@ export default function EquipmentPage() {
   const [qrModalOpen, setQrModalOpen] = useState(false);
   const [object, setSelectetObject] = useState(null)
   const router = useRouter();
-  if (!user) {
-    return <div>Загрузка данных пользователя...</div>;
-  }
 
   useEffect(() => {
-    if (!user) {
-        router.push('/login');
+      if (!user) {
+          router.push('/login');
+      }
+  }, [user, router]);
+
+  const isAdmin = user.admin === true;
+  const isTwofaEnabled = user.twofaEnable === true;
+
+  useEffect(() => {
+    if (!initialEquipments || initialEquipments.length === 0) {
+        // Логика для повторной загрузки данных, если они не переданы
+        fetchEquipmentData().then(setEquipments);
     }
-}, [user, router]);
+}, [initialEquipments]);
 
-const isAdmin = user.admin === true;
-const isTwofaEnabled = user.twofaEnable === true;
-
-  useEffect(() => {
-    fetchEquipment(setEquipment, setIsLoading);
-  }, []);
+  useSocketEquipmentUpdates(setEquipment); // вызов отдельно, вне useEffect
 
   const handleSaveQRCode = () => {
     const link = selectedEquipment.qrcode; // QR-код в формате data URL
@@ -48,12 +51,7 @@ const isTwofaEnabled = user.twofaEnable === true;
 
     saveAs(link, fileName);
   };
-
   
-
-  // Listen for real-time updates
-  useSocketEquipmentUpdates(setEquipment);
-
   useEffect(() => {
     if (searchTerm) {
         const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -61,13 +59,8 @@ const isTwofaEnabled = user.twofaEnable === true;
             const nameMatch = equipment.name.toLowerCase().includes(lowerCaseSearchTerm);
             const ownerMatch = equipment.owner.toLowerCase().includes(lowerCaseSearchTerm);
             
-            // Приведение anyDesk к строке
             const anyDeskMatch = equipment.anyDesk && String(equipment.anyDesk).includes(searchTerm);
-            
-            // Приведение teamViewer к строке
             const teamViewerMatch = equipment.teamViewer && String(equipment.teamViewer).includes(searchTerm);
-            
-            // Приведение ipAddress.main к строке
             const ipAddressMatch = equipment.ipAddress.main && String(equipment.ipAddress.main).includes(searchTerm);
 
             return nameMatch || ownerMatch || anyDeskMatch || teamViewerMatch || ipAddressMatch;
@@ -222,7 +215,7 @@ const isTwofaEnabled = user.twofaEnable === true;
                         labelPlacement="outside"
                         value={searchTerm} // Привязка к состоянию
                         onChange={handleSearch} // Обработчик изменения
-                        endContent={<img src="/assets/img/octicon_search-16.svg" alt="" />}
+                        endContent={<Image src="/assets/Image/octicon_search-16.svg" alt="" />}
                       />
                     </div>
                                     
@@ -267,7 +260,7 @@ const isTwofaEnabled = user.twofaEnable === true;
                   ) : (
                     // Контейнер с картинкой и сообщением об отсутствии записей
                     <div className="flex flex-col items-center justify-center p-24">
-                      <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                      <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                     </div>
                   )
                 ) : selectedTab === 'onlineEquipment' ? (
@@ -290,7 +283,7 @@ const isTwofaEnabled = user.twofaEnable === true;
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
-                    <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                    <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
                 ) : selectedTab === 'offlineEquipment' ? (
@@ -313,7 +306,7 @@ const isTwofaEnabled = user.twofaEnable === true;
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
-                    <img src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                    <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
                 ) : selectedTab === 'selectedEquipment' && selectedEquipment ? (
@@ -348,7 +341,7 @@ const isTwofaEnabled = user.twofaEnable === true;
           </ModalHeader>
           <ModalBody className="flex items-center justify-center">
           {object && object.qrcode ? (
-            <img src={object.qrcode} alt="QR Code" className="w-80 h-80" />
+            <Image src={object.qrcode} alt="QR Code" className="w-80 h-80" />
           ) : ( <span>Нет значения</span> ) }
           </ModalBody>
           <ModalFooter>
@@ -361,4 +354,13 @@ const isTwofaEnabled = user.twofaEnable === true;
 
     </>
   );
+}
+
+export async function getServerSideProps() {
+  // Загрузка данных на сервере
+  const initialEquipments = await fetchEquipmentData();
+
+  return {
+      props: { initialEquipments },
+  };
 }
