@@ -216,7 +216,7 @@ export default function EquipmentPage({ initialEquipments }) {
                         labelPlacement="outside"
                         value={searchTerm} // Привязка к состоянию
                         onChange={handleSearch} // Обработчик изменения
-                        endContent={<Image src="/assets/Image/octicon_search-16.svg" alt="" />}
+                        endContent={<Image src="/assets/img/octicon_search-16.svg" alt="" />}
                       />
                     </div>
                                     
@@ -261,7 +261,7 @@ export default function EquipmentPage({ initialEquipments }) {
                   ) : (
                     // Контейнер с картинкой и сообщением об отсутствии записей
                     <div className="flex flex-col items-center justify-center p-24">
-                      <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                      <Image src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                     </div>
                   )
                 ) : selectedTab === 'onlineEquipment' ? (
@@ -284,7 +284,7 @@ export default function EquipmentPage({ initialEquipments }) {
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
-                    <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                    <Image src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
                 ) : selectedTab === 'offlineEquipment' ? (
@@ -307,7 +307,7 @@ export default function EquipmentPage({ initialEquipments }) {
                 ) : (
                   // Контейнер с картинкой и сообщением об отсутствии записей
                   <div className="flex flex-col items-center justify-center p-24">
-                    <Image src="/assets/Image/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
+                    <Image src="/assets/img/no-data.svg" alt="No emails" className="w-60 h-60 pointer-events-none" />
                   </div>
                 )
                 ) : selectedTab === 'selectedEquipment' && selectedEquipment ? (
